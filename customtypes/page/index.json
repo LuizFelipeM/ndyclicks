@@ -1,0 +1,81 @@
+{
+  "format": "page",
+  "id": "page",
+  "label": "Página",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Nome único da página"
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Título",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "parent": {
+        "type": "Link",
+        "config": {
+          "label": "Página Pai",
+          "select": "document",
+          "customtypes": ["page"]
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "text": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "header": {
+              "type": "SharedSlice"
+            },
+            "call_to_action": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Título",
+          "placeholder": "Título de página utilizado por redes sociais e motores de busca"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Descrição",
+          "placeholder": "Um resumo curto da página"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "label": "Meta Imagem",
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

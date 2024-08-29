@@ -6,5 +6,8 @@ export const components = {
   call_to_action: dynamic(() => import("./CallToAction")),
   header: dynamic(() => import("./Header")),
   hero: dynamic(() => import("./Hero")),
+  image: dynamic(() => import("./Image")),
+  post_gallery: dynamic(() => import("./PostGallery")),
+  splitter: dynamic(() => import("./Splitter")),
   text: dynamic(() => import("./Text")),
 };

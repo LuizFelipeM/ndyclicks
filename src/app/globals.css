@@ -1,3 +1,232 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.img-group {
+    transition: 0.5s;
+}
+
+/* Left one */
+.img-group:nth-child(odd) {
+    animation: slidein-ltr 1.2s forwards;
+}
+
+@keyframes slidein-ltr {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 100%;
+        transform: translateX(0%);
+    }
+}
+
+/* Right one */
+.img-group:nth-child(even) {
+    animation: slidein-rtl 1.2s forwards;
+}
+
+@keyframes slidein-rtl {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 100%;
+        transform: translateX(0%);
+    }
+}
+
+
+.splitter {
+    display: flex;
+    justify-content: center;
+}
+
+/* Splitter component */
+.splitter-component {
+    width: 100%;
+    height: 33.5625rem;
+    position: relative;
+}
+
+.splitter-component .image-wrapper img {
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
+}
+
+.splitter-component .image-wrapper.after img {
+    width: 68rem;
+    max-width: none;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: auto;
+    right: 0%;
+}
+
+.splitter-component .image-wrapper {
+    pointer-events: none;
+    user-select: none;
+}
+
+@media screen and (max-width: 991px) {
+    .splitter-component .image-wrapper img {
+        width: 61.9375rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .splitter-component .image-wrapper img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .splitter-component .image-wrapper.after img {
+        width: 47.9375rem;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .splitter-component {
+        flex: none;
+        width: 21.375rem;
+        height: 27.8125rem;
+    }
+
+    .splitter-component .image-wrapper img {
+        width: 100%;
+    }
+
+    .splitter-component .image-wrapper.after img {
+        width: 21.375rem;
+    }
+}
+
+/* Splitter before */
+.splitter-component .image-wrapper.before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+.splitter-text {
+    z-index: 2;
+    color: #f3f3f3;
+    background-color: #0e1223;
+    border-radius: 9999px;
+    padding: .5rem .75rem;
+    font-size: .75rem;
+    position: absolute;
+    top: .5rem;
+}
+
+.splitter-text.before {
+    left: .5rem;
+    bottom: auto;
+    right: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .splitter-component .image-wrapper.before {
+        overflow: hidden;
+    }
+}
+
+/* Splitter after */
+.splitter-component .image-wrapper.after {
+    z-index: 2;
+    width: 46.96%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: auto;
+    right: 0%;
+    overflow: hidden;
+}
+
+.splitter-text.after {
+    right: .5rem;
+    bottom: auto;
+    left: auto;
+}
+
+/* Splitter handler */
+.splitter-handle-component {
+    z-index: 2;
+    background-color: #fff;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+}
+
+.splitter-handle-component.is-transparent {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.splitter-handle-component.is-transparent.is-1 {
+    left: 30%;
+}
+
+.splitter-handle-wrapper {
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.splitter-handle-wrapper .line {
+    background-color: #fff;
+    width: 2px;
+    height: 47%;
+}
+
+.splitter-handle-wrapper .circle {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 2rem;
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.splitter-handle-wrapper .circle.is-1 {
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 2px;
+    justify-content: center;
+    align-items: center;
+    width: 2.3rem;
+    height: 2.3rem;
+    display: flex;
+}
+
+.splitter-handle-wrapper .circle.is-1:active {
+    border-width: 4px;
+}
+
+@media screen and (max-width: 479px) {
+    .splitter-handle-component {
+        width: 2px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .splitter-handle-wrapper .circle.is-1 {
+        border-radius: 50%;
+    }
+}

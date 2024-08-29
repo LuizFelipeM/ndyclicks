@@ -16,7 +16,10 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx("flex", slice.variation === "center" ? "align-middle justify-center" : null)}
+      className={clsx(
+        "flex",
+        slice.variation === "center" && "lg:align-middle lg:justify-center"
+      )}
     >
       <PrismicNextLink
         field={slice.primary.destination}

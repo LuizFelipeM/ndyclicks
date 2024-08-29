@@ -20,8 +20,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const client = createClient()
+  const client = createClient();
   const page = await client.getByUID("page", "home").catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return (
+    <main className="px-4 py-8 mt-0">
+      <SliceZone slices={page.data.slices} components={components} />
+    </main>
+  );
 }

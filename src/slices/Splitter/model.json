@@ -1,0 +1,35 @@
+{
+  "id": "splitter",
+  "type": "SharedSlice",
+  "name": "Splitter",
+  "description": "Splitter",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "before": {
+          "type": "Image",
+          "config": {
+            "label": "Antes",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "after": {
+          "type": "Image",
+          "config": {
+            "label": "Depois",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

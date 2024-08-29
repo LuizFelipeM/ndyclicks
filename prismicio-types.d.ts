@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | PostGallerySlice
   | TextSlice
   | HeroSlice
   | HeaderSlice
@@ -91,7 +92,11 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type PostDocumentDataSlicesSlice = never;
+type PostDocumentDataSlicesSlice =
+  | SplitterSlice
+  | TextSlice
+  | HeroSlice
+  | CallToActionSlice;
 
 /**
  * Content for Post documents
@@ -351,6 +356,148 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Image → Default → Primary*
+ */
+export interface ImageSliceDefaultPrimary {
+  /**
+   * Imagem field in *Image → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Image Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Image*
+ */
+type ImageSliceVariation = ImageSliceDefault;
+
+/**
+ * Image Shared Slice
+ *
+ * - **API ID**: `image`
+ * - **Description**: Image
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSlice = prismic.SharedSlice<"image", ImageSliceVariation>;
+
+/**
+ * Default variation for PostGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PostGallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *PostGallery*
+ */
+type PostGallerySliceVariation = PostGallerySliceDefault;
+
+/**
+ * PostGallery Shared Slice
+ *
+ * - **API ID**: `post_gallery`
+ * - **Description**: PostGallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PostGallerySlice = prismic.SharedSlice<
+  "post_gallery",
+  PostGallerySliceVariation
+>;
+
+/**
+ * Primary content in *Splitter → Default → Primary*
+ */
+export interface SplitterSliceDefaultPrimary {
+  /**
+   * Antes field in *Splitter → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: splitter.default.primary.before
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  before: prismic.ImageField<never>;
+
+  /**
+   * Depois field in *Splitter → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: splitter.default.primary.after
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  after: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Splitter Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SplitterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SplitterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Splitter*
+ */
+type SplitterSliceVariation = SplitterSliceDefault;
+
+/**
+ * Splitter Shared Slice
+ *
+ * - **API ID**: `splitter`
+ * - **Description**: Splitter
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SplitterSlice = prismic.SharedSlice<
+  "splitter",
+  SplitterSliceVariation
+>;
+
+/**
+ * Primary content in *Text → Default → Primary*
+ */
+export interface TextSliceDefaultPrimary {
+  /**
+   * Texto field in *Text → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
  * Default variation for Text Slice
  *
  * - **API ID**: `default`
@@ -359,7 +506,7 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export type TextSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<TextSliceDefaultPrimary>,
   never
 >;
 
@@ -407,7 +554,19 @@ declare module "@prismicio/client" {
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,
+      ImageSlice,
+      ImageSliceDefaultPrimary,
+      ImageSliceVariation,
+      ImageSliceDefault,
+      PostGallerySlice,
+      PostGallerySliceVariation,
+      PostGallerySliceDefault,
+      SplitterSlice,
+      SplitterSliceDefaultPrimary,
+      SplitterSliceVariation,
+      SplitterSliceDefault,
       TextSlice,
+      TextSliceDefaultPrimary,
       TextSliceVariation,
       TextSliceDefault,
     };

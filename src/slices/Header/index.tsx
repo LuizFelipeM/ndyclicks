@@ -1,20 +1,23 @@
 import { Content } from "@prismicio/client";
 import { JSXMapSerializer, PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { Heading } from "@/components/Heading";
-import { RichText } from "@/components/ReachText";
+
+const components: JSXMapSerializer = {
+  heading1: ({ children }) => (
+    <h1 className="font-Roboto text-rose font-bold text-left text-[2.75rem] lg:text-center md:text-[10rem]">
+      {children}
+    </h1>
+  ),
+  heading2: ({ children }) => (
+    <h2 className="font-Roboto font-light text-white-smoke text-left text-[1.5rem] lg:text-center lg:text-[2.25rem] mb-3">
+      {children}
+    </h2>
+  ),
+};
 
 /**
  * Props for `Header`.
  */
 export type HeaderProps = SliceComponentProps<Content.HeaderSlice>;
-
-// const components: JSXMapSerializer = {
-//   heading1: ({ children }) => (
-//     <Heading as="h2" size="xl" className="mb-4 mt-12 first:mt-0 last:mb-0">
-//       {children}
-//     </Heading>
-//   ),
-// };
 
 /**
  * Component for "Header" Slices.
@@ -26,14 +29,14 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <RichText
+      <PrismicRichText
+        components={components}
         field={slice.primary.title}
-        className="font-Roboto text-rose font-bold text-left text-[2.75rem] lg:text-center md:text-[10rem]"
       />
 
-      <RichText
+      <PrismicRichText
+        components={components}
         field={slice.primary.subtitle}
-        className="font-Roboto font-light text-white-smoke text-left text-[1.5rem] lg:text-center lg:text-[2.25rem] mb-3"
       />
     </section>
   );

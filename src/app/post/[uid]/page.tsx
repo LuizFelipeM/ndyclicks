@@ -1,5 +1,8 @@
+import { RichText } from "@/components/ReachText";
 import { createClient } from "@/prismicio";
+import { components } from "@/slices";
 import { asText } from "@prismicio/client";
+import { SliceZone } from "@prismicio/react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -25,10 +28,20 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
 export default async function Post({ params }: PostProps) {
   const client = createClient();
   const post = await client
-    .getByUID("post", params.uid)
+    .getByUID("post", params.uid, {
+      graphQuery: `{
+        post {
+          title
+          slices
+        }
+      }`
+    })
     .catch(() => notFound());
 
   return (
-    <div>Post</div>
+    <main className="px-4 py-8 mt-0">
+      <RichText field={post.data.title} className="text-rose" />
+      <SliceZone slices={post.data.slices} components={components} />
+    </main>
   )
 }

@@ -1,0 +1,18 @@
+{
+  "id": "post_gallery",
+  "type": "SharedSlice",
+  "name": "PostGallery",
+  "description": "PostGallery",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

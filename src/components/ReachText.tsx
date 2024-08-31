@@ -2,6 +2,7 @@ import {
   PrismicRichText,
   type PrismicRichTextProps,
   type JSXMapSerializer,
+  PrismicLink,
 } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 

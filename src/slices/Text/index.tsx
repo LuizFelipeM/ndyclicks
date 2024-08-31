@@ -1,3 +1,4 @@
+import { RichText } from "@/components/ReachText";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -15,7 +16,7 @@ const Text = ({ slice }: TextProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for text (variation: {slice.variation}) Slices
+      <RichText field={slice.primary.text} />
     </section>
   );
 };

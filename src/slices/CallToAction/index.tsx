@@ -1,3 +1,4 @@
+import { Button } from "@/components/Button";
 import { Content } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicText, SliceComponentProps } from "@prismicio/react";
@@ -21,12 +22,9 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         slice.variation === "center" && "lg:align-middle lg:justify-center"
       )}
     >
-      <PrismicNextLink
-        field={slice.primary.destination}
-        className="inline-flex items-center bg-savoy-blue text-white-smoke rounded-full px-4 h-10"
-      >
+      <Button href={slice.primary.destination}>
         <PrismicText field={slice.primary.text} />
-      </PrismicNextLink>
+      </Button>
     </section>
   );
 };

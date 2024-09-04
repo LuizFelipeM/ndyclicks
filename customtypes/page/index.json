@@ -6,12 +6,6 @@
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "type": "UID",
-        "config": {
-          "label": "Nome único da página"
-        }
-      },
       "title": {
         "type": "StructuredText",
         "config": {
@@ -21,12 +15,27 @@
           "single": "heading1"
         }
       },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Nome único da página"
+        }
+      },
       "parent": {
         "type": "Link",
         "config": {
           "label": "Página Pai",
           "select": "document",
           "customtypes": ["page"]
+        }
+      },
+      "show_title": {
+        "type": "Boolean",
+        "config": {
+          "label": "Mostrar título da página",
+          "placeholder_false": "Não",
+          "placeholder_true": "Sim",
+          "default_value": true
         }
       },
       "slices": {

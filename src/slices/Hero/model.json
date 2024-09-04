@@ -10,7 +10,185 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texto",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
+          }
+        },
+        "buttons": {
+          "type": "Group",
+          "config": {
+            "label": "Botões",
+            "repeat": true,
+            "fields": {
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link do botão",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Texto do botão",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "carousel": {
+          "type": "Group",
+          "config": {
+            "label": "Carrossel de imagens",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "right",
+      "name": "Texto a direita",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texto",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
+          }
+        },
+        "buttons": {
+          "type": "Group",
+          "config": {
+            "label": "Botões",
+            "repeat": true,
+            "fields": {
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link do botão",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Texto do botão",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "carousel": {
+          "type": "Group",
+          "config": {
+            "label": "Carrossel de imagens",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "left",
+      "name": "Texto a esquerda",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texto",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
+          }
+        },
+        "buttons": {
+          "type": "Group",
+          "config": {
+            "label": "Botões",
+            "repeat": true,
+            "fields": {
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link do botão",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Texto do botão",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "carousel": {
+          "type": "Group",
+          "config": {
+            "label": "Carrossel de imagens",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

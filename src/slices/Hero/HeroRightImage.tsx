@@ -1,10 +1,13 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { Button } from '@/components/Button'
 import { RichText } from '@/components/ReachText'
 import { Content, GroupField, RichTextField } from '@prismicio/client'
 import { PrismicNextImage } from '@prismicio/next'
 import { Simplify } from '../../../prismicio-types'
-import { Carousel } from '@material-tailwind/react'
+import clsx from 'clsx'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type HeroRightImageProps = {
   text: RichTextField
@@ -13,6 +16,8 @@ type HeroRightImageProps = {
 }
 
 export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, buttons }) => {
+  const [activeSlide, setActiveSlide] = useState(0)
+
   return (
     <div className="relative isolate content-center h-screen">
       <div
@@ -46,15 +51,57 @@ export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, 
           </div>
 
           <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-            <Carousel className="rounded-xl" onPointerEnterCapture={() => console.log('first')} onPointerLeaveCapture={() => console.log('first')} placeholder={""}>
-              {carousel?.map(({ image }, i) => (
-                <PrismicNextImage
-                  key={i}
-                  field={image}
-                  className="w-full max-w-[600px] m-auto rounded-lg"
-                />
-              ))}
-            </Carousel>
+            {carousel && carousel.length > 0 &&
+              <div className="max-w-4xl mx-auto relative">
+                <div className="relative w-full h-full overflow-x-hidden flex rounded-xl">
+                  {carousel.map(({ image }, i) => (
+                    <div className="w-full h-full inline-block flex-none">
+                      <PrismicNextImage
+                        key={i}
+                        field={image}
+                        className={
+                          clsx(
+                            "w-full max-w-[600px] m-auto rounded-lg flex items-center transition-all",
+                            activeSlide !== i ? "opacity-0" : "opacity-100"
+                          )}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="absolute inset-0 flex">
+                  <div className="flex items-center justify-start w-1/2">
+                    <button
+                      className="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+                      onClick={() => setActiveSlide(a => a = a === 0 ? carousel.length - 1 : a - 1)}
+                    >
+                      <FontAwesomeIcon icon={faChevronLeft} />
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-end w-1/2">
+                    <button
+                      className="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6"
+                      onClick={() => setActiveSlide(a => a = a === carousel.length - 1 ? 0 : a + 1)}
+                    >
+                      <FontAwesomeIcon icon={faChevronRight} />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="absolute w-full flex items-center justify-center px-4">
+                  {carousel.map((_, i) => (
+                    <button
+                      key={i}
+                      className={
+                        clsx(
+                          "flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-savoy-blue hover:shadow-lg cursor-pointer",
+                          activeSlide === i ? 'bg-white-smoke' : 'bg-dim-gray',
+                        )}
+                      onClick={() => setActiveSlide(i)}
+                    />
+                  ))}
+                </div>
+              </div>}
           </div>
         </div>
       </div>

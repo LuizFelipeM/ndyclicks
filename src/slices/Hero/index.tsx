@@ -1,5 +1,3 @@
-import { Button } from "@/components/Button";
-import { RichText } from "@/components/ReachText";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";

@@ -43,7 +43,7 @@ export default async function Post({ params }: PostProps) {
   return (
     <main className="px-4 py-8 mt-0">
       <section className="mb-7 flex flex-row items-center">
-        <RichText field={post.data.title} className="text-rose flex-1 m-0" overrideDefaultClassName />
+        <RichText field={post.data.title} classNames={{ heading1: { className: "text-rose flex-1 m-0", overrideDefault: true } }} />
         <Button href="/" icon={faArrowLeft}>
           Projetos
         </Button>

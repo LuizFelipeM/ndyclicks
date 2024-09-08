@@ -1,6 +1,6 @@
 "use client"
 import { Content, GroupField } from '@prismicio/client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Simplify } from '../../prismicio-types'
 import { PrismicNextImage } from '@prismicio/next'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
@@ -9,17 +9,23 @@ import clsx from 'clsx'
 
 type CarouselProps = {
   slides: GroupField<Simplify<Content.HeroSliceDefaultPrimaryCarouselItem>>
+  ms?: number
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
+export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
   const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    setInterval(() => nextSlide(), ms)
+  }, [])
 
   const previousSlide = () => setCurrent(a => a = a === 0 ? slides.length - 1 : a - 1)
   const nextSlide = () => setCurrent(a => a = a === slides.length - 1 ? 0 : a + 1)
 
+
   return (
     <div className="max-w-4xl mx-auto relative">
-      <div className="relative w-full h-full overflow-x-hidden flex rounded-xl">
+      <div className={`relative w-[600px] h-full overflow-x-hidden flex rounded-xl`}>
         {slides.map(({ image }, i) => (
           <div
             key={i}
@@ -41,7 +47,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
       <div className="absolute inset-0 flex">
         <div className="flex items-center justify-start w-1/2">
           <button
-            className="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+            className="bg-rich-black hover:text-rose shadow-white-smoke hover:shadow-lg rounded-full w-12 h-12 -ml-6"
             onClick={previousSlide}
           >
             <FontAwesomeIcon icon={faChevronLeft} />
@@ -49,7 +55,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
         </div>
         <div className="flex items-center justify-end w-1/2">
           <button
-            className="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6"
+            className="bg-rich-black hover:text-rose hover:shadow rounded-full w-12 h-12 -mr-6"
             onClick={nextSlide}
           >
             <FontAwesomeIcon icon={faChevronRight} />

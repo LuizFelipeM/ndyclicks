@@ -20,7 +20,7 @@ export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, 
 
 
   return (
-    <div className="relative isolate content-center h-screen">
+    <div className="relative isolate content-center h-auto min-h-screen">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -35,11 +35,14 @@ export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, 
       </div>
 
       <div className="flex px-6 md:px-20 items-center justify-center bg-hero overflow-hidden">
-        <div className="flex flex-col gap-10 md:gap-6 md:flex-row items-center max-w-8xl">
+        <div className="flex flex-col gap-10 md:flex-row md:gap-6 items-center max-w-8xl w-full">
           <div className="w-full md:w-1/2 lg:px-4">
             <div className="text-center">
               <RichText
                 field={text}
+                classNames={{
+                  heading1: "text-rose font-bold text-[2.75rem] md:text-[6rem] mb-6"
+                }}
               />
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 {buttons?.map(({ text, link }, i) => !!text && !!link && (

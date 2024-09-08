@@ -31,7 +31,7 @@ export default async function Page({ params }: Arguments) {
   return (
     // <main className="px-4 py-8 mt-0">
     <main className="p-0 mt-0">
-      {page.data.show_title && <RichText field={page.data.title} className="text-rose" />}
+      {page.data.show_title && <RichText field={page.data.title} classNames={{ heading1: "text-rose" }} />}
       <SliceZone slices={page.data.slices} components={components} />
     </main>
   )

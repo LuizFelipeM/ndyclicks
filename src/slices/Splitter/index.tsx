@@ -21,7 +21,7 @@ const Splitter = ({ slice }: SplitterProps): JSX.Element => {
   const splitterAfterRef = useRef<HTMLDivElement>(null)
   const splitterHandlerRef = useRef<HTMLDivElement>(null)
 
-  let isHandleLocked = useRef(false)
+  const isHandleLocked = useRef(false)
 
   useEffect(() => {
     splitterRef.current?.addEventListener("mousemove", splitterMouseMove)

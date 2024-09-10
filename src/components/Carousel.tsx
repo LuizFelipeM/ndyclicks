@@ -1,6 +1,6 @@
 "use client"
 import { Content, GroupField } from '@prismicio/client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Simplify } from '../../prismicio-types'
 import { PrismicNextImage } from '@prismicio/next'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
@@ -16,12 +16,12 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
-    setInterval(() => nextSlide(), ms)
-  }, [])
+    const interval = setInterval(next, ms)
+    return () => clearInterval(interval)
+  }, [current])
 
-  const previousSlide = () => setCurrent(a => a = a === 0 ? slides.length - 1 : a - 1)
-  const nextSlide = () => setCurrent(a => a = a === slides.length - 1 ? 0 : a + 1)
-
+  const previous = () => setCurrent(a => a = a === 0 ? slides.length - 1 : a - 1)
+  const next = () => setCurrent(a => a = a === slides.length - 1 ? 0 : a + 1)
 
   return (
     <div className="max-w-4xl mx-auto relative">
@@ -48,7 +48,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
         <div className="flex items-center justify-start w-1/2">
           <button
             className="bg-rich-black hover:text-rose shadow-white-smoke hover:shadow-lg rounded-full w-12 h-12 -ml-6"
-            onClick={previousSlide}
+            onClick={previous}
           >
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
@@ -56,7 +56,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
         <div className="flex items-center justify-end w-1/2">
           <button
             className="bg-rich-black hover:text-rose hover:shadow rounded-full w-12 h-12 -mr-6"
-            onClick={nextSlide}
+            onClick={next}
           >
             <FontAwesomeIcon icon={faChevronRight} />
           </button>

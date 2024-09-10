@@ -1,0 +1,53 @@
+.fancy-wipe {
+    position: relative;
+    --duration: 2.5s;
+    --easing: cubic-bezier(0.45, 0, 0.55, 1);
+    --colors: linear-gradient(90deg,
+            #fff89a,
+            #cdf2ca,
+            #a2cdcd,
+            #d1e8e4,
+            #cab8ff,
+            #ff7878,
+            #ffc898);
+}
+
+.fancy-wipe .text {
+    animation: wipe-in var(--duration) forwards var(--easing);
+    mask: linear-gradient(to right, white, white 45%, black, 55%, black);
+    mask-composite: exclude;
+    mask-mode: luminance;
+    mask-size: 300% 100%;
+    mask-position: 100% 0px;
+}
+
+.fancy-wipe .wipe {
+    background-image: var(--colors);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wipe-in var(--duration) forwards var(--easing);
+    mask: linear-gradient(to right, black, black 45%, white 50%, black 52.5%, black);
+    mask-composite: exclude;
+    mask-mode: luminance;
+    mask-size: 300% 100%;
+    mask-position: 100% 0px;
+}
+
+.fancy-wipe .blur {
+    background-image: var(--colors);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wipe-in var(--duration) forwards var(--easing);
+    mask: linear-gradient(to right, black, black 45%, white 52.5%, black 55%, black);
+    mask-composite: exclude;
+    mask-mode: luminance;
+    mask-size: 300% 100%;
+    mask-position: 100% 0px;
+    filter: blur(10px);
+}
+
+@keyframes wipe-in {
+    100% {
+        mask-position: 0px 0px;
+    }
+}

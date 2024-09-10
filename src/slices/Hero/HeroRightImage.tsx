@@ -1,14 +1,28 @@
-"use client"
-import React, { useState } from 'react'
+import React from 'react'
 import { Button } from '@/components/Button'
 import { RichText } from '@/components/ReachText'
 import { Content, GroupField, RichTextField } from '@prismicio/client'
-import { PrismicNextImage } from '@prismicio/next'
 import { Simplify } from '../../../prismicio-types'
-import clsx from 'clsx'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Carousel } from '@/components/Carousel'
+import { JSXMapSerializer } from '@prismicio/react'
+import "./Hero.css"
+
+const components: JSXMapSerializer = {
+  heading1: ({ children }) => (
+    <h1 className="mb-6 mt-12 first:mt-0 last:mb-0 text-rose font-bold text-[2.5rem] md:text-[6rem] fancy-wipe">
+      {/* <!-- Adapted fancy wipe animation provided by Jesse in https://codepen.io/Chester/pen/LYKWMxO --> */}
+      <span className="block text">
+        {children}
+      </span>
+      <span className="absolute top-0 left-0 w-full h-full wipe">
+        {children}
+      </span>
+      <span className="absolute top-0 left-0 w-full h-full blur">
+        {children}
+      </span>
+    </h1>
+  ),
+};
 
 type HeroRightImageProps = {
   text: RichTextField
@@ -17,8 +31,6 @@ type HeroRightImageProps = {
 }
 
 export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, buttons }) => {
-
-
   return (
     <div className="relative isolate content-center h-auto min-h-screen">
       <div
@@ -40,9 +52,7 @@ export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, 
             <div className="text-center">
               <RichText
                 field={text}
-                classNames={{
-                  heading1: "text-rose font-bold text-[2.75rem] md:text-[6rem] mb-6"
-                }}
+                components={components}
               />
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 {buttons?.map(({ text, link }, i) => !!text && !!link && (
@@ -55,7 +65,7 @@ export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, 
           </div>
 
           <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-            {carousel && carousel.length > 0 && <Carousel slides={carousel} />}
+            {carousel && carousel.length > 0 && <Carousel slides={carousel} ms={5000} />}
           </div>
         </div>
       </div>

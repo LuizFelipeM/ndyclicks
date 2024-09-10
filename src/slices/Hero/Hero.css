@@ -23,6 +23,7 @@
 
 .fancy-wipe .wipe {
     background-image: var(--colors);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: wipe-in var(--duration) forwards var(--easing);
@@ -35,6 +36,7 @@
 
 .fancy-wipe .blur {
     background-image: var(--colors);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: wipe-in var(--duration) forwards var(--easing);

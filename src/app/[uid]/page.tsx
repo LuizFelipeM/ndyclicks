@@ -1,5 +1,5 @@
 import { Heading } from "@/components/Heading";
-import { RichText } from "@/components/ReachText";
+import { RichText } from "@/components/RichText";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { asText } from "@prismicio/client";

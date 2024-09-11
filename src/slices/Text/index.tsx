@@ -1,4 +1,4 @@
-import { RichText } from "@/components/ReachText";
+import { RichText } from "@/components/RichText";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 

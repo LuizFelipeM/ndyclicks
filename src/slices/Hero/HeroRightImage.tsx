@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '@/components/Button'
-import { RichText } from '@/components/ReachText'
+import { RichText } from '@/components/RichText'
 import { Content, GroupField, RichTextField } from '@prismicio/client'
 import { Simplify } from '../../../prismicio-types'
 import { Carousel } from '@/components/Carousel'
@@ -9,7 +9,7 @@ import "./Hero.css"
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <h1 className="mb-6 mt-12 first:mt-0 last:mb-0 text-rose font-bold text-[2.5rem] md:text-[6rem] fancy-wipe">
+    <h1 className="mb-6 mt-12 first:mt-0 last:mb-0 text-rose font-bold leading-none md:leading-tight text-[4rem] md:text-[6rem] fancy-wipe">
       {/* <!-- Adapted fancy wipe animation provided by Jesse in https://codepen.io/Chester/pen/LYKWMxO --> */}
       <span className="block text">
         {children}

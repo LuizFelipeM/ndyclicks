@@ -1,8 +1,9 @@
 import { Button } from "@/components/Button";
-import { RichText } from "@/components/ReachText";
+import { RichText } from "@/components/RichText";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { asText } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import type { Metadata } from "next";
@@ -44,7 +45,8 @@ export default async function Post({ params }: PostProps) {
     <main className="px-4 py-8 mt-0">
       <section className="mb-7 flex flex-row items-center">
         <RichText field={post.data.title} classNames={{ heading1: { className: "text-rose flex-1 m-0", overrideDefault: true } }} />
-        <Button href="/" icon={faArrowLeft}>
+        <Button href="/">
+          <FontAwesomeIcon icon={faArrowLeft} className="mr-1.5" />
           Projetos
         </Button>
       </section>

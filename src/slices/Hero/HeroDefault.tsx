@@ -4,35 +4,25 @@ import { RichText } from '@/components/RichText'
 import { Content, GroupField, RichTextField } from '@prismicio/client'
 import { Simplify } from '../../../prismicio-types'
 import { Carousel } from '@/components/Carousel'
-import { JSXMapSerializer } from '@prismicio/react'
-import "./Hero.css"
+import { HeroComponents } from "./HeroComponents"
+import clsx from 'clsx'
 
-const components: JSXMapSerializer = {
-  heading1: ({ children }) => (
-    <h1 className="mb-6 mt-12 first:mt-0 last:mb-0 text-rose font-bold leading-none md:leading-tight text-[4rem] md:text-[6rem] fancy-wipe">
-      {/* <!-- Adapted fancy wipe animation provided by Jesse in https://codepen.io/Chester/pen/LYKWMxO --> */}
-      <span className="block text">
-        {children}
-      </span>
-      <span className="absolute top-0 left-0 w-full h-full wipe">
-        {children}
-      </span>
-      <span className="absolute top-0 left-0 w-full h-full blur">
-        {children}
-      </span>
-    </h1>
-  ),
-};
-
-type HeroRightImageProps = {
+type HeroDefaultProps = {
+  className?: string
+  title: RichTextField
   text: RichTextField
   carousel: GroupField<Simplify<Content.HeroSliceDefaultPrimaryCarouselItem>>
   buttons: GroupField<Simplify<Content.HeroSliceDefaultPrimaryButtonsItem>>
 }
 
-export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, buttons }) => {
+export const HeroDefault: React.FC<HeroDefaultProps> = ({ title, text, carousel, buttons, className }) => {
   return (
-    <div className="relative isolate content-center h-auto min-h-screen">
+    <div className={
+      clsx(
+        "relative isolate content-center h-auto min-h-screen",
+        className
+      )
+    }>
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -46,14 +36,15 @@ export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, 
         />
       </div>
 
-      <div className="flex px-6 md:px-20 items-center justify-center bg-hero overflow-hidden">
+      <div className="flex px-6 md:px-20 items-center justify-center bg-hero md:overflow-hidden">
         <div className="flex flex-col gap-10 md:flex-row md:gap-6 items-center max-w-8xl w-full">
           <div className="w-full md:w-1/2 lg:px-4">
             <div className="text-center">
               <RichText
-                field={text}
-                components={components}
+                field={title}
+                components={HeroComponents}
               />
+              <RichText field={text} />
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 {buttons?.map(({ text, link }, i) => !!text && !!link && (
                   <Button key={i} href={link}>
@@ -64,7 +55,7 @@ export const HeroRightImage: React.FC<HeroRightImageProps> = ({ text, carousel, 
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <div className="hidden w-full md:w-1/2 md:flex justify-center md:justify-end">
             {carousel && carousel.length > 0 && <Carousel slides={carousel} ms={5000} />}
           </div>
         </div>

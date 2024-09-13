@@ -2,7 +2,39 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Copper"
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum eu sint incididunt laborum commodo sunt consequat nostrud elit velit. Tempor sint adipisicing magna nisi culpa eiusmod fugiat."
+						}
+					}
+				]
+			},
+			"cols": {
+				"__TYPE__": "FieldContent",
+				"value": "72",
+				"type": "Number"
+			},
+			"show_post_titles": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			}
+		},
 		"items": []
 	}
 ]

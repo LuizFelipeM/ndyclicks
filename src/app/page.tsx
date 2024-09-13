@@ -24,7 +24,7 @@ export default async function Home() {
   const page = await client.getByUID("page", "home").catch(() => notFound());
 
   return (
-    <main className="px-4 py-8 mt-0">
+    <main className="pb-8 mt-0">
       <SliceZone slices={page.data.slices} components={components} />
     </main>
   );

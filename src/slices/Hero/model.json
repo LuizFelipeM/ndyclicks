@@ -12,13 +12,22 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Título",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
         "text": {
           "type": "StructuredText",
           "config": {
             "label": "Texto",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,hyperlink,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
+            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
           }
         },
         "buttons": {
@@ -67,20 +76,29 @@
       "items": {}
     },
     {
-      "id": "right",
-      "name": "Texto a direita",
+      "id": "magazineMobileAndDesktop",
+      "name": "Estilo Revista - Mobile e Desk",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Título",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
         "text": {
           "type": "StructuredText",
           "config": {
             "label": "Texto",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,hyperlink,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
+            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
           }
         },
         "buttons": {
@@ -108,41 +126,41 @@
             }
           }
         },
-        "carousel": {
-          "type": "Group",
+        "image": {
+          "type": "Image",
           "config": {
-            "label": "Carrossel de imagens",
-            "repeat": true,
-            "fields": {
-              "image": {
-                "type": "Image",
-                "config": {
-                  "label": "Imagem",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              }
-            }
+            "label": "Imagem",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },
       "items": {}
     },
     {
-      "id": "left",
-      "name": "Texto a esquerda",
+      "id": "magazineMobile",
+      "name": "Estilo Revista - Mobile",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Título",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1"
+          }
+        },
         "text": {
           "type": "StructuredText",
           "config": {
             "label": "Texto",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,hyperlink,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
+            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
           }
         },
         "buttons": {
@@ -168,6 +186,14 @@
                 }
               }
             }
+          }
+        },
+        "mobile_image": {
+          "type": "Image",
+          "config": {
+            "label": "Imagem Mobile",
+            "constraint": {},
+            "thumbnails": []
           }
         },
         "carousel": {

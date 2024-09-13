@@ -9,7 +9,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Aliqua ex deserunt consequat aliqua reprehenderit nostrud exercitation sunt amet qui dolore culpa dolore irure nulla."
+							"text": "Sint aute nulla nostrud occaecat culpa cupidatat laboris amet tempor nisi sunt proident ut id Lorem. Et incididunt tempor enim anim magna. Anim fugiat do aliquip minim elit anim ad do exercitation voluptate ad ut excepteur quis aliqua."
 						}
 					}
 				]
@@ -77,13 +77,24 @@
 						]
 					}
 				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Blank"
+						}
+					}
+				]
 			}
 		},
 		"items": []
 	},
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "left",
+		"variation": "magazineMobileAndDesktop",
 		"primary": {
 			"text": {
 				"__TYPE__": "StructuredTextContent",
@@ -91,7 +102,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Ex sint sit aliqua fugiat irure dolor proident reprehenderit dolor qui tempor voluptate et ut. Occaecat qui elit anim in laborum aliquip eu Lorem mollit non labore eiusmod esse. Ad veniam duis mollit ipsum dolor eu excepteur ullamco sunt excepteur sit."
+							"text": "Anim in sunt fugiat cillum deserunt magna Lorem deserunt ullamco voluptate. Id officia et cillum magna pariatur non voluptate reprehenderit velit velit anim irure dolore consequat."
 						}
 					}
 				]
@@ -108,7 +119,7 @@
 									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
-										"url": "http://twitter.com"
+										"url": "https://prismic.io"
 									}
 								}
 							],
@@ -116,7 +127,7 @@
 								"text",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "rough",
+									"value": "package",
 									"type": "Text"
 								}
 							]
@@ -124,39 +135,37 @@
 					}
 				]
 			},
-			"carousel": {
-				"__TYPE__": "GroupContentType",
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+					"width": 6597,
+					"height": 4398
+				},
+				"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+				"width": 6597,
+				"height": 4398,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"image",
-								{
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
-										"width": 3199,
-										"height": 3199
-									},
-									"url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
-									"width": 3199,
-									"height": 3199,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							]
-						]
+						"type": "heading1",
+						"content": {
+							"text": "Ourselves"
+						}
 					}
 				]
 			}
@@ -170,32 +179,16 @@
 	},
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "right",
+		"variation": "magazineMobile",
 		"primary": {
 			"text": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
-						"content": {
-							"text": "Deploy to the cloud with confidence",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 35
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
 						"type": "paragraph",
 						"content": {
-							"text": "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Enim proident officia sint cupidatat."
+						}
 					}
 				]
 			},
@@ -211,7 +204,7 @@
 									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
-										"url": "http://twitter.com"
+										"url": "http://google.com"
 									}
 								}
 							],
@@ -219,7 +212,7 @@
 								"text",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "middle",
+									"value": "mental",
 									"type": "Text"
 								}
 							]
@@ -238,13 +231,13 @@
 								{
 									"origin": {
 										"id": "main",
-										"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
-										"width": 5243,
-										"height": 3495
+										"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+										"width": 5616,
+										"height": 3744
 									},
-									"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
-									"width": 5243,
-									"height": 3495,
+									"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+									"width": 5616,
+									"height": 3744,
 									"edit": {
 										"zoom": 1,
 										"crop": {
@@ -260,68 +253,40 @@
 								}
 							]
 						]
+					}
+				]
+			},
+			"mobile_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+					"width": 4000,
+					"height": 6000
+				},
+				"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+				"width": 4000,
+				"height": 6000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
 					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
 					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"image",
-								{
-									"__TYPE__": "ImageContent",
-									"provider": "imgix",
-									"url": "https://images.unsplash.com/photo-1568383306313-1b27a2e28071?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjU0Nzc0MzR8MA&ixlib=rb-4.0.3&q=85",
-									"alt": "sliced fruit",
-									"origin": {
-										"id": "p2n1zvbA5_4",
-										"url": "https://images.unsplash.com/photo-1568383306313-1b27a2e28071?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjU0Nzc0MzR8MA&ixlib=rb-4.0.3&q=85",
-										"width": 6000,
-										"height": 4000
-									},
-									"width": 6000,
-									"height": 4000,
-									"edit": {
-										"background": "transparent",
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										}
-									},
-									"thumbnails": {}
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"image",
-								{
-									"__TYPE__": "ImageContent",
-									"provider": "imgix",
-									"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI1NDc3NDM0fDA&ixlib=rb-4.0.3&q=85",
-									"alt": "orange citrus",
-									"origin": {
-										"id": "CFWgJgmm6p8",
-										"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI1NDc3NDM0fDA&ixlib=rb-4.0.3&q=85",
-										"width": 6000,
-										"height": 4000
-									},
-									"width": 6000,
-									"height": 4000,
-									"edit": {
-										"background": "transparent",
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										}
-									},
-									"thumbnails": {}
-								}
-							]
-						]
+						"type": "heading1",
+						"content": {
+							"text": "Upper"
+						}
 					}
 				]
 			}

@@ -1,6 +1,6 @@
 "use client"
 import { Content, GroupField } from '@prismicio/client'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Simplify } from '../../prismicio-types'
 import { PrismicNextImage } from '@prismicio/next'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'

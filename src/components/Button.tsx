@@ -6,13 +6,14 @@ import React from 'react'
 type ButtonProps = React.PropsWithChildren<{
   href: LinkField | string
   className?: string
+  overrideDefault?: boolean
 }>
 
 type LinkProps = { field: LinkField, href: undefined } | { field: undefined, href: string }
 
 const isString = (link: LinkField | string): link is string => typeof link === 'string'
 
-export const Button: React.FC<ButtonProps> = ({ children, href, className }) => {
+export const Button: React.FC<ButtonProps> = ({ children, href, className, overrideDefault }) => {
   const props: LinkProps = {} as LinkProps
   if (isString(href)) props.href = href
   else props.field = href
@@ -22,7 +23,7 @@ export const Button: React.FC<ButtonProps> = ({ children, href, className }) => 
       {...props}
       className={
         clsx(
-          "inline-flex items-center bg-savoy-blue text-white-smoke rounded-full px-4 h-10",
+          !overrideDefault && "inline-flex items-center bg-savoy-blue text-white-smoke rounded-full px-4 h-10",
           className
         )
       }

@@ -6,7 +6,7 @@
   "variations": [
     {
       "id": "default",
-      "name": "Default",
+      "name": "Fullscreen",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -18,6 +18,41 @@
             "label": "Imagem",
             "constraint": {},
             "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "multipleImages",
+      "name": "Multiplas Imagens",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "col_quantity": {
+          "type": "Number",
+          "config": {
+            "label": "Quantidade de colunas",
+            "placeholder": ""
+          }
+        },
+        "images": {
+          "type": "Group",
+          "config": {
+            "label": "Imagens",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
           }
         }
       },

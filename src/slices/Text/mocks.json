@@ -7,14 +7,458 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
+						"type": "heading2",
+						"content": {
+							"text": "Segundo cabeçalho para demonstrar o poder",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
 						"type": "paragraph",
 						"content": {
-							"text": "Et reprehenderit culpa eiusmod proident do ipsum laboris cillum mollit voluptate."
-						}
+							"text": "Aqui é só um textão genérico pra que fique explicito como ele irá renderizar",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Listinha ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Pra",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "validar ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "funcionamento",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "e por fim um teste de link",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 22,
+									"end": 26,
+									"data": {
+										"__TYPE__": "ExternalLink",
+										"url": "www.google.com",
+										"target": "_blank"
+									}
+								}
+							]
+						},
+						"direction": "ltr"
 					}
 				]
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textAndImage",
+		"primary": {
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+					"width": 5616,
+					"height": 3744
+				},
+				"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+				"width": 5616,
+				"height": 3744,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"text_position": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Segundo cabeçalho para demonstrar o poder",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aqui é só um textão genérico pra que fique explicito como ele irá renderizar",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Listinha ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Pra",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "validar ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "funcionamento",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "e por fim um teste de link",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 22,
+									"end": 26,
+									"data": {
+										"__TYPE__": "ExternalLink",
+										"url": "www.google.com",
+										"target": "_blank"
+									}
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "abc",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "bananinha",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textAndHeader",
+		"primary": {
+			"is_text_left": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Segundo cabeçalho para demonstrar o poder",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aqui é só um textão genérico pra que fique explicito como ele irá renderizar",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Listinha ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Pra",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "validar ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "funcionamento",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "e por fim um teste de link",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 22,
+									"end": 26,
+									"data": {
+										"__TYPE__": "ExternalLink",
+										"url": "www.google.com",
+										"target": "_blank"
+									}
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"header": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Presidente é tudo um bando de canalha!",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 13,
+									"end": 18
+								},
+								{
+									"type": "em",
+									"start": 30,
+									"end": 37
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "textWithHeaderAndImage",
+		"primary": {
+			"is_text_left": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Segundo cabeçalho para demonstrar o poder",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aqui é só um textão genérico pra que fique explicito como ele irá renderizar",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Listinha ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Pra",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "validar ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "funcionamento",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "e por fim um teste de link",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 22,
+									"end": 26,
+									"data": {
+										"__TYPE__": "ExternalLink",
+										"url": "www.google.com",
+										"target": "_blank"
+									}
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"header": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Presidente é tudo um bando de canalha!",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 13,
+									"end": 18
+								},
+								{
+									"type": "em",
+									"start": 30,
+									"end": 37
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"image": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MjUyNTc3fDA&ixlib=rb-4.0.3&q=85",
+				"alt": "orange citrus",
+				"origin": {
+					"id": "CFWgJgmm6p8",
+					"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MjUyNTc3fDA&ixlib=rb-4.0.3&q=85",
+					"width": 6000,
+					"height": 4000
+				},
+				"width": 6000,
+				"height": 4000,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

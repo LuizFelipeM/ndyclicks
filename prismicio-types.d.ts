@@ -654,11 +654,26 @@ type HeroSliceVariation =
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Primary content in *Image → Default → Primary*
+ * Item in *Image → Multiplas Imagens → Primary → Imagens*
+ */
+export interface ImageSliceMultipleImagesPrimaryImagesItem {
+  /**
+   * Imagem field in *Image → Multiplas Imagens → Primary → Imagens*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.multipleImages.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Image → Fullscreen → Primary*
  */
 export interface ImageSliceDefaultPrimary {
   /**
-   * Imagem field in *Image → Default → Primary*
+   * Imagem field in *Image → Fullscreen → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -669,7 +684,7 @@ export interface ImageSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Image Slice
+ * Fullscreen variation for Image Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -682,9 +697,49 @@ export type ImageSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Image → Multiplas Imagens → Primary*
+ */
+export interface ImageSliceMultipleImagesPrimary {
+  /**
+   * Quantidade de colunas field in *Image → Multiplas Imagens → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.multipleImages.primary.col_quantity
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  col_quantity: prismic.NumberField;
+
+  /**
+   * Imagens field in *Image → Multiplas Imagens → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.multipleImages.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<
+    Simplify<ImageSliceMultipleImagesPrimaryImagesItem>
+  >;
+}
+
+/**
+ * Multiplas Imagens variation for Image Slice
+ *
+ * - **API ID**: `multipleImages`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSliceMultipleImages = prismic.SharedSliceVariation<
+  "multipleImages",
+  Simplify<ImageSliceMultipleImagesPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Image*
  */
-type ImageSliceVariation = ImageSliceDefault;
+type ImageSliceVariation = ImageSliceDefault | ImageSliceMultipleImages;
 
 /**
  * Image Shared Slice
@@ -929,11 +984,11 @@ export type TestimonialsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Text → Default → Primary*
+ * Primary content in *Text → Texto → Primary*
  */
 export interface TextSliceDefaultPrimary {
   /**
-   * Texto field in *Text → Default → Primary*
+   * Texto field in *Text → Texto → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -944,7 +999,7 @@ export interface TextSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Text Slice
+ * Texto variation for Text Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -957,9 +1012,170 @@ export type TextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Text → Texto & Imagem → Primary*
+ */
+export interface TextSliceTextAndImagePrimary {
+  /**
+   * Posição do texto field in *Text → Texto & Imagem → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: text.textAndImage.primary.is_text_left
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_text_left: prismic.BooleanField;
+
+  /**
+   * Texto field in *Text → Texto & Imagem → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.textAndImage.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Imagem field in *Text → Texto & Imagem → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.textAndImage.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Texto & Imagem variation for Text Slice
+ *
+ * - **API ID**: `textAndImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceTextAndImage = prismic.SharedSliceVariation<
+  "textAndImage",
+  Simplify<TextSliceTextAndImagePrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Text → Texto & Cabeçalho → Primary*
+ */
+export interface TextSliceTextAndHeaderPrimary {
+  /**
+   * Posição do texto field in *Text → Texto & Cabeçalho → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: text.textAndHeader.primary.is_text_left
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_text_left: prismic.BooleanField;
+
+  /**
+   * Texto field in *Text → Texto & Cabeçalho → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.textAndHeader.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Cabeçalho field in *Text → Texto & Cabeçalho → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.textAndHeader.primary.header
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  header: prismic.RichTextField;
+}
+
+/**
+ * Texto & Cabeçalho variation for Text Slice
+ *
+ * - **API ID**: `textAndHeader`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceTextAndHeader = prismic.SharedSliceVariation<
+  "textAndHeader",
+  Simplify<TextSliceTextAndHeaderPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Text → Texto + Cabeçalho & Imagem → Primary*
+ */
+export interface TextSliceTextWithHeaderAndImagePrimary {
+  /**
+   * Posição do texto field in *Text → Texto + Cabeçalho & Imagem → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: text.textWithHeaderAndImage.primary.is_text_left
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_text_left: prismic.BooleanField;
+
+  /**
+   * Texto field in *Text → Texto + Cabeçalho & Imagem → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.textWithHeaderAndImage.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Cabeçalho field in *Text → Texto + Cabeçalho & Imagem → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.textWithHeaderAndImage.primary.header
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  header: prismic.RichTextField;
+
+  /**
+   * Imagem field in *Text → Texto + Cabeçalho & Imagem → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.textWithHeaderAndImage.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Texto + Cabeçalho & Imagem variation for Text Slice
+ *
+ * - **API ID**: `textWithHeaderAndImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceTextWithHeaderAndImage = prismic.SharedSliceVariation<
+  "textWithHeaderAndImage",
+  Simplify<TextSliceTextWithHeaderAndImagePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Text*
  */
-type TextSliceVariation = TextSliceDefault;
+type TextSliceVariation =
+  | TextSliceDefault
+  | TextSliceTextAndImage
+  | TextSliceTextAndHeader
+  | TextSliceTextWithHeaderAndImage;
 
 /**
  * Text Shared Slice
@@ -1012,8 +1228,11 @@ declare module "@prismicio/client" {
       HeroSliceMagazineMobile,
       ImageSlice,
       ImageSliceDefaultPrimary,
+      ImageSliceMultipleImagesPrimaryImagesItem,
+      ImageSliceMultipleImagesPrimary,
       ImageSliceVariation,
       ImageSliceDefault,
+      ImageSliceMultipleImages,
       PostGallerySlice,
       PostGallerySliceDefaultPrimary,
       PostGallerySliceVariation,
@@ -1029,8 +1248,14 @@ declare module "@prismicio/client" {
       TestimonialsSliceDefault,
       TextSlice,
       TextSliceDefaultPrimary,
+      TextSliceTextAndImagePrimary,
+      TextSliceTextAndHeaderPrimary,
+      TextSliceTextWithHeaderAndImagePrimary,
       TextSliceVariation,
       TextSliceDefault,
+      TextSliceTextAndImage,
+      TextSliceTextAndHeader,
+      TextSliceTextWithHeaderAndImage,
     };
   }
 }

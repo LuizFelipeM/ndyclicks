@@ -25,7 +25,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   heading1: ({ children }) => (
     <Heading as="h1" className={
       clsx(
-        isClassNameModifier(classNames?.heading1) && !classNames?.heading1?.overrideDefault && "mb-7 mt-12 first:mt-0 last:mb-0",
+        (!isClassNameModifier(classNames?.heading1) || !classNames?.heading1?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
         isClassNameModifier(classNames?.heading1) ? classNames?.heading1?.className : classNames?.heading1
       )}
     >
@@ -35,7 +35,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   heading2: ({ children }) => (
     <Heading as="h2" size="md" className={
       clsx(
-        isClassNameModifier(classNames?.heading2) && !classNames?.heading2?.overrideDefault && "mb-7 mt-12 first:mt-0 last:mb-0",
+        (!isClassNameModifier(classNames?.heading2) || !classNames?.heading2?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
         isClassNameModifier(classNames?.heading2) ? classNames?.heading2?.className : classNames?.heading2
       )}
     >
@@ -45,7 +45,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   heading3: ({ children }) => (
     <Heading as="h3" size="sm" className={
       clsx(
-        isClassNameModifier(classNames?.heading3) && !classNames?.heading3?.overrideDefault && "mb-7 mt-12 first:mt-0 last:mb-0",
+        (!isClassNameModifier(classNames?.heading3) || !classNames?.heading3?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
         isClassNameModifier(classNames?.heading3) ? classNames?.heading3?.className : classNames?.heading3
       )}
     >
@@ -55,7 +55,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   heading4: ({ children }) => (
     <Heading as="h4" size="sm" className={
       clsx(
-        isClassNameModifier(classNames?.heading4) && !classNames?.heading4?.overrideDefault && "mb-7 mt-12 first:mt-0 last:mb-0",
+        (!isClassNameModifier(classNames?.heading4) || !classNames?.heading4?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
         isClassNameModifier(classNames?.heading4) ? classNames?.heading4?.className : classNames?.heading4
       )}
     >
@@ -65,7 +65,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   heading5: ({ children }) => (
     <Heading as="h5" size="sm" className={
       clsx(
-        isClassNameModifier(classNames?.heading5) && !classNames?.heading5?.overrideDefault && "mb-7 mt-12 first:mt-0 last:mb-0",
+        (!isClassNameModifier(classNames?.heading5) || !classNames?.heading5?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
         isClassNameModifier(classNames?.heading5) ? classNames?.heading5?.className : classNames?.heading5
       )
     }>
@@ -75,7 +75,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   heading6: ({ children }) => (
     <Heading as="h6" size="sm" className={
       clsx(
-        isClassNameModifier(classNames?.heading6) && !classNames?.heading6?.overrideDefault && "mb-7 mt-12 first:mt-0 last:mb-0",
+        (!isClassNameModifier(classNames?.heading6) || !classNames?.heading6?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
         isClassNameModifier(classNames?.heading6) ? classNames?.heading6?.className : classNames?.heading6
       )}
     >
@@ -89,7 +89,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   oList: ({ children }) => (
     <ol className={
       clsx(
-        isClassNameModifier(classNames?.oList) && !classNames?.oList?.overrideDefault && "mb-4 pl-4 last:mb-0 md:pl-6",
+        (!isClassNameModifier(classNames?.oList) || !classNames?.oList?.overrideDefault) && "mb-4 pl-4 last:mb-0 md:pl-6",
         isClassNameModifier(classNames?.oList) ? classNames?.oList?.className : classNames?.oList
       )}
     >
@@ -99,7 +99,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   oListItem: ({ children }) => (
     <li className={
       clsx(
-        isClassNameModifier(classNames?.oListItem) && !classNames?.oListItem?.overrideDefault && "mb-1 list-decimal pl-1 last:mb-0 md:pl-2",
+        (!isClassNameModifier(classNames?.oListItem) || !classNames?.oListItem?.overrideDefault) && "mb-1 list-decimal pl-1 last:mb-0 md:pl-2",
         isClassNameModifier(classNames?.oListItem) ? classNames?.oListItem?.className : classNames?.oListItem
       )}
     >
@@ -110,7 +110,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   list: ({ children }) => (
     <ul className={
       clsx(
-        isClassNameModifier(classNames?.list) && !classNames?.list?.overrideDefault && "mb-4 pl-4 last:mb-0 md:pl-6",
+        (!isClassNameModifier(classNames?.list) || !classNames?.list?.overrideDefault) && "mb-4 pl-4 last:mb-0 md:pl-6",
         isClassNameModifier(classNames?.list) ? classNames?.list?.className : classNames?.list
       )}
     >
@@ -120,7 +120,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   listItem: ({ children }) => (
     <li className={
       clsx(
-        isClassNameModifier(classNames?.listItem) && !classNames?.listItem?.overrideDefault && "mb-1 list-disc pl-1 last:mb-0 md:pl-2",
+        (!isClassNameModifier(classNames?.listItem) || !classNames?.listItem?.overrideDefault) && "mb-1 list-disc pl-1 last:mb-0 md:pl-2",
         isClassNameModifier(classNames?.listItem) ? classNames?.listItem?.className : classNames?.listItem
       )}
     >
@@ -133,7 +133,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   paragraph: ({ children }) => (
     <p className={
       clsx(
-        isClassNameModifier(classNames?.paragraph) && !classNames?.paragraph?.overrideDefault && "mb-4 last:mb-0",
+        (!isClassNameModifier(classNames?.paragraph) || !classNames?.paragraph?.overrideDefault) && "mb-4 last:mb-0",
         isClassNameModifier(classNames?.paragraph) ? classNames?.paragraph?.className : classNames?.paragraph
       )}
     >
@@ -144,7 +144,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   strong: ({ children }) => (
     <strong className={
       clsx(
-        isClassNameModifier(classNames?.strong) && !classNames?.strong?.overrideDefault && "font-semibold",
+        (!isClassNameModifier(classNames?.strong) || !classNames?.strong?.overrideDefault) && "font-semibold",
         isClassNameModifier(classNames?.strong) ? classNames?.strong?.className : classNames?.strong
       )}
     >
@@ -157,7 +157,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
       field={node.data}
       className={
         clsx(
-          isClassNameModifier(classNames?.hyperlink) && !classNames?.hyperlink?.overrideDefault && "underline decoration-1 underline-offset-2",
+          (!isClassNameModifier(classNames?.hyperlink) || !classNames?.hyperlink?.overrideDefault) && "underline decoration-1 underline-offset-2",
           isClassNameModifier(classNames?.hyperlink) ? classNames?.hyperlink?.className : classNames?.hyperlink
         )}
     >
@@ -172,7 +172,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
       field={node}
       className={
         clsx(
-          isClassNameModifier(classNames?.image) && !classNames?.image?.overrideDefault && "mb-4",
+          (!isClassNameModifier(classNames?.image) || !classNames?.image?.overrideDefault) && "mb-4",
           isClassNameModifier(classNames?.image) ? classNames?.image?.className : classNames?.image
         )}
     />
@@ -181,7 +181,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   preformatted: ({ children }) => (
     <pre className={
       clsx(
-        isClassNameModifier(classNames?.preformatted) && !classNames?.preformatted?.overrideDefault && "mb-4 rounded bg-slate-100 p-4 text-sm last:mb-0 md:p-8 md:text-lg",
+        (!isClassNameModifier(classNames?.preformatted) || !classNames?.preformatted?.overrideDefault) && "mb-4 rounded bg-slate-100 p-4 text-sm last:mb-0 md:p-8 md:text-lg",
         isClassNameModifier(classNames?.preformatted) ? classNames?.preformatted?.className : classNames?.preformatted
       )}
     >

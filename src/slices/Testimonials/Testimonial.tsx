@@ -3,7 +3,7 @@ import { ImageField, LinkField, RichTextField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 
 type TestimonialProps = {
-  authorImage: ImageField<never>
+  authorImage: ImageField
   authorName: RichTextField
   quote: RichTextField
   quoteUrl: LinkField

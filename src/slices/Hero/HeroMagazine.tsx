@@ -13,7 +13,7 @@ type HeroMagazineProps = {
   title: RichTextField
   text: RichTextField
   buttons: GroupField<Simplify<Content.HeroSliceDefaultPrimaryButtonsItem>>
-  image: ImageField<never>
+  image: ImageField
 }
 
 export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons, image, className }) => {

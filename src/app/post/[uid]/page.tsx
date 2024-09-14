@@ -42,7 +42,7 @@ export default async function Post({ params }: PostProps) {
     .catch(() => notFound());
 
   return (
-    <main className="px-4 py-8 mt-0">
+    <main className="px-4 py-8 mt-0 md:px-60">
       <section className="mb-7 flex flex-row items-center">
         <RichText field={post.data.title} classNames={{ heading1: { className: "text-rose flex-1 m-0", overrideDefault: true } }} />
         <Button href="/">

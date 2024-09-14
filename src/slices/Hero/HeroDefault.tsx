@@ -47,7 +47,7 @@ export const HeroDefault: React.FC<HeroDefaultProps> = ({ title, text, carousel,
               <RichText field={text} />
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 {buttons?.map(({ text, link }, i) => !!text && !!link && (
-                  <Button key={i} href={link}>
+                  <Button key={i} href={link} className="font-bold">
                     {text}
                   </Button>
                 ))}

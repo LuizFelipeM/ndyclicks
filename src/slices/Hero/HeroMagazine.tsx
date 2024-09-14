@@ -5,6 +5,8 @@ import { Simplify } from "../../../prismicio-types";
 import { HeroComponents } from "./HeroComponents";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
+import { faBarcode } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type HeroMagazineProps = {
   className?: string
@@ -32,7 +34,7 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
       </div>
 
       {/* Magazine title at the top */}
-      <div className="relative z-10 text-white text-left">
+      <div className="relative z-10 text-left mt-[20%]">
         <RichText
           field={title}
           components={HeroComponents}
@@ -40,15 +42,19 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
       </div>
 
       {/* Remaining content aligned to the right */}
-      <div className="relative z-10 text-white text-right flex flex-col items-end mt-auto">
+      <div className="relative z-10 text-right flex flex-col items-end mt-auto mb-[45%] ml-auto max-w-[75%]">
         <RichText
           field={text}
           components={HeroComponents}
         />
 
-        <div className="mt-6">
+        <div className="mt-6 flex gap-x-4">
           {buttons?.map(({ text, link }, i) => !!text && !!link && (
-            <Button key={i} href={link} className="bg-white text-black font-bold py-2 px-4 rounded-full shadow-md hover:bg-gray-200 transition" overrideDefault>
+            <Button
+              key={i}
+              href={link}
+              className="font-bold"
+            >
               {text}
             </Button>
           ))}
@@ -56,58 +62,17 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
       </div>
 
       {/* Additional elements for magazine style */}
-      {/* <div className="absolute top-6 left-6 text-white font-bold text-sm tracking-wider z-10">
+      <div className="absolute top-6 left-6 font-bold text-sm tracking-wider z-10">
         <p>Exclusive</p>
         <p>Fashion & Style</p>
       </div>
 
-      <div className="absolute bottom-6 right-6 text-white font-bold text-sm tracking-wider z-10">
+      <div className="absolute bottom-6 left-6 font-bold tracking-wider z-10">
+        <FontAwesomeIcon icon={faBarcode} size="3x" />
+      </div>
+      <div className="absolute bottom-8 right-6 font-bold text-base tracking-wider z-10">
         <p>$5.99</p>
-      </div> */}
+      </div>
     </div>
   );
-
-  // return (
-  //   <div className={
-  //     clsx(
-  //       "relative w-full h-screen bg-gray-100 flex flex-col justify-center items-center text-center p-6",
-  //       className
-  //     )
-  //   }>
-  //     {/* Background image */}
-  //     <div className="absolute inset-0 z-0">
-  //       <PrismicNextImage
-  //         field={image}
-  //         className="w-full h-full object-cover"
-  //       />
-  //       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70"></div>
-  //     </div>
-
-  //     {/* Main content */}
-  //     <div className="relative z-10 text-white">
-  //       <RichText
-  //         field={text}
-  //         components={HeroComponents}
-  //       />
-
-  //       <div className="mt-6">
-  //         {buttons?.map(({ text, link }, i) => !!text && !!link && (
-  //           <Button key={i} href={link} className="bg-white text-black font-bold py-2 px-4 rounded-full shadow-md hover:bg-gray-200 transition" overrideDefault>
-  //             {text}
-  //           </Button>
-  //         ))}
-  //       </div>
-  //     </div>
-
-  //     {/* Additional elements for magazine style */}
-  //     <div className="absolute top-6 left-6 text-white font-bold text-sm tracking-wider z-10">
-  //       <p>Exclusive</p>
-  //       <p>Fashion & Style</p>
-  //     </div>
-
-  //     <div className="absolute bottom-6 right-6 text-white font-bold text-sm tracking-wider z-10">
-  //       <p>$5.99</p>
-  //     </div>
-  //   </div>
-  // );
 };

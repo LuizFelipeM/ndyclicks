@@ -9,5 +9,6 @@ export const components = {
   image: dynamic(() => import("./Image")),
   post_gallery: dynamic(() => import("./PostGallery")),
   splitter: dynamic(() => import("./Splitter")),
+  testimonials: dynamic(() => import("./Testimonials")),
   text: dynamic(() => import("./Text")),
 };

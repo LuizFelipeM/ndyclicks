@@ -654,15 +654,30 @@ type HeroSliceVariation =
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Item in *Image → Multiplas Imagens → Primary → Imagens*
+ * Item in *Image → Imagens - Estilo Colunas → Primary → Imagens*
  */
-export interface ImageSliceMultipleImagesPrimaryImagesItem {
+export interface ImageSliceImagesInColumnsPrimaryImagesItem {
   /**
-   * Imagem field in *Image → Multiplas Imagens → Primary → Imagens*
+   * Imagem field in *Image → Imagens - Estilo Colunas → Primary → Imagens*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.multipleImages.primary.images[].image
+   * - **API ID Path**: image.imagesInColumns.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *Image → Imagens - Estilo Alvenaria → Primary → Imagens*
+ */
+export interface ImageSliceImagesInMasonryPrimaryImagesItem {
+  /**
+   * Imagem field in *Image → Imagens - Estilo Alvenaria → Primary → Imagens*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.imagesInMasonry.primary.images[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
@@ -697,49 +712,92 @@ export type ImageSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Image → Multiplas Imagens → Primary*
+ * Primary content in *Image → Imagens - Estilo Colunas → Primary*
  */
-export interface ImageSliceMultipleImagesPrimary {
+export interface ImageSliceImagesInColumnsPrimary {
   /**
-   * Quantidade de colunas field in *Image → Multiplas Imagens → Primary*
+   * Quantidade de colunas field in *Image → Imagens - Estilo Colunas → Primary*
    *
    * - **Field Type**: Number
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.multipleImages.primary.col_quantity
+   * - **API ID Path**: image.imagesInColumns.primary.col_quantity
    * - **Documentation**: https://prismic.io/docs/field#number
    */
   col_quantity: prismic.NumberField;
 
   /**
-   * Imagens field in *Image → Multiplas Imagens → Primary*
+   * Imagens field in *Image → Imagens - Estilo Colunas → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.multipleImages.primary.images[]
+   * - **API ID Path**: image.imagesInColumns.primary.images[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   images: prismic.GroupField<
-    Simplify<ImageSliceMultipleImagesPrimaryImagesItem>
+    Simplify<ImageSliceImagesInColumnsPrimaryImagesItem>
   >;
 }
 
 /**
- * Multiplas Imagens variation for Image Slice
+ * Imagens - Estilo Colunas variation for Image Slice
  *
- * - **API ID**: `multipleImages`
+ * - **API ID**: `imagesInColumns`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ImageSliceMultipleImages = prismic.SharedSliceVariation<
-  "multipleImages",
-  Simplify<ImageSliceMultipleImagesPrimary>,
+export type ImageSliceImagesInColumns = prismic.SharedSliceVariation<
+  "imagesInColumns",
+  Simplify<ImageSliceImagesInColumnsPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Image → Imagens - Estilo Alvenaria → Primary*
+ */
+export interface ImageSliceImagesInMasonryPrimary {
+  /**
+   * Largura da coluna field in *Image → Imagens - Estilo Alvenaria → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.imagesInMasonry.primary.col_width
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  col_width: prismic.NumberField;
+
+  /**
+   * Imagens field in *Image → Imagens - Estilo Alvenaria → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.imagesInMasonry.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<
+    Simplify<ImageSliceImagesInMasonryPrimaryImagesItem>
+  >;
+}
+
+/**
+ * Imagens - Estilo Alvenaria variation for Image Slice
+ *
+ * - **API ID**: `imagesInMasonry`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageSliceImagesInMasonry = prismic.SharedSliceVariation<
+  "imagesInMasonry",
+  Simplify<ImageSliceImagesInMasonryPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Image*
  */
-type ImageSliceVariation = ImageSliceDefault | ImageSliceMultipleImages;
+type ImageSliceVariation =
+  | ImageSliceDefault
+  | ImageSliceImagesInColumns
+  | ImageSliceImagesInMasonry;
 
 /**
  * Image Shared Slice
@@ -914,16 +972,6 @@ export interface TestimonialsSliceDefaultPrimaryTestimonialsItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   quote: prismic.RichTextField;
-
-  /**
-   * Site de referência do autor field in *Testimonials → Default → Primary → Depoimentos*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.testimonials[].quote_url
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  quote_url: prismic.LinkField;
 }
 
 /**
@@ -1228,11 +1276,14 @@ declare module "@prismicio/client" {
       HeroSliceMagazineMobile,
       ImageSlice,
       ImageSliceDefaultPrimary,
-      ImageSliceMultipleImagesPrimaryImagesItem,
-      ImageSliceMultipleImagesPrimary,
+      ImageSliceImagesInColumnsPrimaryImagesItem,
+      ImageSliceImagesInColumnsPrimary,
+      ImageSliceImagesInMasonryPrimaryImagesItem,
+      ImageSliceImagesInMasonryPrimary,
       ImageSliceVariation,
       ImageSliceDefault,
-      ImageSliceMultipleImages,
+      ImageSliceImagesInColumns,
+      ImageSliceImagesInMasonry,
       PostGallerySlice,
       PostGallerySliceDefaultPrimary,
       PostGallerySliceVariation,

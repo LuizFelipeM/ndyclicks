@@ -24,8 +24,8 @@
       "items": {}
     },
     {
-      "id": "multipleImages",
-      "name": "Multiplas Imagens",
+      "id": "imagesInColumns",
+      "name": "Imagens - Estilo Colunas",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -35,6 +35,41 @@
           "type": "Number",
           "config": {
             "label": "Quantidade de colunas",
+            "placeholder": ""
+          }
+        },
+        "images": {
+          "type": "Group",
+          "config": {
+            "label": "Imagens",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "imagesInMasonry",
+      "name": "Imagens - Estilo Alvenaria",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "col_width": {
+          "type": "Number",
+          "config": {
+            "label": "Largura da coluna",
             "placeholder": ""
           }
         },

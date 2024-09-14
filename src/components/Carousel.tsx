@@ -1,5 +1,5 @@
 "use client"
-import { Content, GroupField } from '@prismicio/client'
+import { Content, GroupField, isFilled } from '@prismicio/client'
 import React, { useEffect, useState } from 'react'
 import { Simplify } from '../../prismicio-types'
 import { PrismicNextImage } from '@prismicio/next'
@@ -26,7 +26,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
   return (
     <div className="max-w-4xl mx-auto relative">
       <div className={`relative w-[600px] h-full overflow-x-hidden flex rounded-xl`}>
-        {slides.map(({ image }, i) => (
+        {slides.map(({ image }, i) => isFilled.image(image) && (
           <div
             key={i}
             style={{ transform: `translateX(-${current * 100}%)` }}

@@ -1,6 +1,6 @@
 import { Button } from "@/components/Button";
 import { RichText } from "@/components/RichText";
-import { RichTextField, GroupField, Content, ImageField } from "@prismicio/client";
+import { RichTextField, GroupField, Content, ImageField, isFilled } from "@prismicio/client";
 import { Simplify } from "../../../prismicio-types";
 import { HeroComponents } from "./HeroComponents";
 import { PrismicNextImage } from "@prismicio/next";
@@ -26,10 +26,11 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
     }>
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <PrismicNextImage
-          field={image}
-          className="w-full h-full object-cover"
-        />
+        {isFilled.image(image) &&
+          <PrismicNextImage
+            field={image}
+            className="w-full h-full object-cover"
+          />}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70"></div>
       </div>
 
@@ -49,15 +50,18 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
         />
 
         <div className="mt-6 flex gap-x-4">
-          {buttons?.map(({ text, link }, i) => !!text && !!link && (
-            <Button
-              key={i}
-              href={link}
-              className="font-bold"
-            >
-              {text}
-            </Button>
-          ))}
+          {buttons?.map(({ text, link }, i) =>
+            isFilled.keyText(text) &&
+            isFilled.link(link) &&
+            (
+              <Button
+                key={i}
+                href={link}
+                className="font-bold"
+              >
+                {text}
+              </Button>
+            ))}
         </div>
       </div>
 

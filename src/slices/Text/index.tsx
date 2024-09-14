@@ -6,7 +6,7 @@ import { TextAndImage } from "./TextAndImage";
 import { TextAndHeader } from "./TextAndHeader";
 import { TextWithHeaderAndImage } from "./TextWithHeaderImage";
 
-const TextVariationSelector: React.FC<{ slice: Content.TextSlice }> = ({ slice }) => {
+const VariationSelector: React.FC<{ slice: Content.TextSlice }> = ({ slice }) => {
   switch (slice.variation) {
     case "textAndImage":
       return (
@@ -55,7 +55,7 @@ const Text = ({ slice }: TextProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <TextVariationSelector slice={slice} />
+      <VariationSelector slice={slice} />
     </section>
   );
 };

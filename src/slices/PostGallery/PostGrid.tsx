@@ -16,7 +16,7 @@ type PostGridProps = {
 /**
  * Component for "PostGrid" component.
  */
-export const PostGrid: React.FC<PostGridProps> = ({ posts, cols, showPostTitles }) => {
+export const PostGrid: React.FC<PostGridProps> = ({ posts, showPostTitles, cols = 4 }) => {
   const postGridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => postGridRef.current?.style.setProperty("--cols", String(cols)), [postGridRef, cols])

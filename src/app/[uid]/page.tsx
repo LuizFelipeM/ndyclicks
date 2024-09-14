@@ -2,7 +2,7 @@ import { Heading } from "@/components/Heading";
 import { RichText } from "@/components/RichText";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { asText } from "@prismicio/client";
+import { asText, isFilled } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";

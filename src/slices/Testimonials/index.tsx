@@ -1,5 +1,5 @@
 import { RichText } from "@/components/RichText";
-import { Content } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
 import { Testimonial } from "./Testimonial";
@@ -24,9 +24,18 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-10">
-        {!!slice.primary.testimonials && slice.primary.testimonials.map(({ author_image, author_name, quote, quote_url }, i) => (
-          <Testimonial key={i} authorImage={author_image} authorName={author_name} quote={quote} quoteUrl={quote_url} />
-        ))}
+        {isFilled.group(slice.primary.testimonials) &&
+          slice.primary.testimonials.map(({ author_image, author_name, quote }, i) =>
+            isFilled.richText(author_name) &&
+            isFilled.richText(quote) &&
+            (
+              <Testimonial
+                key={i}
+                authorImage={author_image}
+                authorName={author_name}
+                quote={quote}
+              />
+            ))}
       </div>
     </section>
   );

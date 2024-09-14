@@ -1,6 +1,6 @@
 import { RichText } from "@/components/RichText";
 import { createClient } from "@/prismicio";
-import { Content } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
 import { PostGrid } from "./PostGrid";
@@ -33,10 +33,14 @@ const PostGallery = async ({ slice }: PostGalleryProps): Promise<JSX.Element> =>
       className="px-8 lg:px-16"
     >
       <div className="text-center mb-6">
-        {!!slice.primary.title && <RichText field={slice.primary.title} />}
-        {!!slice.primary.subtitle && <RichText field={slice.primary.subtitle} />}
+        {isFilled.richText(slice.primary.title) && <RichText field={slice.primary.title} />}
+        {isFilled.richText(slice.primary.subtitle) && <RichText field={slice.primary.subtitle} />}
       </div>
-      <PostGrid posts={posts!} showPostTitles={slice.primary.show_post_titles} cols={slice.primary.cols?.valueOf()} />
+      <PostGrid
+        posts={posts!}
+        showPostTitles={slice.primary.show_post_titles}
+        cols={isFilled.number(slice.primary.cols) ? slice.primary.cols.valueOf() : undefined}
+      />
     </section>
   );
 };

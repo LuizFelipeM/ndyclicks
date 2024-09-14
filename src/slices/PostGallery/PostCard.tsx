@@ -2,7 +2,7 @@ import { Button } from "@/components/Button";
 import { Heading } from "@/components/Heading";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Content, asLinkAttrs } from "@prismicio/client";
+import { Content, asLinkAttrs, isFilled } from "@prismicio/client";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import { JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 import { useEffect } from "react";
@@ -39,7 +39,11 @@ export const PostCard: React.FC<PostCardProps> = ({ post, showTitle }): JSX.Elem
   return (
     <div className="img-group text-center">
       <PrismicNextLink {...attributes} href={href!} className="text-center">
-        <PrismicNextImage field={post.data.thumbnail} className="mb-4 rounded-lg object-cover min-w-[180px]" />
+        {isFilled.image(post.data.thumbnail) &&
+          <PrismicNextImage
+            field={post.data.thumbnail}
+            className="mb-4 rounded-lg object-cover min-w-[180px]"
+          />}
         {showTitle &&
           <PrismicRichText
             field={post.data.title}

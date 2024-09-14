@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Content, ImageField } from "@prismicio/client"
+import { Content, ImageField, isFilled } from "@prismicio/client"
 import { PrismicNextImage } from "@prismicio/next"
 import { SliceComponentProps } from "@prismicio/react"
 
@@ -58,7 +58,7 @@ const Splitter: React.FC<SplitterProps> = ({ slice }) => {
       className="mb-5 relative h-auto md:h-[40rem] md:max-h-[60vh] w-full overflow-hidden cursor-ew-resize rounded-lg"
     >
       {/* Before Image with Clipping */}
-      {!!imagesMinWidth &&
+      {!!imagesMinWidth && isFilled.image(slice.primary.before) &&
         <div
           className="absolute inset-0 overflow-hidden z-20"
           style={{ width: `${dividerPosition}%` }}
@@ -71,11 +71,12 @@ const Splitter: React.FC<SplitterProps> = ({ slice }) => {
         </div>}
 
       {/* After Image */}
-      <PrismicNextImage
-        field={slice.primary.after}
-        style={{ minWidth: imagesMinWidth }}
-        className="inset-0 h-auto md:h-full w-full object-cover z-10"
-      />
+      {isFilled.image(slice.primary.after) &&
+        <PrismicNextImage
+          field={slice.primary.after}
+          style={{ minWidth: imagesMinWidth }}
+          className="inset-0 h-auto md:h-full w-full object-cover z-10"
+        />}
 
       {/* Divider */}
       <div

@@ -100,17 +100,6 @@
 									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
-							],
-							[
-								"quote_url",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "www.google.com",
-										"target": ""
-									}
-								}
 							]
 						]
 					},
@@ -181,17 +170,6 @@
 										}
 									]
 								}
-							],
-							[
-								"quote_url",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "www.rabbitmq.com",
-										"target": ""
-									}
-								}
 							]
 						]
 					},
@@ -261,17 +239,6 @@
 									"credits": null,
 									"__TYPE__": "ImageContent",
 									"thumbnails": {}
-								}
-							],
-							[
-								"quote_url",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "www.abacate.com.br",
-										"target": null
-									}
 								}
 							]
 						]

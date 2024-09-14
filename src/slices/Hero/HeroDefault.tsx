@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@/components/Button'
 import { RichText } from '@/components/RichText'
-import { Content, GroupField, RichTextField } from '@prismicio/client'
+import { Content, GroupField, isFilled, RichTextField } from '@prismicio/client'
 import { Simplify } from '../../../prismicio-types'
 import { Carousel } from '@/components/Carousel'
 import { HeroComponents } from "./HeroComponents"
@@ -46,17 +46,20 @@ export const HeroDefault: React.FC<HeroDefaultProps> = ({ title, text, carousel,
               />
               <RichText field={text} />
               <div className="mt-10 flex items-center justify-center gap-x-6">
-                {buttons?.map(({ text, link }, i) => !!text && !!link && (
-                  <Button key={i} href={link} className="font-bold">
-                    {text}
-                  </Button>
-                ))}
+                {buttons?.map(({ text, link }, i) =>
+                  isFilled.keyText(text) &&
+                  isFilled.link(link) &&
+                  (
+                    <Button key={i} href={link} className="font-bold">
+                      {text}
+                    </Button>
+                  ))}
               </div>
             </div>
           </div>
 
           <div className="hidden w-full md:w-1/2 md:flex justify-center md:justify-end">
-            {carousel && carousel.length > 0 && <Carousel slides={carousel} ms={5000} />}
+            {isFilled.group(carousel) && <Carousel slides={carousel} ms={5000} />}
           </div>
         </div>
       </div>

@@ -52,15 +52,6 @@
                   "allowTargetBlank": true,
                   "multi": "em,paragraph,preformatted,strong"
                 }
-              },
-              "quote_url": {
-                "type": "Link",
-                "config": {
-                  "label": "Site de referência do autor",
-                  "placeholder": "",
-                  "allowTargetBlank": false,
-                  "select": null
-                }
               }
             }
           }

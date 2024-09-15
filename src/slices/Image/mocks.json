@@ -500,8 +500,8 @@
 			},
 			"col_width": {
 				"__TYPE__": "FieldContent",
-				"type": "Number",
-				"value": "350"
+				"value": "41",
+				"type": "Number"
 			}
 		},
 		"items": [

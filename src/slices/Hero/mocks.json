@@ -168,6 +168,14 @@
 						}
 					}
 				]
+			},
+			"is_text_left": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"is_title_left": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": [
@@ -289,6 +297,10 @@
 						}
 					}
 				]
+			},
+			"is_text_left": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": [

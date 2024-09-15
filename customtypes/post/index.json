@@ -37,6 +37,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "image": {
+              "type": "SharedSlice"
+            },
             "splitter": {
               "type": "SharedSlice"
             },

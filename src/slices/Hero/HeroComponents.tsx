@@ -3,11 +3,13 @@ import { JSXMapSerializer } from "@prismicio/react";
 export const HeroComponents: JSXMapSerializer = {
   heading1: ({ children }) => (
     <h1
-      className="mb-6 mt-12 first:mt-0 last:mb-0
+      className="
+        mb-6 mt-12 first:mt-0 last:mb-0
         text-rose text-shadow-md font-serif font-extrabold
         tracking-tighter leading-none md:leading-tight
-        text-[4.5rem] md:text-[6rem]
-        fancy-wipe"
+        text-[16vw] md:text-[6rem]
+        fancy-wipe
+      "
     >
       {/* <!-- Adapted fancy wipe animation provided by Jesse in https://codepen.io/Chester/pen/LYKWMxO --> */}
       <span className="block text">

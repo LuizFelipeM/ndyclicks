@@ -55,7 +55,7 @@ const Splitter: React.FC<SplitterProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       ref={containerRef}
-      className="mb-5 relative h-auto md:h-[40rem] md:max-h-[60vh] w-full overflow-hidden cursor-ew-resize rounded-lg"
+      className="mb-5 relative h-auto md:h-[40rem] md:max-h-[80vh] w-full overflow-hidden cursor-ew-resize rounded-lg"
     >
       {/* Before Image with Clipping */}
       {!!imagesMinWidth && isFilled.image(slice.primary.before) &&

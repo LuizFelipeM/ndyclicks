@@ -33,7 +33,7 @@ export const Default: React.FC<DefaultProps> = ({ changeImageSize, image, keepAs
         height: imageHeight,
         width: imageWidth,
       }}
-      className="overflow-hidden mx-auto"
+      className="overflow-hidden mx-auto max-w-full rounded-lg"
     >
       <PrismicNextImage
         field={image}

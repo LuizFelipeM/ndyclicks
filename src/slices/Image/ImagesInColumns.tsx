@@ -18,12 +18,16 @@ export const ImagesInColumns: React.FC<ImagesInColumnsProps> = ({ images, images
     >
       {isFilled.group(images) &&
         images.map(({ image }, i) => (
-          <PrismicImage
+          <div
             key={i}
-            field={image}
             style={{ height: `${imagesHeight}px` }}
-            className="w-auto m-auto"
-          />
+            className="relative w-full rounded-lg"
+          >
+            <PrismicImage
+              field={image}
+              className="absolute inset-0 w-auto h-full m-auto object-cover rounded-lg"
+            />
+          </div>
         ))}
     </div>
   )

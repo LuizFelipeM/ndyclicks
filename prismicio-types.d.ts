@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | ImageSlice
   | TestimonialsSlice
   | PostGallerySlice
   | TextSlice
@@ -106,6 +107,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type PostDocumentDataSlicesSlice =
+  | ImageSlice
   | SplitterSlice
   | TextSlice
   | HeroSlice
@@ -519,6 +521,17 @@ export interface HeroSliceMagazineMobileAndDesktopPrimary {
   title: prismic.RichTextField;
 
   /**
+   * Posição do título field in *Hero → Estilo Revista - Mobile e Desk → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.is_title_left
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_title_left: prismic.BooleanField;
+
+  /**
    * Texto field in *Hero → Estilo Revista - Mobile e Desk → Primary*
    *
    * - **Field Type**: Rich Text
@@ -527,6 +540,17 @@ export interface HeroSliceMagazineMobileAndDesktopPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Posição do texto field in *Hero → Estilo Revista - Mobile e Desk → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.is_text_left
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_text_left: prismic.BooleanField;
 
   /**
    * Botões field in *Hero → Estilo Revista - Mobile e Desk → Primary*
@@ -587,6 +611,17 @@ export interface HeroSliceMagazineMobilePrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Posição do texto field in *Hero → Estilo Revista - Mobile → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.magazineMobile.primary.is_text_left
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_text_left: prismic.BooleanField;
 
   /**
    * Botões field in *Hero → Estilo Revista - Mobile → Primary*
@@ -811,7 +846,7 @@ export type ImageSliceImagesInColumns = prismic.SharedSliceVariation<
  */
 export interface ImageSliceImagesInMasonryPrimary {
   /**
-   * Largura da coluna field in *Image → Imagens - Estilo Alvenaria → Primary*
+   * Largura da coluna (px) field in *Image → Imagens - Estilo Alvenaria → Primary*
    *
    * - **Field Type**: Number
    * - **Placeholder**: *None*

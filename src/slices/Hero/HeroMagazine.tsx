@@ -14,9 +14,13 @@ type HeroMagazineProps = {
   text: RichTextField
   buttons: GroupField<Simplify<Content.HeroSliceDefaultPrimaryButtonsItem>>
   image: ImageField
+  isTextLeft: boolean
+  isTitleLeft?: boolean
 }
 
-export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons, image, className }) => {
+export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons, image, className, isTextLeft, isTitleLeft }) => {
+  const margin = isTextLeft ? "mr-auto" : "ml-auto"
+
   return (
     <div className={
       clsx(
@@ -31,11 +35,25 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
             field={image}
             className="w-full h-full object-cover"
           />}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70"></div>
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-t
+            from-rich-black from-5%
+            via-transparent via-30%
+            to-rich-black to-95%
+            opacity-35
+          "
+        />
       </div>
 
       {/* Magazine title at the top */}
-      <div className="relative z-10 text-left mt-[20%]">
+      <div className={
+        clsx(
+          "relative z-10 mt-[20%] md:mt-[5%]",
+          isTitleLeft || isTitleLeft === undefined ? "text-left" : "text-right"
+        )
+      }>
         <RichText
           field={title}
           components={HeroComponents}
@@ -43,13 +61,24 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
       </div>
 
       {/* Remaining content aligned to the right */}
-      <div className="relative z-10 text-right flex flex-col items-end mt-auto mb-[45%] ml-auto max-w-[75%]">
+      <div className={
+        clsx(
+          "relative z-10 flex flex-col items-end mt-auto mb-[45%] md:mb-[10%] max-w-[75%]",
+          margin,
+          isTextLeft ? "text-left" : "text-right"
+        )
+      }>
         <RichText
           field={text}
           components={HeroComponents}
         />
 
-        <div className="mt-6 flex gap-x-4">
+        <div className={
+          clsx(
+            "mt-6 flex gap-x-4",
+            margin
+          )
+        }>
           {buttons?.map(({ text, link }, i) =>
             isFilled.keyText(text) &&
             isFilled.link(link) &&

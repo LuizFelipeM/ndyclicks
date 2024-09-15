@@ -27,14 +27,9 @@ const config: Config = {
     "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    },
     colors: {
+      'black': 'black',
+      'transparent': 'transparent',
       'savoy-blue': '#5762d6',
       'rose': '#ff216e',
       'rich-black': '#0e1223',

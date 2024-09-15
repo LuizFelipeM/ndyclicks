@@ -92,6 +92,15 @@
             "multi": "heading1"
           }
         },
+        "is_title_left": {
+          "type": "Boolean",
+          "config": {
+            "label": "Posição do título",
+            "placeholder_false": "A direita",
+            "placeholder_true": "A esquerda",
+            "default_value": false
+          }
+        },
         "text": {
           "type": "StructuredText",
           "config": {
@@ -99,6 +108,15 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
+          }
+        },
+        "is_text_left": {
+          "type": "Boolean",
+          "config": {
+            "label": "Posição do texto",
+            "placeholder_false": "A direita",
+            "placeholder_true": "A esquerda",
+            "default_value": false
           }
         },
         "buttons": {
@@ -161,6 +179,15 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
+          }
+        },
+        "is_text_left": {
+          "type": "Boolean",
+          "config": {
+            "label": "Posição do texto",
+            "placeholder_false": "A direita",
+            "placeholder_true": "A esquerda",
+            "default_value": false
           }
         },
         "buttons": {

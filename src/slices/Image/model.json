@@ -111,7 +111,7 @@
         "col_width": {
           "type": "Number",
           "config": {
-            "label": "Largura da coluna",
+            "label": "Largura da coluna (px)",
             "placeholder": ""
           }
         },

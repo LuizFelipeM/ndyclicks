@@ -39,7 +39,7 @@ const PostGallery = async ({ slice }: PostGalleryProps): Promise<JSX.Element> =>
       <PostGrid
         posts={posts!}
         showPostTitles={slice.primary.show_post_titles}
-        cols={isFilled.number(slice.primary.cols) ? slice.primary.cols.valueOf() : undefined}
+        cols={isFilled.number(slice.primary.cols) ? slice.primary.cols : undefined}
       />
     </section>
   );

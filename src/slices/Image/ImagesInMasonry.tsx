@@ -4,13 +4,13 @@ import { ImageSliceImagesInColumnsPrimaryImagesItem, Simplify } from '../../../p
 import { PrismicNextImage } from '@prismicio/next'
 
 type ImagesInMasonryProps = {
-  colsWidth: NumberField
+  colsWidth?: number
   images: GroupField<Simplify<ImageSliceImagesInColumnsPrimaryImagesItem>>
 }
 
-export const ImagesInMasonry: React.FC<ImagesInMasonryProps> = ({ images, colsWidth }) => {
+export const ImagesInMasonry: React.FC<ImagesInMasonryProps> = ({ images, colsWidth = 350 }) => {
   return (
-    <div style={{ columns: `${colsWidth?.valueOf()}px` }}>
+    <div style={{ columns: `${colsWidth}px` }}>
       {isFilled.group(images) &&
         images.map(({ image }, i) => isFilled.image(image) && (
           <PrismicNextImage

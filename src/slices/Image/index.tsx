@@ -3,29 +3,38 @@ import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import { ImagesInColumns } from "./ImagesInColumns";
 import { ImagesInMasonry } from "./ImagesInMasonry";
+import { getValueOrDefault } from "@/utils/getValueOrDefault";
+import { Default } from "./Default";
 
 const VariationSelector: React.FC<{ slice: Content.ImageSlice }> = ({ slice }) => {
   switch (slice.variation) {
     case "imagesInColumns":
       return (
-        isFilled.group(slice.primary.images) &&
         <ImagesInColumns
           images={slice.primary.images}
-          cols={isFilled.number(slice.primary.col_quantity) ? slice.primary.col_quantity : undefined}
+          imagesHeight={getValueOrDefault(slice.primary.image_height)}
+          cols={getValueOrDefault(slice.primary.col_quantity)}
         />
       )
 
     case "imagesInMasonry":
       return (
-        isFilled.group(slice.primary.images) &&
         <ImagesInMasonry
           images={slice.primary.images}
-          colsWidth={slice.primary.col_width}
+          colsWidth={getValueOrDefault(slice.primary.col_width)}
         />
       )
 
     default:
-      return isFilled.image(slice.primary.image) && <PrismicNextImage field={slice.primary.image} />
+      return (
+        <Default
+          image={slice.primary.image}
+          changeImageSize={slice.primary.change_image_size}
+          keepAspectRatio={slice.primary.keep_aspect_ratio}
+          height={getValueOrDefault(slice.primary.image_height)}
+          width={getValueOrDefault(slice.primary.image_width)}
+        />
+      )
   }
 }
 

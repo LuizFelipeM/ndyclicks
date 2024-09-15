@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Content, asLinkAttrs, isFilled } from "@prismicio/client";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import { JSXMapSerializer, PrismicRichText } from "@prismicio/react";
-import { useEffect } from "react";
 
 /**
  * Components map for `PrismicRichText`.
@@ -31,10 +30,6 @@ type PostCardProps = {
  */
 export const PostCard: React.FC<PostCardProps> = ({ post, showTitle }): JSX.Element => {
   const { href, ...attributes } = asLinkAttrs(post)
-
-  useEffect(() => {
-    console.log('showTitle', showTitle)
-  }, [showTitle])
 
   return (
     <div className="img-group text-center">

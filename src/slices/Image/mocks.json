@@ -25,6 +25,25 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"image_height": {
+				"__TYPE__": "FieldContent",
+				"type": "Number",
+				"value": "600"
+			},
+			"image_width": {
+				"__TYPE__": "FieldContent",
+				"type": "Number",
+				"value": "700"
+			},
+			"keep_aspect_ratio": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Não manter proporção"
+			},
+			"change_image_size": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []
@@ -35,8 +54,8 @@
 		"primary": {
 			"col_quantity": {
 				"__TYPE__": "FieldContent",
-				"value": "10",
-				"type": "Number"
+				"type": "Number",
+				"value": "2"
 			},
 			"images": {
 				"__TYPE__": "GroupContentType",
@@ -71,8 +90,205 @@
 								}
 							]
 						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+									"alt": "orange citrus",
+									"origin": {
+										"id": "CFWgJgmm6p8",
+										"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+										"width": 6000,
+										"height": 4000
+									},
+									"width": 6000,
+									"height": 4000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1568383306313-1b27a2e28071?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjYzNDI3NTR8MA&ixlib=rb-4.0.3&q=85",
+									"alt": "sliced fruit",
+									"origin": {
+										"id": "p2n1zvbA5_4",
+										"url": "https://images.unsplash.com/photo-1568383306313-1b27a2e28071?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjYzNDI3NTR8MA&ixlib=rb-4.0.3&q=85",
+										"width": 6000,
+										"height": 4000
+									},
+									"width": 6000,
+									"height": 4000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1704960945318-a79f73a55e8a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyM3x8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+									"alt": "a knife and two lemons on a reflective surface",
+									"origin": {
+										"id": "jwL6-kJzpEA",
+										"url": "https://images.unsplash.com/photo-1704960945318-a79f73a55e8a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyM3x8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+										"width": 6000,
+										"height": 4000
+									},
+									"width": 6000,
+									"height": 4000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1585778226755-167cecfec8c5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNXx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+									"alt": "clear wine glass with lemon juice",
+									"origin": {
+										"id": "j5BRvjRt1h0",
+										"url": "https://images.unsplash.com/photo-1585778226755-167cecfec8c5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNXx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+										"width": 3909,
+										"height": 5863
+									},
+									"width": 3909,
+									"height": 5863,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1704960945993-ef988f2a17f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+									"alt": "a yellow lemon sitting on top of a reflective surface",
+									"origin": {
+										"id": "KufsPJyG6Ig",
+										"url": "https://images.unsplash.com/photo-1704960945993-ef988f2a17f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+										"width": 6000,
+										"height": 4000
+									},
+									"width": 6000,
+									"height": 4000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1589558176370-5a120f5e7057?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+									"alt": "person holding brown wooden ladle",
+									"origin": {
+										"id": "86erkIJeSpg",
+										"url": "https://images.unsplash.com/photo-1589558176370-5a120f5e7057?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+										"width": 3024,
+										"height": 4032
+									},
+									"width": 3024,
+									"height": 4032,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
 					}
 				]
+			},
+			"image_height": {
+				"__TYPE__": "FieldContent",
+				"type": "Number",
+				"value": "600"
 			}
 		},
 		"items": [
@@ -119,13 +335,173 @@
 								}
 							]
 						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjYzNDI3NTR8MA&ixlib=rb-4.0.3&q=85",
+									"alt": "orange fruits under blue sky during daytime",
+									"origin": {
+										"id": "eaOjEz8746k",
+										"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjYzNDI3NTR8MA&ixlib=rb-4.0.3&q=85",
+										"width": 5688,
+										"height": 3792
+									},
+									"width": 5688,
+									"height": 3792,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1605379189003-32dce724c6e8?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+									"alt": "clear drinking glass with lemon juice",
+									"origin": {
+										"id": "laPRL7LrE1M",
+										"url": "https://images.unsplash.com/photo-1605379189003-32dce724c6e8?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+										"width": 4000,
+										"height": 6000
+									},
+									"width": 4000,
+									"height": 6000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1568383306313-1b27a2e28071?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjYzNDI3NTR8MA&ixlib=rb-4.0.3&q=85",
+									"alt": "sliced fruit",
+									"origin": {
+										"id": "p2n1zvbA5_4",
+										"url": "https://images.unsplash.com/photo-1568383306313-1b27a2e28071?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjYzNDI3NTR8MA&ixlib=rb-4.0.3&q=85",
+										"width": 6000,
+										"height": 4000
+									},
+									"width": 6000,
+									"height": 4000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1589558176370-5a120f5e7057?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+									"alt": "person holding brown wooden ladle",
+									"origin": {
+										"id": "86erkIJeSpg",
+										"url": "https://images.unsplash.com/photo-1589558176370-5a120f5e7057?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+										"width": 3024,
+										"height": 4032
+									},
+									"width": 3024,
+									"height": 4032,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+									"alt": "orange citrus",
+									"origin": {
+										"id": "CFWgJgmm6p8",
+										"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzI2MzQyNzU0fDA&ixlib=rb-4.0.3&q=85",
+										"width": 6000,
+										"height": 4000
+									},
+									"width": 6000,
+									"height": 4000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
 					}
 				]
 			},
 			"col_width": {
 				"__TYPE__": "FieldContent",
-				"value": "22",
-				"type": "Number"
+				"type": "Number",
+				"value": "350"
 			}
 		},
 		"items": [

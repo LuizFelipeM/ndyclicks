@@ -696,6 +696,51 @@ export interface ImageSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Alterar tamanho da imagem field in *Image → Fullscreen → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image.default.primary.change_image_size
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  change_image_size: prismic.BooleanField;
+
+  /**
+   * Manter proporção? field in *Image → Fullscreen → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.default.primary.keep_aspect_ratio
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  keep_aspect_ratio: prismic.SelectField<
+    | "Largura (ajustar altura automaticamente)"
+    | "Altura (ajustar largura automaticamente)"
+    | "Não manter proporção"
+  >;
+
+  /**
+   * Altura da imagem (px) field in *Image → Fullscreen → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.default.primary.image_height
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  image_height: prismic.NumberField;
+
+  /**
+   * Largura da imagem (px) field in *Image → Fullscreen → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.default.primary.image_width
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  image_width: prismic.NumberField;
 }
 
 /**
@@ -716,14 +761,24 @@ export type ImageSliceDefault = prismic.SharedSliceVariation<
  */
 export interface ImageSliceImagesInColumnsPrimary {
   /**
-   * Quantidade de colunas field in *Image → Imagens - Estilo Colunas → Primary*
+   * Número de colunas field in *Image → Imagens - Estilo Colunas → Primary*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: Número de colunas mostradas no PC
    * - **API ID Path**: image.imagesInColumns.primary.col_quantity
    * - **Documentation**: https://prismic.io/docs/field#number
    */
   col_quantity: prismic.NumberField;
+
+  /**
+   * Altura das imagens (px) field in *Image → Imagens - Estilo Colunas → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: Altura utilizada para que todas as imagens tenham o mesmo tamanho
+   * - **API ID Path**: image.imagesInColumns.primary.image_height
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  image_height: prismic.NumberField;
 
   /**
    * Imagens field in *Image → Imagens - Estilo Colunas → Primary*

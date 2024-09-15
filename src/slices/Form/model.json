@@ -1,0 +1,59 @@
+{
+  "id": "form",
+  "type": "SharedSlice",
+  "name": "Form",
+  "description": "Form",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "fields": {
+          "type": "Group",
+          "config": {
+            "label": "Campos",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Título",
+                  "placeholder": ""
+                }
+              },
+              "type": {
+                "type": "Select",
+                "config": {
+                  "label": "Tipo",
+                  "placeholder": "Tipo do campo a ser preenchido",
+                  "options": [
+                    "Texto curto",
+                    "Texto longo (múltiplas linhas)",
+                    "Número",
+                    "E-mail",
+                    "Data",
+                    "Número de Telefone"
+                  ]
+                }
+              },
+              "required": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Obrigatório?",
+                  "placeholder_false": "Não",
+                  "placeholder_true": "Sim",
+                  "default_value": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

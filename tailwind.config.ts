@@ -28,8 +28,9 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      'black': 'black',
       'transparent': 'transparent',
+      'black': '#000000',
+      'red': '#DF1F1F',
       'savoy-blue': '#5762d6',
       'rose': '#ff216e',
       'rich-black': '#0e1223',

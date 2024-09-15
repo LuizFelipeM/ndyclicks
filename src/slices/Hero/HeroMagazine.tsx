@@ -1,4 +1,4 @@
-import { Button } from "@/components/Button";
+import { LinkButton } from "@/components/LinkButton";
 import { RichText } from "@/components/RichText";
 import { RichTextField, GroupField, Content, ImageField, isFilled } from "@prismicio/client";
 import { Simplify } from "../../../prismicio-types";
@@ -83,13 +83,13 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
             isFilled.keyText(text) &&
             isFilled.link(link) &&
             (
-              <Button
+              <LinkButton
                 key={i}
                 href={link}
                 className="font-bold"
               >
                 {text}
-              </Button>
+              </LinkButton>
             ))}
         </div>
       </div>

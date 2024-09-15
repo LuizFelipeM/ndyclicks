@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@/components/Button'
+import { LinkButton } from '@/components/LinkButton'
 import { RichText } from '@/components/RichText'
 import { Content, GroupField, isFilled, RichTextField } from '@prismicio/client'
 import { Simplify } from '../../../prismicio-types'
@@ -50,9 +50,9 @@ export const HeroDefault: React.FC<HeroDefaultProps> = ({ title, text, carousel,
                   isFilled.keyText(text) &&
                   isFilled.link(link) &&
                   (
-                    <Button key={i} href={link} className="font-bold">
+                    <LinkButton key={i} href={link} className="font-bold">
                       {text}
-                    </Button>
+                    </LinkButton>
                   ))}
               </div>
             </div>

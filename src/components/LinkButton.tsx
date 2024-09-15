@@ -13,7 +13,7 @@ type LinkProps = { field: LinkField, href: undefined } | { field: undefined, hre
 
 const isString = (link: LinkField | string): link is string => typeof link === 'string'
 
-export const Button: React.FC<ButtonProps> = ({ children, href, className, overrideDefault }) => {
+export const LinkButton: React.FC<ButtonProps> = ({ children, href, className, overrideDefault }) => {
   const props: LinkProps = {} as LinkProps
   if (isString(href)) props.href = href
   else props.field = href

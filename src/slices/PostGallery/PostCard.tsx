@@ -1,4 +1,4 @@
-import { Button } from "@/components/Button";
+import { LinkButton } from "@/components/LinkButton";
 import { Heading } from "@/components/Heading";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,10 +45,10 @@ export const PostCard: React.FC<PostCardProps> = ({ post, showTitle }): JSX.Elem
             components={components}
           />}
       </PrismicNextLink>
-      <Button href={href!} className="mt-3">
+      <LinkButton href={href!} className="mt-3">
         Confira
         <FontAwesomeIcon icon={faArrowRight} className="ml-1.5" />
-      </Button>
+      </LinkButton>
     </div>
   )
 }

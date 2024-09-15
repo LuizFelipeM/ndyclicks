@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | FormSlice
   | ImageSlice
   | TestimonialsSlice
   | PostGallerySlice
@@ -290,6 +291,91 @@ export type CallToActionSlice = prismic.SharedSlice<
   "call_to_action",
   CallToActionSliceVariation
 >;
+
+/**
+ * Item in *Form → Default → Primary → Campos*
+ */
+export interface FormSliceDefaultPrimaryFieldsItem {
+  /**
+   * Título field in *Form → Default → Primary → Campos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.default.primary.fields[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Tipo field in *Form → Default → Primary → Campos*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Tipo do campo a ser preenchido
+   * - **API ID Path**: form.default.primary.fields[].type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  type: prismic.SelectField<
+    | "Texto curto"
+    | "Texto longo (múltiplas linhas)"
+    | "Número"
+    | "E-mail"
+    | "Data"
+    | "Número de Telefone"
+  >;
+
+  /**
+   * Obrigatório? field in *Form → Default → Primary → Campos*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: form.default.primary.fields[].required
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  required: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *Form → Default → Primary*
+ */
+export interface FormSliceDefaultPrimary {
+  /**
+   * Campos field in *Form → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.default.primary.fields[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  fields: prismic.GroupField<Simplify<FormSliceDefaultPrimaryFieldsItem>>;
+}
+
+/**
+ * Default variation for Form Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Form*
+ */
+type FormSliceVariation = FormSliceDefault;
+
+/**
+ * Form Shared Slice
+ *
+ * - **API ID**: `form`
+ * - **Description**: Form
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSlice = prismic.SharedSlice<"form", FormSliceVariation>;
 
 /**
  * Primary content in *Header → Default → Primary*
@@ -1347,6 +1433,11 @@ declare module "@prismicio/client" {
       CallToActionSliceVariation,
       CallToActionSliceDefault,
       CallToActionSliceCenter,
+      FormSlice,
+      FormSliceDefaultPrimaryFieldsItem,
+      FormSliceDefaultPrimary,
+      FormSliceVariation,
+      FormSliceDefault,
       HeaderSlice,
       HeaderSliceDefaultPrimary,
       HeaderSliceVariation,

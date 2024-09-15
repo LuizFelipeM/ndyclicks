@@ -17,7 +17,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative w-full bg-gray-100 py-16 px-8"
+      className="relative w-full bg-gray-100 py-8 px-8"
     >
       <div className="text-center mb-12">
         <RichText field={slice.primary.text} />

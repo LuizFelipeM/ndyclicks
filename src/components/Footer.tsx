@@ -1,8 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from "@fortawesome/free-brands-svg-icons"
 import React from 'react';
+import { createClient } from '@/prismicio';
+import { isFilled } from '@prismicio/client';
 
-const Footer: React.FC = () => {
+const Footer: React.FC = async () => {
+  const client = createClient();
+  const socialMedias = await client.getAllByType("social_media").catch(() => console.error("Error getting posts list"));
+
   return (
     <footer className="w-full py-4 px-8 flex flex-col md:flex-row gap-3 justify-between items-center">
       <a
@@ -10,6 +15,7 @@ const Footer: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
+        {isFilled.socialMedias.map()}
         <FontAwesomeIcon icon={faInstagram} size="2x" />
       </a>
 

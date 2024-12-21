@@ -4,6 +4,38 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Content for Email de contato documents
+ */
+interface ContactEmailDocumentData {
+  /**
+   * Email field in *Email de contato*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_email.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+}
+
+/**
+ * Email de contato document from Prismic
+ *
+ * - **API ID**: `contact_email`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactEmailDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ContactEmailDocumentData>,
+    "contact_email",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | FormSlice
   | ImageSlice
@@ -195,7 +227,43 @@ interface PostDocumentData {
 export type PostDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
 
-export type AllDocumentTypes = PageDocument | PostDocument;
+/**
+ * Content for Rede Social documents
+ */
+interface SocialMediaDocumentData {
+  /**
+   * Link field in *Rede Social*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Rede Social document from Prismic
+ *
+ * - **API ID**: `social_media`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SocialMediaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SocialMediaDocumentData>,
+    "social_media",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | ContactEmailDocument
+  | PageDocument
+  | PostDocument
+  | SocialMediaDocument;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -1420,12 +1488,16 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ContactEmailDocument,
+      ContactEmailDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       PostDocument,
       PostDocumentData,
       PostDocumentDataSlicesSlice,
+      SocialMediaDocument,
+      SocialMediaDocumentData,
       AllDocumentTypes,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,

@@ -1,47 +1,61 @@
-"use client"
-import { Content, GroupField, isFilled } from '@prismicio/client'
-import React, { useEffect, useState } from 'react'
-import { Simplify } from '../../prismicio-types'
-import { PrismicNextImage } from '@prismicio/next'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import clsx from 'clsx'
+"use client";
+import { Content, GroupField, isFilled } from "@prismicio/client";
+import React, { useCallback, useEffect, useState } from "react";
+import { Simplify } from "../../prismicio-types";
+import { PrismicNextImage } from "@prismicio/next";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import clsx from "clsx";
 
 type CarouselProps = {
-  slides: GroupField<Simplify<Content.HeroSliceDefaultPrimaryCarouselItem>>
-  ms?: number
-}
+  slides: GroupField<Simplify<Content.HeroSliceDefaultPrimaryCarouselItem>>;
+  ms?: number;
+};
 
 export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(0);
+
+  const previous = useCallback(
+    () => setCurrent((a) => (a = a === 0 ? slides.length - 1 : a - 1)),
+    [setCurrent, slides.length]
+  );
+
+  const next = useCallback(
+    () => setCurrent((a) => (a = a === slides.length - 1 ? 0 : a + 1)),
+    [setCurrent, slides.length]
+  );
 
   useEffect(() => {
-    const interval = setInterval(next, ms)
-    return () => clearInterval(interval)
-  }, [current])
-
-  const previous = () => setCurrent(a => a = a === 0 ? slides.length - 1 : a - 1)
-  const next = () => setCurrent(a => a = a === slides.length - 1 ? 0 : a + 1)
+    const interval = setInterval(next, ms);
+    return () => clearInterval(interval);
+  }, [current, next, ms]);
 
   return (
     <div className="max-w-4xl mx-auto relative">
-      <div className={`relative w-[600px] h-full overflow-x-hidden flex rounded-xl`}>
-        {slides.map(({ image }, i) => isFilled.image(image) && (
-          <div
-            key={i}
-            style={{ transform: `translateX(-${current * 100}%)` }}
-            className="w-full h-full inline-block flex-none"
-          >
-            <PrismicNextImage
-              field={image}
-              className={
-                clsx(
-                  "w-full max-w-[600px] m-auto flex items-center transition-all transform-gpu",
-                  current === i ? "opacity-100" : "opacity-0"
-                )}
-            />
-          </div>
-        ))}
+      <div
+        className={`relative w-[600px] h-full overflow-x-hidden flex rounded-xl`}
+      >
+        {slides.map(
+          ({ image }, i) =>
+            isFilled.image(image) && (
+              <div
+                key={i}
+                style={{ transform: `translateX(-${current * 100}%)` }}
+                className="w-full h-full inline-block flex-none"
+              >
+                <PrismicNextImage
+                  field={image}
+                  className={clsx(
+                    "w-full max-w-[600px] m-auto flex items-center transition-all transform-gpu",
+                    current === i ? "opacity-100" : "opacity-0"
+                  )}
+                />
+              </div>
+            )
+        )}
       </div>
 
       <div className="absolute inset-0 flex">
@@ -67,15 +81,14 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
         {slides.map((_, i) => (
           <button
             key={i}
-            className={
-              clsx(
-                "flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-savoy-blue hover:shadow-lg cursor-pointer",
-                current === i ? "bg-white-smoke" : "bg-dim-gray",
-              )}
+            className={clsx(
+              "flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-savoy-blue hover:shadow-lg cursor-pointer",
+              current === i ? "bg-white-smoke" : "bg-dim-gray"
+            )}
             onClick={() => setCurrent(i)}
           />
         ))}
       </div>
     </div>
   );
-}
+};

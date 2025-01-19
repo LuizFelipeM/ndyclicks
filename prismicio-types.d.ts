@@ -535,6 +535,56 @@ export interface HeroSliceMagazineMobilePrimaryCarouselItem {
 }
 
 /**
+ * Item in *Hero → Produtos → Primary → Botões*
+ */
+export interface HeroSliceProductsPrimaryButtonsItem {
+  /**
+   * Link do botão field in *Hero → Produtos → Primary → Botões*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.products.primary.buttons[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Texto do botão field in *Hero → Produtos → Primary → Botões*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.products.primary.buttons[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Hero → Produtos → Primary → Carrossel de imagens*
+ */
+export interface HeroSliceProductsPrimaryCarouselItem {
+  /**
+   * Texto destacado field in *Hero → Produtos → Primary → Carrossel de imagens*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.products.primary.carousel[].highlighted_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  highlighted_text: prismic.RichTextField;
+
+  /**
+   * Imagem field in *Hero → Produtos → Primary → Carrossel de imagens*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.products.primary.carousel[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -758,12 +808,71 @@ export type HeroSliceMagazineMobile = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Produtos → Primary*
+ */
+export interface HeroSliceProductsPrimary {
+  /**
+   * Antes do texto destacado field in *Hero → Produtos → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.products.primary.before_highlighted_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  before_highlighted_text: prismic.RichTextField;
+
+  /**
+   * Depois do texto detacado field in *Hero → Produtos → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.products.primary.after_highlighted_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  after_highlighted_text: prismic.RichTextField;
+
+  /**
+   * Botões field in *Hero → Produtos → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.products.primary.buttons[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  buttons: prismic.GroupField<Simplify<HeroSliceProductsPrimaryButtonsItem>>;
+
+  /**
+   * Carrossel de imagens field in *Hero → Produtos → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.products.primary.carousel[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  carousel: prismic.GroupField<Simplify<HeroSliceProductsPrimaryCarouselItem>>;
+}
+
+/**
+ * Produtos variation for Hero Slice
+ *
+ * - **API ID**: `products`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceProducts = prismic.SharedSliceVariation<
+  "products",
+  Simplify<HeroSliceProductsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
 type HeroSliceVariation =
   | HeroSliceDefault
   | HeroSliceMagazineMobileAndDesktop
-  | HeroSliceMagazineMobile;
+  | HeroSliceMagazineMobile
+  | HeroSliceProducts;
 
 /**
  * Hero Shared Slice
@@ -1418,6 +1527,17 @@ declare module "@prismicio/client" {
     ): prismic.Client<AllDocumentTypes>;
   }
 
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
+  }
+
   namespace Content {
     export type {
       PageDocument,
@@ -1451,10 +1571,14 @@ declare module "@prismicio/client" {
       HeroSliceMagazineMobilePrimaryButtonsItem,
       HeroSliceMagazineMobilePrimaryCarouselItem,
       HeroSliceMagazineMobilePrimary,
+      HeroSliceProductsPrimaryButtonsItem,
+      HeroSliceProductsPrimaryCarouselItem,
+      HeroSliceProductsPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceMagazineMobileAndDesktop,
       HeroSliceMagazineMobile,
+      HeroSliceProducts,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceImagesInColumnsPrimaryImagesItem,

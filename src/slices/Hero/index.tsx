@@ -4,6 +4,7 @@ import React from "react";
 import { HeroDefault } from "./HeroDefault";
 import "./Hero.css"
 import { HeroMagazine } from "./HeroMagazine";
+import { HeroProducts } from "./HeroProducts";
 
 /**
  * Props for `Hero`.
@@ -12,6 +13,15 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const HeroVariation: React.FC<{ slice: HeroProps["slice"] }> = ({ slice }) => {
   switch (slice.variation) {
+    case "products":
+      return (
+        <HeroProducts
+          afterHighlightedText={slice.primary.after_highlighted_text}
+          beforeHighlightedText={slice.primary.before_highlighted_text}
+          buttons={slice.primary.buttons}
+          carousel={slice.primary.carousel}
+        />
+      )
     case "magazineMobile":
       return (
         <>

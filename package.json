@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm:next\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
+    "dev": "concurrently \"pnpm:next\" \"pnpm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -19,9 +19,12 @@
     "@prismicio/next": "^1.6.0",
     "@prismicio/react": "^2.8.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.0.0",
     "next": "14.2.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-transition-group": "^4.4.5",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.47",
@@ -29,6 +32,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-transition-group": "^4.4.12",
+    "@types/uuid": "^10.0.0",
     "concurrently": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.7",

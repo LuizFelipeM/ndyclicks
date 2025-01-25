@@ -1,0 +1,16 @@
+/* #region Top text transition */
+.top-text-enter {
+  transform: translateY(-100%);
+}
+.top-text-enter-active {
+  transform: translateY(0);
+  transition: transform 350ms;
+}
+.top-text-exit {
+  transform: translateY(0);
+}
+.top-text-exit-active {
+  transform: translateY(100%);
+  transition: transform 350ms;
+}
+/* #endregion */

@@ -242,6 +242,86 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "products",
+      "name": "Produtos",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "before_highlighted_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Antes do texto destacado",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "after_highlighted_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Depois do texto detacado",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "buttons": {
+          "type": "Group",
+          "config": {
+            "label": "Botões",
+            "repeat": true,
+            "fields": {
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link do botão",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Texto do botão",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "carousel": {
+          "type": "Group",
+          "config": {
+            "label": "Carrossel de imagens",
+            "repeat": true,
+            "fields": {
+              "highlighted_text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Texto destacado",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "strong,em,paragraph"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

@@ -13,6 +13,23 @@
           "placeholder": ""
         }
       },
+      "type": {
+        "type": "Select",
+        "config": {
+          "label": "Tipo",
+          "placeholder": "",
+          "options": [
+            "Instagram",
+            "Facebook",
+            "Threads",
+            "X",
+            "TikTok",
+            "Behance",
+            "Pinterest",
+            "YouTube"
+          ]
+        }
+      },
       "link": {
         "type": "Link",
         "config": {

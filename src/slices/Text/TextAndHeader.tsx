@@ -11,7 +11,7 @@ type TextAndHeaderProps = {
 }
 
 export const TextAndHeader: React.FC<TextAndHeaderProps> = ({ text, header, isTextLeft }) => (
-  <div className="flex flex-col md:flex-row items-center justify-between w-full py-3 border-b border-t border-jet">
+  <div className="flex flex-col md:flex-row items-center justify-between w-full py-3 border-b border-t border-neutral-jet">
     <div className={
       clsx(
         "w-full md:w-3/5 p-4",

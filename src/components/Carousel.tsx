@@ -61,7 +61,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
       <div className="absolute inset-0 flex">
         <div className="flex items-center justify-start w-1/2">
           <button
-            className="bg-rich-black hover:text-rose shadow-white-smoke hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+            className="bg-neutral-night hover:text-primary shadow-neutral-white-smoke hover:shadow-lg rounded-full w-12 h-12 -ml-6"
             onClick={previous}
           >
             <FontAwesomeIcon icon={faChevronLeft} />
@@ -69,7 +69,7 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
         </div>
         <div className="flex items-center justify-end w-1/2">
           <button
-            className="bg-rich-black hover:text-rose hover:shadow rounded-full w-12 h-12 -mr-6"
+            className="bg-neutral-night hover:text-primary hover:shadow rounded-full w-12 h-12 -mr-6"
             onClick={next}
           >
             <FontAwesomeIcon icon={faChevronRight} />
@@ -82,8 +82,8 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, ms = 3000 }) => {
           <button
             key={i}
             className={clsx(
-              "flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-savoy-blue hover:shadow-lg cursor-pointer",
-              current === i ? "bg-white-smoke" : "bg-dim-gray"
+              "flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-secondary-olive-dark hover:shadow-lg cursor-pointer",
+              current === i ? "bg-neutral-white-smoke" : "bg-neutral-dim-gray"
             )}
             onClick={() => setCurrent(i)}
           />

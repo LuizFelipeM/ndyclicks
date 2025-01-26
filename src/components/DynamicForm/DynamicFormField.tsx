@@ -17,7 +17,7 @@ export const DynamicFormField: React.FC<DynamicFormFieldProps> = ({ field: { typ
         name={title}
         className={
           clsx(
-            "bg-jet border border-jet p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-dim-gray text-white-smoke",
+            "bg-neutral-jet border border-neutral-jet p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-dim-gray text-neutral-white-smoke",
             className
           )
         }
@@ -31,7 +31,7 @@ export const DynamicFormField: React.FC<DynamicFormFieldProps> = ({ field: { typ
         name={title}
         className={
           clsx(
-            "bg-jet border border-jet p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-dim-gray text-white-smoke",
+            "bg-neutral-jet border border-neutral-jet p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-dim-gray text-neutral-white-smoke",
             className
           )
         }

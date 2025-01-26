@@ -44,7 +44,8 @@ export default async function Post({ params }: PostProps) {
   return (
     <main className="px-4 py-8 mt-0 md:px-60">
       <section className="mb-7 flex flex-row items-center">
-        <RichText field={post.data.title} classNames={{ heading1: { className: "text-rose flex-1 m-0", overrideDefault: true } }} />
+        <RichText field={post.data.title} classNames={{ heading1: { className: "text-primary flex-1 m-0", overrideDefault: true } }} />
+        
         <LinkButton href="/">
           <FontAwesomeIcon icon={faArrowLeft} className="mr-1.5" />
           Projetos

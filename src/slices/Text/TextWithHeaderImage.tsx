@@ -13,7 +13,7 @@ type TextWithHeaderAndImageProps = {
 }
 
 export const TextWithHeaderAndImage: React.FC<TextWithHeaderAndImageProps> = ({ text, header, image, isTextLeft }) => (
-  <div className="flex flex-col md:flex-row items-center justify-between w-full py-3 border-b border-t border-jet">
+  <div className="flex flex-col md:flex-row items-center justify-between w-full py-3 border-b border-t border-neutral-jet">
     {(isFilled.richText(header) || isFilled.richText(text)) &&
       <div className={
         clsx(

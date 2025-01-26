@@ -232,6 +232,26 @@ export type PostDocument<Lang extends string = string> =
  */
 interface SocialMediaDocumentData {
   /**
+   * Tipo field in *Rede Social*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.type
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  type: prismic.SelectField<
+    | "Instagram"
+    | "Facebook"
+    | "Threads"
+    | "X"
+    | "TikTok"
+    | "Behance"
+    | "Pinterest"
+    | "YouTube"
+  >;
+
+  /**
    * Link field in *Rede Social*
    *
    * - **Field Type**: Link

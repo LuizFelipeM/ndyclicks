@@ -4,6 +4,49 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Content for Dados de contato documents
+ */
+interface ContactDataDocumentData {
+  /**
+   * E-mail field in *Dados de contato*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_data.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Número de celular field in *Dados de contato*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_data.tel_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tel_number: prismic.KeyTextField;
+}
+
+/**
+ * Dados de contato document from Prismic
+ *
+ * - **API ID**: `contact_data`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactDataDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ContactDataDocumentData>,
+    "contact_data",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | FormSlice
   | ImageSlice
@@ -195,7 +238,63 @@ interface PostDocumentData {
 export type PostDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
 
-export type AllDocumentTypes = PageDocument | PostDocument;
+/**
+ * Content for Rede Social documents
+ */
+interface SocialMediaDocumentData {
+  /**
+   * Tipo field in *Rede Social*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.type
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  type: prismic.SelectField<
+    | "Instagram"
+    | "Facebook"
+    | "Threads"
+    | "X"
+    | "TikTok"
+    | "Behance"
+    | "Pinterest"
+    | "YouTube"
+  >;
+
+  /**
+   * Link field in *Rede Social*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Rede Social document from Prismic
+ *
+ * - **API ID**: `social_media`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SocialMediaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SocialMediaDocumentData>,
+    "social_media",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | ContactDataDocument
+  | PageDocument
+  | PostDocument
+  | SocialMediaDocument;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -339,6 +438,17 @@ export interface FormSliceDefaultPrimaryFieldsItem {
  * Primary content in *Form → Default → Primary*
  */
 export interface FormSliceDefaultPrimary {
+  /**
+   * Enviar respostas por? field in *Form → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Canal para receber as respostas dos clientes
+   * - **Default Value**: E-mail
+   * - **API ID Path**: form.default.primary.send_answers_by
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  send_answers_by: prismic.SelectField<"E-mail" | "SMS", "filled">;
+
   /**
    * Campos field in *Form → Default → Primary*
    *
@@ -1540,12 +1650,16 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ContactDataDocument,
+      ContactDataDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       PostDocument,
       PostDocumentData,
       PostDocumentDataSlicesSlice,
+      SocialMediaDocument,
+      SocialMediaDocumentData,
       AllDocumentTypes,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,

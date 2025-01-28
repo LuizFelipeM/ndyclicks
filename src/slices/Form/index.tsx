@@ -1,6 +1,6 @@
 import DynamicForm from "@/components/DynamicForm/DynamicForm";
-import { FieldType } from '@/components/DynamicForm/FieldType';
-import { Field } from '@/components/DynamicForm/Field';
+import { FieldType } from "@/components/DynamicForm/FieldType";
+import { Field } from "@/components/DynamicForm/Field";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -10,25 +10,25 @@ type ContentFieldType =
   | "Número"
   | "E-mail"
   | "Data"
-  | "Número de Telefone"
+  | "Número de Telefone";
 
 const convertToFieldType = (type: ContentFieldType): FieldType => {
   switch (type) {
     case "Texto longo (múltiplas linhas)":
-      return "textarea"
+      return "textarea";
     case "E-mail":
-      return "email"
+      return "email";
     case "Número":
-      return "number"
+      return "number";
     case "Data":
-      return "date"
+      return "date";
     case "Número de Telefone":
-      return "tel"
+      return "tel";
     case "Texto curto":
     default:
-      return "text"
+      return "text";
   }
-}
+};
 
 /**
  * Props for `Form`.
@@ -39,14 +39,18 @@ export type FormProps = SliceComponentProps<Content.FormSlice>;
  * Component for "Form" Slices.
  */
 const Form = ({ slice }: FormProps): JSX.Element => {
-  const convertToFormField = (fields: Content.FormSlice["primary"]["fields"]): Field[] =>
+  const convertToFormField = (
+    fields: Content.FormSlice["primary"]["fields"]
+  ): Field[] =>
     fields
-      .filter(({ title, type }) => isFilled.keyText(title) && isFilled.select(type))
+      .filter(
+        ({ title, type }) => isFilled.keyText(title) && isFilled.select(type)
+      )
       .map(({ title, type, required }) => ({
         title: title!,
         type: convertToFieldType(type!),
-        required
-      }))
+        required,
+      }));
 
   return (
     <section
@@ -54,10 +58,12 @@ const Form = ({ slice }: FormProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="my-8"
     >
-      {isFilled.group(slice.primary.fields) &&
+      {isFilled.group(slice.primary.fields) && (
         <DynamicForm
+          channel={slice.primary.send_answers_by === "E-mail" ? "email" : "sms"}
           fields={convertToFormField(slice.primary.fields)}
-        />}
+        />
+      )}
     </section>
   );
 };

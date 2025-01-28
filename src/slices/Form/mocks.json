@@ -84,6 +84,11 @@
 						]
 					}
 				]
+			},
+			"send_answers_by": {
+				"__TYPE__": "FieldContent",
+				"value": "E-mail",
+				"type": "Select"
 			}
 		},
 		"items": []

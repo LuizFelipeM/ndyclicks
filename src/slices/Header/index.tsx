@@ -3,12 +3,12 @@ import { JSXMapSerializer, PrismicRichText, SliceComponentProps } from "@prismic
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <h1 className="font-Roboto text-rose font-bold text-left text-[2.75rem] lg:text-center md:text-[10rem]">
+    <h1 className="font-Roboto text-primary font-bold text-left text-[2.75rem] lg:text-center md:text-[10rem]">
       {children}
     </h1>
   ),
   heading2: ({ children }) => (
-    <h2 className="font-Roboto font-light text-white-smoke text-left text-[1.5rem] lg:text-center lg:text-[2.25rem] mb-3">
+    <h2 className="font-Roboto font-light text-neutral-white-smoke text-left text-[1.5rem] lg:text-center lg:text-[2.25rem] mb-3">
       {children}
     </h2>
   ),

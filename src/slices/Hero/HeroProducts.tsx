@@ -45,7 +45,7 @@ export const HeroProducts: React.FC<HeroProductsProps> = ({
             )
         )}
       </div>
-      <span className="absolute bottom-4 right-4 text-savoy-blue text-3xl font-bold font-serif text-shadow-md z-10">
+      <span className="absolute bottom-4 right-4 text-primary text-3xl font-bold font-serif md z-10">
         Nandayara
       </span>
     </div>

@@ -23,7 +23,7 @@ export const LinkButton: React.FC<ButtonProps> = ({ children, href, className, o
       {...props}
       className={
         clsx(
-          !overrideDefault && "inline-flex items-center bg-savoy-blue text-white-smoke rounded-full px-4 h-10",
+          !overrideDefault && "inline-flex items-center bg-primary text-neutral-white-smoke rounded-full px-4 h-10",
           className
         )
       }

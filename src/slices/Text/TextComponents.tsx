@@ -7,12 +7,12 @@ export const TextComponents: JSXMapSerializer = {
     </h2>
   ),
   strong: ({ children }) => (
-    <strong className="text-savoy-blue">
+    <strong className="text-primary">
       {children}
     </strong>
   ),
   em: ({ children }) => (
-    <em className="text-rose font-serif">
+    <em className="text-secondary-olive-dark font-serif">
       {children}
     </em>
   )

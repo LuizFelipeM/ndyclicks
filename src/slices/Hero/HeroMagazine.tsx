@@ -24,7 +24,7 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
   return (
     <div className={
       clsx(
-        "relative w-full h-screen bg-gray-100 flex flex-col justify-between p-6",
+        "relative w-full h-screen flex flex-col justify-between p-6 text-neutral-white-smoke",
         className
       )
     }>
@@ -39,9 +39,9 @@ export const HeroMagazine: React.FC<HeroMagazineProps> = ({ title, text, buttons
           className="
             absolute inset-0
             bg-gradient-to-t
-            from-rich-black from-5%
+            from-neutral-night from-5%
             via-transparent via-30%
-            to-rich-black to-95%
+            to-neutral-night to-95%
             opacity-35
           "
         />

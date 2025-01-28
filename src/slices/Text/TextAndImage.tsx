@@ -11,7 +11,7 @@ type TextAndImageProps = {
 }
 
 export const TextAndImage: React.FC<TextAndImageProps> = ({ text, image, isTextLeft }) => (
-  <div className="flex flex-col md:flex-row items-center justify-between w-full py-3 border-b border-t border-jet">
+  <div className="flex flex-col md:flex-row items-center justify-between w-full py-3 border-b border-t border-neutral-jet">
     {isFilled.richText(text) &&
       <div className={
         clsx(

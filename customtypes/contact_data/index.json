@@ -1,0 +1,25 @@
+{
+  "format": "custom",
+  "id": "contact_data",
+  "label": "Dados de contato",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "E-mail",
+          "placeholder": ""
+        }
+      },
+      "tel_number": {
+        "type": "Text",
+        "config": {
+          "label": "Número de celular",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

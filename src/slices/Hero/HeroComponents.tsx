@@ -5,7 +5,7 @@ export const HeroComponents: JSXMapSerializer = {
     <h1
       className="
         mb-6 mt-12 first:mt-0 last:mb-0
-        text-rose text-shadow-md font-serif font-extrabold
+        text-secondary-olive-light text-shadow-md font-serif font-extrabold
         tracking-tighter leading-none md:leading-tight
         text-[16vw] md:text-[6rem]
         fancy-wipe

@@ -5,34 +5,45 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
- * Content for Email de contato documents
+ * Content for Dados de contato documents
  */
-interface ContactEmailDocumentData {
+interface ContactDataDocumentData {
   /**
-   * Email field in *Email de contato*
+   * E-mail field in *Dados de contato*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact_email.email
+   * - **API ID Path**: contact_data.email
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   email: prismic.KeyTextField;
+
+  /**
+   * Número de celular field in *Dados de contato*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_data.tel_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tel_number: prismic.KeyTextField;
 }
 
 /**
- * Email de contato document from Prismic
+ * Dados de contato document from Prismic
  *
- * - **API ID**: `contact_email`
+ * - **API ID**: `contact_data`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type ContactEmailDocument<Lang extends string = string> =
+export type ContactDataDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
-    Simplify<ContactEmailDocumentData>,
-    "contact_email",
+    Simplify<ContactDataDocumentData>,
+    "contact_data",
     Lang
   >;
 
@@ -280,7 +291,7 @@ export type SocialMediaDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
-  | ContactEmailDocument
+  | ContactDataDocument
   | PageDocument
   | PostDocument
   | SocialMediaDocument;
@@ -427,6 +438,17 @@ export interface FormSliceDefaultPrimaryFieldsItem {
  * Primary content in *Form → Default → Primary*
  */
 export interface FormSliceDefaultPrimary {
+  /**
+   * Enviar respostas por? field in *Form → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Canal para receber as respostas dos clientes
+   * - **Default Value**: E-mail
+   * - **API ID Path**: form.default.primary.send_answers_by
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  send_answers_by: prismic.SelectField<"E-mail" | "SMS", "filled">;
+
   /**
    * Campos field in *Form → Default → Primary*
    *
@@ -1628,8 +1650,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      ContactEmailDocument,
-      ContactEmailDocumentData,
+      ContactDataDocument,
+      ContactDataDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

@@ -12,6 +12,18 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "send_answers_by": {
+          "type": "Select",
+          "config": {
+            "label": "Enviar respostas por?",
+            "placeholder": "Canal para receber as respostas dos clientes",
+            "options": [
+              "E-mail",
+              "SMS"
+            ],
+            "default_value": "E-mail"
+          }
+        },
         "fields": {
           "type": "Group",
           "config": {

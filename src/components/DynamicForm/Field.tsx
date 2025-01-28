@@ -1,6 +1,4 @@
-"use client";
-import { FieldType } from './FieldType';
-
+import { FieldType } from "./FieldType";
 
 export type Field = {
   title: string;

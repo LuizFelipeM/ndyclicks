@@ -6,10 +6,11 @@ import { DynamicFormField } from "./DynamicFormField";
 import { emailRegex } from "@/utils/regex";
 
 type DynamicFormProps = {
+  channel: "email" | "sms";
   fields: Field[];
 };
 
-const DynamicForm: React.FC<DynamicFormProps> = ({ fields }) => {
+const DynamicForm: React.FC<DynamicFormProps> = ({ channel, fields }) => {
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [errors, setErrors] = useState<Record<string, string | undefined>>({});
 
@@ -45,37 +46,41 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields }) => {
     setErrors((prev) => ({ ...prev, [title]: error }));
   };
 
-  const handleSubmit = (_: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const newErrors: Record<string, string | undefined> = {};
+  const handleSubmit = async (
+    _: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    try {
+      const newErrors: Record<string, string | undefined> = {};
 
-    fields.forEach((field) => {
-      const error = validateField(
-        field.title,
-        formData[field.title],
-        field.type
-      );
-      newErrors[field.title] = error;
-    });
+      fields.forEach((field) => {
+        const error = validateField(
+          field.title,
+          formData[field.title],
+          field.type
+        );
 
-    if (Object.keys(newErrors).length === 0) {
-      console.log('formData', formData)
+        if (error) newErrors[field.title] = error;
+      });
+
       const emailField = fields.find((v) => v.type === "email");
-      fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({
-          name: "Test",
-          email: emailField && formData[emailField.title],
-          message: Object.entries(formData).reduce(
-            (message, [title, value]) => message + `\n${title}: ${value}`,
-            ""
-          ),
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log("data", data))
-        .catch((error) => console.error(error));
-    } else {
-      setErrors(newErrors);
+      if (Object.keys(newErrors).length === 0 && emailField) {
+        await fetch(`/api/contact/${channel}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fields: Object.entries(formData).map(([title, value]) => ({
+              title,
+              value,
+            })),
+          }),
+        });
+      } else {
+        setErrors(newErrors);
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
 

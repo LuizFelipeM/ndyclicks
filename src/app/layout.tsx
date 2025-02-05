@@ -4,6 +4,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import "./globals.css";
 import Footer from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className="bg-neutral-white-smoke font-Roboto text-neutral-jet-dark p-0 m-0">
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,16 +1,23 @@
-import { GroupField, isFilled } from '@prismicio/client'
-import React from 'react'
-import { ImageSliceImagesInColumnsPrimaryImagesItem, Simplify } from '../../../prismicio-types'
-import { PrismicImage } from '@prismicio/react'
-import "./ImagesInColumns.css"
+import { GroupField, isFilled } from "@prismicio/client";
+import React from "react";
+import {
+  ImageSliceImagesInColumnsPrimaryImagesItem,
+  Simplify,
+} from "../../../prismicio-types";
+import { PrismicImage } from "@prismicio/react";
+import "./ImagesInColumns.css";
 
 type ImagesInColumnsProps = {
-  cols?: number
-  imagesHeight?: number
-  images: GroupField<Simplify<ImageSliceImagesInColumnsPrimaryImagesItem>>
-}
+  cols?: number;
+  imagesHeight?: number;
+  images: GroupField<Simplify<ImageSliceImagesInColumnsPrimaryImagesItem>>;
+};
 
-export const ImagesInColumns: React.FC<ImagesInColumnsProps> = ({ images, imagesHeight = 600, cols = 2 }) => {
+export const ImagesInColumns: React.FC<ImagesInColumnsProps> = ({
+  images,
+  imagesHeight = 600,
+  cols = 2,
+}) => {
   return (
     <div
       style={{ "--cols": cols }}
@@ -25,10 +32,10 @@ export const ImagesInColumns: React.FC<ImagesInColumnsProps> = ({ images, images
           >
             <PrismicImage
               field={image}
-              className="absolute inset-0 w-auto h-full m-auto object-cover rounded-lg"
+              className="absolute inset-0 w-auto h-full m-auto rounded-lg"
             />
           </div>
         ))}
     </div>
-  )
-}
+  );
+};

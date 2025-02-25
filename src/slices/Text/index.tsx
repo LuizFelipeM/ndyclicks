@@ -54,6 +54,7 @@ const Text = ({ slice }: TextProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="mt-4 mb-4"
     >
       <VariationSelector slice={slice} />
     </section>

@@ -31,6 +31,9 @@ const config: Config = {
     colors: {
       transparent: "transparent",
       black: "#000000",
+      white: "#FFFFFF",
+      brown: "#663E2A",
+      olive: "#6F7D5C",
 
       error: "#DF1F1F",
 
@@ -62,6 +65,8 @@ const config: Config = {
 
     extend: {
       fontFamily: {
+        abhaya: ["Abhaya Libre", "serif"],
+        inspiration: ["Inspiration", "cursive"],
         Roboto: ["Roboto", "sans-serif"],
       },
       textShadow: {

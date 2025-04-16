@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brown: #663E2A;
+    --color-olive: #6F7D5C;
+  }
+
+  body {
+    @apply bg-white text-brown;
+  }
+}
+
+@layer components {
+  .btn {
+    /* @apply inline-block px-6 py-2 bg-brown text-white rounded-full hover:bg-brown/90 transition-colors; */
+    @apply flex items-center gap-2 px-6 py-2 text-white rounded-full border border-transparent transition-all hover:backdrop-blur-sm hover:shadow-sm;
+  }
+
+  .btn::after {
+    @apply content-[""] block w-12 h-12 bg-[url('/semi-divisa-botao-direita-BRANCO.svg')] bg-contain bg-no-repeat bg-center;
+  }
+}
+
+/* Custom styles for background patterns and decorative elements */
+/* .bg-pattern {
+  background-image: url('/arabesco-marca-dagua.svg');
+  background-repeat: repeat;
+  background-size: 200px;
+  opacity: 0.1;
+} */

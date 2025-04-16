@@ -32,8 +32,6 @@ const config: Config = {
       transparent: "transparent",
       black: "#000000",
       white: "#FFFFFF",
-      brown: "#663E2A",
-      olive: "#6F7D5C",
 
       error: "#DF1F1F",
 
@@ -44,11 +42,9 @@ const config: Config = {
       },
 
       secondary: {
-        olive: {
-          DEFAULT: "#8C9A76",
-          light: "#A2B28A",
-          dark: "#6F7D5C",
-        },
+        DEFAULT: "#6F7D5C",
+        light: "#A2B28A",
+        dark: "#8C9A76",
       },
 
       neutral: {

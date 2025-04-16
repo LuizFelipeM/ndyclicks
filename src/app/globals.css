@@ -9,18 +9,17 @@
   }
 
   body {
-    @apply bg-white text-brown;
+    @apply bg-white text-primary;
   }
 }
 
 @layer components {
   .btn {
-    /* @apply inline-block px-6 py-2 bg-brown text-white rounded-full hover:bg-brown/90 transition-colors; */
     @apply flex items-center gap-2 px-6 py-2 text-white rounded-full border border-transparent transition-all hover:backdrop-blur-sm hover:shadow-sm;
   }
 
   .btn::after {
-    @apply content-[""] block w-12 h-12 bg-[url('/semi-divisa-botao-direita-BRANCO.svg')] bg-contain bg-no-repeat bg-center;
+    @apply content-[""] block w-12 h-5 bg-[url('/semi-divisa-botao-direita-BRANCO.svg')] bg-contain bg-no-repeat bg-center;
   }
 }
 

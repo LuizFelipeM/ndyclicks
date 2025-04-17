@@ -2,31 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base {
   :root {
     --color-brown: #663E2A;
     --color-olive: #6F7D5C;
+    --color-white: #FFFFFF;
   }
 
   body {
     @apply bg-white text-primary;
   }
-}
+} */
 
 @layer components {
   .btn {
-    @apply flex items-center gap-2 px-6 py-2 text-white rounded-full border border-transparent transition-all hover:backdrop-blur-sm hover:shadow-sm;
+    @apply flex items-center gap-2
+      px-6 py-2
+      text-white
+      rounded-full
+      text-button;
   }
 
   .btn::after {
-    @apply content-[""] block w-12 h-5 bg-[url('/semi-divisa-botao-direita-BRANCO.svg')] bg-contain bg-no-repeat bg-center;
+    @apply w-12 h-5;
+
+    content: "";
+    display: block;
+    background-image: url("/semi-divisa-botao-direita-BRANCO.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Custom styles for background patterns and decorative elements */
+  .bg-arabesco-left {
+    background-image: url("/arabesco.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .bg-arabesco-right {
+    background-image: url("/arabesco.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
   }
 }
-
-/* Custom styles for background patterns and decorative elements */
-/* .bg-pattern {
-  background-image: url('/arabesco-marca-dagua.svg');
-  background-repeat: repeat;
-  background-size: 200px;
-  opacity: 0.1;
-} */

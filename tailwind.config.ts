@@ -30,37 +30,37 @@ const config: Config = {
   theme: {
     fontSize: {
       "hero-title": [
-        "4.75rem",
-        {
-          lineHeight: "1",
-        },
-      ],
-      title: [
         "4rem",
         {
           lineHeight: "1",
         },
       ],
+      title: [
+        "3rem",
+        {
+          lineHeight: "1",
+        },
+      ],
       subtitle: [
-        "3.5rem",
+        "2.25rem",
         {
           lineHeight: "1",
         },
       ],
       paragraph: [
-        "2.5rem",
+        "2rem",
         {
           lineHeight: "1",
         },
       ],
       button: [
-        "2.5rem",
+        "2rem",
         {
           lineHeight: "1",
         },
       ],
       footer: [
-        "2rem",
+        "1rem",
         {
           lineHeight: "2rem",
         },

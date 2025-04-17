@@ -7,6 +7,13 @@ import { components } from "@/slices";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import dynamic from "next/dynamic";
+
+const TestimonialSlider = dynamic(() => import("@/components/TestimonialSlider"), {
+  ssr: false
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
@@ -49,7 +56,6 @@ export default async function Home() {
           </p>
         </div>
 
-        {/* <div className="w-2/6 h-4/6 absolute -bottom-full -translate-y-full left-1/2 -translate-x-1/2 "> */}
         <div className="w-2/6 h-4/6 absolute -bottom-80 left-1/2 -translate-x-1/2 ">
           <div className="w-[21rem] h-[32rem] p-3 z-10 absolute left-1/3 -translate-x-1/2 border-[14px] border-white shadow-md -rotate-[22deg]">
             <Image
@@ -67,12 +73,6 @@ export default async function Home() {
               className="object-cover"
             />
           </div>
-          {/* <Image
-            src="/fotografias.png"
-            alt="Eventos e ensaios"
-            fill
-            className="object-contain"
-          /> */}
         </div>
       </section>
 
@@ -143,8 +143,8 @@ export default async function Home() {
             <div className="text-primary m-auto mx-10">
               <h2
                 className="
-              font-abhaya font-extrabold text-center text-subtitle mb-4
-              after:content-[''] after:m-auto after:block after:w-52 after:h-8 after:mt-4 after:bg-[url('/divisa-marrom-PEQUENA.svg')] after:bg-contain after:bg-no-repeat after:bg-center"
+                font-abhaya font-extrabold text-center text-subtitle mb-4
+                after:content-[''] after:m-auto after:block after:w-52 after:h-8 after:mt-4 after:bg-[url('/divisa-marrom-PEQUENA.svg')] after:bg-contain after:bg-no-repeat after:bg-center"
               >
                 Mercado Pet
               </h2>
@@ -176,53 +176,26 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Culinary Section */}
-      <section className="pb-16 px-4 md:px-8 bg-secondary-dark/10">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-          <div className="relative aspect-square">
-            <Image
-              src="/fotografias.png"
-              alt="Culinária"
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
-          <div className="text-left">
-            <h2 className="font-abhaya font-extrabold text-3xl md:text-4xl text-primary mb-4">
-              Culinária
-            </h2>
-            <p className="text-secondary-dark mb-6">
-              Nossas fotografias destacam a harmonia das cores, das formas e dos
-              detalhes. Cada imagem valoriza o capricho presente em cada mesa.
-            </p>
-            <Link href="/culinaria" className="btn">
-              Confira
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section className="pb-16 px-4 md:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="font-abhaya font-extrabold text-3xl md:text-4xl text-primary mb-12">
+        <div className="max-w-6xl mx-auto text-center pb-32 px-4 md:px-8">
+          <h2
+            className="
+            flex items-center justify-center gap-2
+            font-abhaya font-extrabold text-title text-primary mb-4
+            after:content-[''] after:block after:w-32 after:h-5 after:bg-[url('/semi-divisa-botao-direita-MARROM.svg')] after:bg-contain after:bg-no-repeat after:bg-center
+            before:content-[''] before:block before:w-32 before:h-5 before:bg-[url('/semi-divisa-botao-esquerda-MARROM.svg')] before:bg-contain before:bg-no-repeat before:bg-center"
+          >
             Depoimentos
           </h2>
-          <p className="text-secondary-dark mb-8">
+          <p className="text-paragraph text-primary max-w-2xl mx-auto">
             Histórias reais de pessoas reais que experienciaram ter momentos
             mágicos registrados.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Testimonial cards would go here - this is a placeholder */}
-            <div className="bg-secondary-dark/20 p-6 rounded-lg">
-              <p className="text-primary italic mb-4">
-                "Estou emocionada! Nunca tinha um registro da minha barriga que
-                realmente amasse — agora tenho. As fotos ficaram perfeitas!"
-              </p>
-              <p className="font-bold text-primary">- Ana Carolina</p>
-            </div>
-            {/* Add more testimonial cards as needed */}
-          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto">
+          <TestimonialSlider />
         </div>
       </section>
     </main>

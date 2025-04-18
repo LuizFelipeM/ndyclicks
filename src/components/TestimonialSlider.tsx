@@ -1,8 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useCallback, useMemo, useReducer } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import TestimonialCard from "./TestimonialCard";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
 
 interface Testimonial {
@@ -12,104 +14,134 @@ interface Testimonial {
   author: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    imageSrc: "/foto-ana.avif",
-    testimonial: "Estou emocionada! Nunca tinha um registro da minha barriga que realmente amasse - agora tenho. As fotos ficaram perfeitas [...] Muito obrigada!",
-    author: "Ana Carolina"
-  },
-  {
-    id: 2,
-    imageSrc: "/testimonial2.jpg",
-    testimonial: "Uma experiência incrível! As fotos capturaram exatamente o que eu queria transmitir. Cada detalhe foi pensado com muito carinho.",
-    author: "Maria Silva"
-  },
-  {
-    id: 3,
-    imageSrc: "/testimonial3.jpg",
-    testimonial: "Um olhar único e sensível que transformou momentos em memórias eternas. Gratidão por todo o profissionalismo.",
-    author: "Ana Oliveira"
+const PREV = "PREV";
+const NEXT = "NEXT";
+type Direction = typeof PREV | typeof NEXT;
+
+interface CarouselState {
+  position: number;
+  sliding: boolean;
+  direction: Direction;
+}
+
+type CarouselAction = { type: Direction; numItems: number } | { type: "STOP" };
+
+const getOrder = (index: number, position: number, numItems: number) => {
+  return index - position < 0
+    ? numItems - Math.abs(index - position)
+    : index - position;
+};
+
+const getInitialState = (numItems: number): CarouselState => ({
+  position: numItems - (numItems % 2 === 0 ? 2 : 1),
+  sliding: false,
+  direction: NEXT,
+});
+
+function reducer(state: CarouselState, action: CarouselAction): CarouselState {
+  switch (action.type) {
+    case PREV:
+      return {
+        direction: PREV,
+        sliding: true,
+        position:
+          state.position === 0 ? action.numItems - 1 : state.position - 1,
+      };
+    case NEXT:
+      return {
+        direction: NEXT,
+        sliding: true,
+        position:
+          state.position === action.numItems - 1 ? 0 : state.position + 1,
+      };
+    case "STOP":
+      return {
+        ...state,
+        sliding: false,
+      };
+    default:
+      return state;
   }
-];
+}
 
-export default function TestimonialSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+export const TestimonialSlider: React.FC<{ children: React.ReactNode }> = ({
+  children: childrenProp,
+}) => {
+  const children = useMemo(() => {
+    if (React.Children.count(childrenProp) % 5 === 0) return [childrenProp];
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
+    const result: React.ReactNode[] = [childrenProp];
+    const arrayChildren = React.Children.toArray(childrenProp);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-  };
-
-  useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-
-    if (isAutoPlaying) {
-      intervalId = setInterval(nextSlide, 5000);
+    let i = 0;
+    while (React.Children.count(result) % 5 !== 0) {
+      result.push(arrayChildren[i]);
+      i++;
     }
+    return result;
+  }, [childrenProp]);
 
-    return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
-    };
-  }, [isAutoPlaying]);
+  const numChildren = React.Children.count(children);
+
+  const [state, dispatch] = useReducer(reducer, getInitialState(numChildren));
+
+  const slide = (direction: Direction) => {
+    dispatch({ type: direction, numItems: numChildren });
+    setTimeout(() => dispatch({ type: "STOP" }), 500);
+  };
 
   const handlers = useSwipeable({
-    onSwipedLeft: () => nextSlide(),
-    onSwipedRight: () => prevSlide(),
+    onSwipedLeft: () => slide(NEXT),
+    onSwipedRight: () => slide(PREV),
+    swipeDuration: 500,
     preventScrollOnSwipe: true,
-    trackMouse: true
+    trackMouse: true,
   });
 
-  const getVisibleTestimonials = () => {
-    const lastIndex = testimonials.length - 1;
-    const prevIndex = currentIndex === 0 ? lastIndex : currentIndex - 1;
-    const nextIndex = currentIndex === lastIndex ? 0 : currentIndex + 1;
-
-    return [
-      { ...testimonials[prevIndex], isActive: false },
-      { ...testimonials[currentIndex], isActive: true },
-      { ...testimonials[nextIndex], isActive: false },
-    ];
-  };
-
   return (
-    <div className="relative " {...handlers}>
-      <div className="flex justify-center items-center gap-4">
-        {getVisibleTestimonials().map((testimonial, index) => (
-          <TestimonialCard
-            key={`${testimonial.id}-${index}`}
-            imageSrc={testimonial.imageSrc}
-            testimonial={testimonial.testimonial}
-            author={testimonial.author}
-            isActive={testimonial.isActive}
-          />
-        ))}
+    <div className="relative" {...handlers}>
+      <div className="w-full overflow-hidden">
+        <div
+          className="flex justify-center items-center gap-20 transform-gpu"
+          style={{
+            transition: state.sliding ? "none" : "all 1s ease",
+            transform: !state.sliding
+              ? `translateX(-30rem -5rem)`
+              : state.direction === PREV
+                ? `translateX(calc(2 * (-30rem -5rem)))`
+                : `translateX(0%)`,
+          }}
+        >
+          {React.Children.map(children, (child, index) => {
+            const order = getOrder(index, state.position, numChildren)
+            const isActive = order === 2
+            return (
+            <div
+              style={{
+                transition: "all 500ms ease",
+                order: order,
+                opacity: isActive ? 1 : 0.5,
+                scale: isActive ? 1 : 0.9,
+              }}
+            >
+              {child}
+            </div>
+          )})}
+        </div>
       </div>
 
       <div className="flex justify-center items-center gap-4 mt-8">
         <button
-          onClick={() => {
-            setIsAutoPlaying(false);
-            prevSlide();
-          }}
+          id="PREV"
+          onClick={() => slide(PREV)}
           className="p-2 text-secondary hover:text-secondary-light transition-colors"
           aria-label="Previous testimonial"
         >
           <FontAwesomeIcon icon={faChevronLeft} size="2x" />
         </button>
         <button
-          onClick={() => {
-            setIsAutoPlaying(false);
-            nextSlide();
-          }}
+          id="NEXT"
+          onClick={() => slide(NEXT)}
           className="p-2 text-secondary hover:text-secondary-light transition-colors"
           aria-label="Next testimonial"
         >
@@ -118,4 +150,4 @@ export default function TestimonialSlider() {
       </div>
     </div>
   );
-} 
+};

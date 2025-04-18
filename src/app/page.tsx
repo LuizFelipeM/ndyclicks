@@ -10,10 +10,8 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import dynamic from "next/dynamic";
-
-const TestimonialSlider = dynamic(() => import("@/components/TestimonialSlider"), {
-  ssr: false
-});
+import { TestimonialSlider } from "@/components/TestimonialSlider";
+import { TestimonialCard } from "@/components/TestimonialCard";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
@@ -28,6 +26,30 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   };
 }
+
+const testimonials = [
+  {
+    id: 1,
+    imageSrc: "/foto-ana.avif",
+    testimonial:
+      "Estou emocionada! Nunca tinha um registro da minha barriga que realmente amasse - agora tenho. As fotos ficaram perfeitas [...] Muito obrigada!",
+    author: "Ana Carolina",
+  },
+  {
+    id: 2,
+    imageSrc: "/testimonial2.jpg",
+    testimonial:
+      "Uma experiência incrível! As fotos capturaram exatamente o que eu queria transmitir. Cada detalhe foi pensado com muito carinho.",
+    author: "Maria Silva",
+  },
+  {
+    id: 3,
+    imageSrc: "/testimonial3.jpg",
+    testimonial:
+      "Um olhar único e sensível que transformou momentos em memórias eternas. Gratidão por todo o profissionalismo.",
+    author: "Ana Oliveira",
+  },
+];
 
 export default async function Home() {
   const client = createClient();
@@ -195,7 +217,17 @@ export default async function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <TestimonialSlider />
+          <TestimonialSlider>
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={`${testimonial.id}-${index}`}
+                imageSrc={testimonial.imageSrc}
+                testimonial={testimonial.testimonial}
+                author={testimonial.author}
+                // isActive={testimonial.isActive}
+              />
+            ))}
+          </TestimonialSlider>
         </div>
       </section>
     </main>

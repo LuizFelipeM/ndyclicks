@@ -4,6 +4,7 @@ import { Field } from "./Field";
 import { FieldType } from "./FieldType";
 import { DynamicFormField } from "./DynamicFormField";
 import { emailRegex } from "@/utils/regex";
+import { Card } from "../Card";
 
 type DynamicFormProps = {
   channel: "email" | "sms";
@@ -85,33 +86,35 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ channel, fields }) => {
   };
 
   return (
-    <form className="space-y-4">
-      {fields.map((field, index) => (
-        <div key={index} className="flex flex-col">
-          <label className="mb-2 font-semibold">{field.title}</label>
+    <Card className="m-auto max-w-[90vw] lg:max-w-[50vw]">
+      <form className="space-y-4">
+        {fields.map((field, index) => (
+          <div key={index} className="flex flex-col">
+            <label className="mb-2 font-semibold">{field.title}</label>
 
-          <DynamicFormField
-            field={field}
-            onChange={handleChange}
-            className={errors[field.title] && "border-error"}
-          />
+            <DynamicFormField
+              field={field}
+              onChange={handleChange}
+              className={errors[field.title] && "border-error"}
+            />
 
-          {errors[field.title] && (
-            <span className="text-error text-sm mt-1">
-              {errors[field.title]}
-            </span>
-          )}
-        </div>
-      ))}
+            {errors[field.title] && (
+              <span className="text-error text-sm mt-1">
+                {errors[field.title]}
+              </span>
+            )}
+          </div>
+        ))}
 
-      <button
-        type="button"
-        onClick={handleSubmit}
-        className="inline-flex items-center bg-secondary-olive-dark text-neutral-white-smoke rounded-full px-4 h-10"
-      >
-        Enviar
-      </button>
-    </form>
+        <button
+          type="button"
+          onClick={handleSubmit}
+          className="inline-flex items-center bg-secondary-olive-dark text-neutral-white-smoke rounded-full px-4 h-10"
+        >
+          Enviar
+        </button>
+      </form>
+    </Card>
   );
 };
 

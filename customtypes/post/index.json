@@ -32,6 +32,15 @@
           "thumbnails": []
         }
       },
+      "short_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Descrição curta",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

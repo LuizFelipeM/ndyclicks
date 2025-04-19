@@ -1,27 +1,26 @@
-import clsx from "clsx";
-import Image from "next/image";
+import { ImageField, isFilled, RichTextField } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 import { ImQuotesLeft } from "react-icons/im";
+import { RichText } from "./RichText";
+import { PiTildeBold } from "react-icons/pi";
+import { Card } from "./Card";
+
 interface TestimonialCardProps {
-  imageSrc: string;
-  testimonial: string;
-  author: string;
+  image: ImageField<never>;
+  testimonial: RichTextField;
+  author: RichTextField;
   isActive?: boolean;
 }
 
 export const TestimonialCard: React.FC<TestimonialCardProps> = ({
-  imageSrc,
+  image,
   testimonial,
   author,
   isActive = true,
 }) => {
   return (
-    <div
-      className="
-        min-w-[30rem] max-w-[30rem] transition-all duration-500
-        p-12 pt-32 mt-20
-        bg-secondary relative rounded-tl-md rounded-br-md rounded-tr-[80px] rounded-bl-[80px] text-center 
-        after:content-[''] after:w-72 after:h-64 after:absolute after:-top-4 after:-left-16 after:bg-arabesco-right
-        cursor-grab select-none"
+    <Card
+      className="cursor-grab select-none pt-32 mt-20"
       style={{
         opacity: isActive ? 1 : 0.5,
         scale: isActive ? 1 : 0.9,
@@ -29,12 +28,9 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
     >
       <div className="absolute z-50 -top-16 left-1/2 -translate-x-1/2 w-32 h-32">
         <div className="relative w-full h-full rounded-tr-md rounded-bl-md rounded-tl-[40px] rounded-br-[40px] overflow-hidden">
-          <Image
-            src={imageSrc}
-            alt={`Depoimento de ${author}`}
-            fill
-            className="object-cover"
-          />
+          {isFilled.image(image) && (
+            <PrismicNextImage field={image} fill className="object-cover" />
+          )}
         </div>
       </div>
 
@@ -46,8 +42,18 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
         <ImQuotesLeft size={40} />
       </div>
 
-      <p className="text-paragraph text-white mb-6">{testimonial}</p>
-      <p className="text-paragraph font-bold text-white">~ {author}</p>
-    </div>
+      {isFilled.richText(testimonial) && (
+        <RichText
+          field={testimonial}
+          classNames={{ paragraph: "text-white mb-10" }}
+        />
+      )}
+      <span className="flex items-center gap-2 justify-center">
+        <PiTildeBold size={25} className="text-white" />{" "}
+        {isFilled.richText(author) && (
+          <RichText field={author} classNames={{ paragraph: "text-white" }} />
+        )}
+      </span>
+    </Card>
   );
 };

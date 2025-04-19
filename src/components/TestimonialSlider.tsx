@@ -1,11 +1,7 @@
 "use client";
 import React, { useCallback, useMemo, useReducer } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 interface Testimonial {
   id: number;
@@ -137,7 +133,7 @@ export const TestimonialSlider: React.FC<{ children: React.ReactNode }> = ({
           className="p-2 text-secondary hover:text-secondary-light transition-colors"
           aria-label="Previous testimonial"
         >
-          <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+          <FaChevronLeft size={35} />
         </button>
         <button
           id="NEXT"
@@ -145,7 +141,7 @@ export const TestimonialSlider: React.FC<{ children: React.ReactNode }> = ({
           className="p-2 text-secondary hover:text-secondary-light transition-colors"
           aria-label="Next testimonial"
         >
-          <FontAwesomeIcon icon={faChevronRight} size="2x" />
+          <FaChevronRight size={35} />
         </button>
       </div>
     </div>

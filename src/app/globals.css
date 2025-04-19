@@ -2,20 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  :root {
-    --color-brown: #663E2A;
-    --color-olive: #6F7D5C;
-    --color-white: #FFFFFF;
-  }
-
-  body {
-    @apply bg-white text-primary;
-  }
-} */
-
 @layer components {
-  .btn {
+  .btn, .btn-reverse {
     @apply gap-2 px-6 py-2
       text-white
       text-button;
@@ -24,6 +12,17 @@
     position: relative;
     align-items: center;
     border-radius: 9999px;
+  }
+
+  .btn-reverse::before {
+    @apply w-12 h-5;
+
+    content: "";
+    display: block;
+    background-image: url("/semi-divisa-botao-esquerda.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .btn::after {

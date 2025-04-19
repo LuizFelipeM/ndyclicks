@@ -73,6 +73,17 @@ interface PageDocumentData {
   title: prismic.TitleField;
 
   /**
+   * Descrição curta field in *Página*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.short_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  short_description: prismic.RichTextField;
+
+  /**
    * Página Pai field in *Página*
    *
    * - **Field Type**: Content Relationship
@@ -82,18 +93,6 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   parent: prismic.ContentRelationshipField<"page">;
-
-  /**
-   * Mostrar título da página field in *Página*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: page.show_title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  show_title: prismic.BooleanField;
 
   /**
    * Slice Zone field in *Página*
@@ -182,6 +181,17 @@ interface PostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   thumbnail: prismic.ImageField<never>;
+
+  /**
+   * Descrição curta field in *Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.short_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  short_description: prismic.RichTextField;
 
   /**
    * Slice Zone field in *Post*
@@ -540,207 +550,62 @@ type HeaderSliceVariation = HeaderSliceDefault;
 export type HeaderSlice = prismic.SharedSlice<"header", HeaderSliceVariation>;
 
 /**
- * Item in *Hero → Default → Primary → Botões*
- */
-export interface HeroSliceDefaultPrimaryButtonsItem {
-  /**
-   * Link do botão field in *Hero → Default → Primary → Botões*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.buttons[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-
-  /**
-   * Texto do botão field in *Hero → Default → Primary → Botões*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.buttons[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-}
-
-/**
- * Item in *Hero → Default → Primary → Carrossel de imagens*
- */
-export interface HeroSliceDefaultPrimaryCarouselItem {
-  /**
-   * Imagem field in *Hero → Default → Primary → Carrossel de imagens*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.carousel[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Item in *Hero → Estilo Revista - Mobile e Desk → Primary → Botões*
- */
-export interface HeroSliceMagazineMobileAndDesktopPrimaryButtonsItem {
-  /**
-   * Link do botão field in *Hero → Estilo Revista - Mobile e Desk → Primary → Botões*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.buttons[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-
-  /**
-   * Texto do botão field in *Hero → Estilo Revista - Mobile e Desk → Primary → Botões*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.buttons[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-}
-
-/**
- * Item in *Hero → Estilo Revista - Mobile → Primary → Botões*
- */
-export interface HeroSliceMagazineMobilePrimaryButtonsItem {
-  /**
-   * Link do botão field in *Hero → Estilo Revista - Mobile → Primary → Botões*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobile.primary.buttons[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-
-  /**
-   * Texto do botão field in *Hero → Estilo Revista - Mobile → Primary → Botões*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobile.primary.buttons[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-}
-
-/**
- * Item in *Hero → Estilo Revista - Mobile → Primary → Carrossel de imagens*
- */
-export interface HeroSliceMagazineMobilePrimaryCarouselItem {
-  /**
-   * Imagem field in *Hero → Estilo Revista - Mobile → Primary → Carrossel de imagens*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobile.primary.carousel[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Item in *Hero → Produtos → Primary → Botões*
- */
-export interface HeroSliceProductsPrimaryButtonsItem {
-  /**
-   * Link do botão field in *Hero → Produtos → Primary → Botões*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.products.primary.buttons[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-
-  /**
-   * Texto do botão field in *Hero → Produtos → Primary → Botões*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.products.primary.buttons[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-}
-
-/**
- * Item in *Hero → Produtos → Primary → Carrossel de imagens*
- */
-export interface HeroSliceProductsPrimaryCarouselItem {
-  /**
-   * Texto destacado field in *Hero → Produtos → Primary → Carrossel de imagens*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.products.primary.carousel[].highlighted_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  highlighted_text: prismic.RichTextField;
-
-  /**
-   * Imagem field in *Hero → Produtos → Primary → Carrossel de imagens*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.products.primary.carousel[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Primary content in *Hero → Default → Primary*
+ * Primary content in *Hero → Padrão → Primary*
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Título field in *Hero → Default → Primary*
+   * Título field in *Hero → Padrão → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.RichTextField;
+  title: prismic.TitleField;
 
   /**
-   * Texto field in *Hero → Default → Primary*
+   * Subtítulo field in *Hero → Padrão → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.text
+   * - **API ID Path**: hero.default.primary.subtitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.RichTextField;
+  subtitle: prismic.RichTextField;
 
   /**
-   * Botões field in *Hero → Default → Primary*
+   * Imagem de fundo field in *Hero → Padrão → Primary*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.buttons[]
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **API ID Path**: hero.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  buttons: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryButtonsItem>>;
+  background_image: prismic.ImageField<never>;
 
   /**
-   * Carrossel de imagens field in *Hero → Default → Primary*
+   * Cartão Esquerdo field in *Hero → Padrão → Primary*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.carousel[]
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **API ID Path**: hero.default.primary.left_card
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  carousel: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryCarouselItem>>;
+  left_card: prismic.ImageField<never>;
+
+  /**
+   * Cartão Direito field in *Hero → Padrão → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.right_card
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  right_card: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for Hero Slice
+ * Padrão variation for Hero Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -753,236 +618,9 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Hero → Estilo Revista - Mobile e Desk → Primary*
- */
-export interface HeroSliceMagazineMobileAndDesktopPrimary {
-  /**
-   * Título field in *Hero → Estilo Revista - Mobile e Desk → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Posição do título field in *Hero → Estilo Revista - Mobile e Desk → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.is_title_left
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  is_title_left: prismic.BooleanField;
-
-  /**
-   * Texto field in *Hero → Estilo Revista - Mobile e Desk → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-
-  /**
-   * Posição do texto field in *Hero → Estilo Revista - Mobile e Desk → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.is_text_left
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  is_text_left: prismic.BooleanField;
-
-  /**
-   * Botões field in *Hero → Estilo Revista - Mobile e Desk → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.buttons[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  buttons: prismic.GroupField<
-    Simplify<HeroSliceMagazineMobileAndDesktopPrimaryButtonsItem>
-  >;
-
-  /**
-   * Imagem field in *Hero → Estilo Revista - Mobile e Desk → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobileAndDesktop.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Estilo Revista - Mobile e Desk variation for Hero Slice
- *
- * - **API ID**: `magazineMobileAndDesktop`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSliceMagazineMobileAndDesktop = prismic.SharedSliceVariation<
-  "magazineMobileAndDesktop",
-  Simplify<HeroSliceMagazineMobileAndDesktopPrimary>,
-  never
->;
-
-/**
- * Primary content in *Hero → Estilo Revista - Mobile → Primary*
- */
-export interface HeroSliceMagazineMobilePrimary {
-  /**
-   * Título field in *Hero → Estilo Revista - Mobile → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobile.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Texto field in *Hero → Estilo Revista - Mobile → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobile.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-
-  /**
-   * Posição do texto field in *Hero → Estilo Revista - Mobile → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: hero.magazineMobile.primary.is_text_left
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  is_text_left: prismic.BooleanField;
-
-  /**
-   * Botões field in *Hero → Estilo Revista - Mobile → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobile.primary.buttons[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  buttons: prismic.GroupField<
-    Simplify<HeroSliceMagazineMobilePrimaryButtonsItem>
-  >;
-
-  /**
-   * Imagem Mobile field in *Hero → Estilo Revista - Mobile → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobile.primary.mobile_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  mobile_image: prismic.ImageField<never>;
-
-  /**
-   * Carrossel de imagens field in *Hero → Estilo Revista - Mobile → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.magazineMobile.primary.carousel[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  carousel: prismic.GroupField<
-    Simplify<HeroSliceMagazineMobilePrimaryCarouselItem>
-  >;
-}
-
-/**
- * Estilo Revista - Mobile variation for Hero Slice
- *
- * - **API ID**: `magazineMobile`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSliceMagazineMobile = prismic.SharedSliceVariation<
-  "magazineMobile",
-  Simplify<HeroSliceMagazineMobilePrimary>,
-  never
->;
-
-/**
- * Primary content in *Hero → Produtos → Primary*
- */
-export interface HeroSliceProductsPrimary {
-  /**
-   * Antes do texto destacado field in *Hero → Produtos → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.products.primary.before_highlighted_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  before_highlighted_text: prismic.RichTextField;
-
-  /**
-   * Depois do texto detacado field in *Hero → Produtos → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.products.primary.after_highlighted_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  after_highlighted_text: prismic.RichTextField;
-
-  /**
-   * Botões field in *Hero → Produtos → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.products.primary.buttons[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  buttons: prismic.GroupField<Simplify<HeroSliceProductsPrimaryButtonsItem>>;
-
-  /**
-   * Carrossel de imagens field in *Hero → Produtos → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.products.primary.carousel[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  carousel: prismic.GroupField<Simplify<HeroSliceProductsPrimaryCarouselItem>>;
-}
-
-/**
- * Produtos variation for Hero Slice
- *
- * - **API ID**: `products`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSliceProducts = prismic.SharedSliceVariation<
-  "products",
-  Simplify<HeroSliceProductsPrimary>,
-  never
->;
-
-/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation =
-  | HeroSliceDefault
-  | HeroSliceMagazineMobileAndDesktop
-  | HeroSliceMagazineMobile
-  | HeroSliceProducts;
+type HeroSliceVariation = HeroSliceDefault;
 
 /**
  * Hero Shared Slice
@@ -1677,22 +1315,9 @@ declare module "@prismicio/client" {
       HeaderSliceVariation,
       HeaderSliceDefault,
       HeroSlice,
-      HeroSliceDefaultPrimaryButtonsItem,
-      HeroSliceDefaultPrimaryCarouselItem,
       HeroSliceDefaultPrimary,
-      HeroSliceMagazineMobileAndDesktopPrimaryButtonsItem,
-      HeroSliceMagazineMobileAndDesktopPrimary,
-      HeroSliceMagazineMobilePrimaryButtonsItem,
-      HeroSliceMagazineMobilePrimaryCarouselItem,
-      HeroSliceMagazineMobilePrimary,
-      HeroSliceProductsPrimaryButtonsItem,
-      HeroSliceProductsPrimaryCarouselItem,
-      HeroSliceProductsPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
-      HeroSliceMagazineMobileAndDesktop,
-      HeroSliceMagazineMobile,
-      HeroSliceProducts,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceImagesInColumnsPrimaryImagesItem,

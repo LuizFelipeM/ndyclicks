@@ -1,4 +1,4 @@
-import DynamicForm from "@/components/DynamicForm/DynamicForm";
+import DynamicForm from "@/components/DynamicForm";
 import { FieldType } from "@/components/DynamicForm/FieldType";
 import { Field } from "@/components/DynamicForm/Field";
 import { Content, isFilled } from "@prismicio/client";

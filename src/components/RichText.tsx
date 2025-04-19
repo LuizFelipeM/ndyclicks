@@ -4,187 +4,69 @@ import {
   type JSXMapSerializer,
 } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-
-import { Heading } from "./Heading";
 import clsx from "clsx";
 
-type ClassNameModifier = {
-  className: string
-  overrideDefault?: boolean
-}
-
 type DefaultComponentsProps = {
-  classNames?: Partial<Record<keyof JSXMapSerializer, string | ClassNameModifier>>
-}
+  classNames?: Partial<Record<keyof JSXMapSerializer, string>>;
+};
 
-const isClassNameModifier = (className: string | ClassNameModifier | undefined): className is ClassNameModifier =>
-  !!className && !(typeof className === "string") && "className" in className
-
-const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerializer => ({
+const defaultComponents = ({
+  classNames,
+}: DefaultComponentsProps): JSXMapSerializer => ({
   //#region Headings
   heading1: ({ children }) => (
-    <Heading as="h1" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading1) || !classNames?.heading1?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading1) ? classNames?.heading1?.className : classNames?.heading1
-      )}
+    <h1
+      className="
+                flex items-center justify-center gap-2
+                font-abhaya font-extrabold text-title text-primary mb-4
+                after:content-[''] after:block after:w-32 after:h-5 after:bg-[url('/semi-divisa-botao-direita-MARROM.svg')] after:bg-contain after:bg-no-repeat after:bg-center
+                before:content-[''] before:block before:w-32 before:h-5 before:bg-[url('/semi-divisa-botao-esquerda-MARROM.svg')] before:bg-contain before:bg-no-repeat before:bg-center"
     >
       {children}
-    </Heading>
+    </h1>
   ),
   heading2: ({ children }) => (
-    <Heading as="h2" size="md" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading2) || !classNames?.heading2?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading2) ? classNames?.heading2?.className : classNames?.heading2
-      )}
+    <h2
+      className="
+                font-abhaya font-extrabold text-center text-subtitle text-primary mb-4
+                after:content-[''] after:m-auto after:block after:w-52 after:h-8 after:mt-4 after:bg-[url('/divisa-marrom-PEQUENA.svg')] after:bg-contain after:bg-no-repeat after:bg-center"
     >
       {children}
-    </Heading>
-  ),
-  heading3: ({ children }) => (
-    <Heading as="h3" size="sm" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading3) || !classNames?.heading3?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading3) ? classNames?.heading3?.className : classNames?.heading3
-      )}
-    >
-      {children}
-    </Heading>
-  ),
-  heading4: ({ children }) => (
-    <Heading as="h4" size="sm" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading4) || !classNames?.heading4?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading4) ? classNames?.heading4?.className : classNames?.heading4
-      )}
-    >
-      {children}
-    </Heading>
-  ),
-  heading5: ({ children }) => (
-    <Heading as="h5" size="sm" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading5) || !classNames?.heading5?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading5) ? classNames?.heading5?.className : classNames?.heading5
-      )
-    }>
-      {children}
-    </Heading>
-  ),
-  heading6: ({ children }) => (
-    <Heading as="h6" size="sm" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading6) || !classNames?.heading6?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading6) ? classNames?.heading6?.className : classNames?.heading6
-      )}
-    >
-
-      {children}
-    </Heading >
+    </h2>
   ),
   //#endregion
 
   //#region Lists
-  oList: ({ children }) => (
-    <ol className={
-      clsx(
-        (!isClassNameModifier(classNames?.oList) || !classNames?.oList?.overrideDefault) && "mb-4 pl-4 last:mb-0 md:pl-6",
-        isClassNameModifier(classNames?.oList) ? classNames?.oList?.className : classNames?.oList
-      )}
-    >
-      {children}
-    </ol>
-  ),
-  oListItem: ({ children }) => (
-    <li className={
-      clsx(
-        (!isClassNameModifier(classNames?.oListItem) || !classNames?.oListItem?.overrideDefault) && "mb-1 list-decimal pl-1 last:mb-0 md:pl-2",
-        isClassNameModifier(classNames?.oListItem) ? classNames?.oListItem?.className : classNames?.oListItem
-      )}
-    >
-      {children}
-    </li>
-  ),
+  oList: ({ children }) => <ol className="">{children}</ol>,
+  oListItem: ({ children }) => <li className="">{children}</li>,
 
-  list: ({ children }) => (
-    <ul className={
-      clsx(
-        (!isClassNameModifier(classNames?.list) || !classNames?.list?.overrideDefault) && "mb-4 pl-4 last:mb-0 md:pl-6",
-        isClassNameModifier(classNames?.list) ? classNames?.list?.className : classNames?.list
-      )}
-    >
-      {children}
-    </ul>
-  ),
-  listItem: ({ children }) => (
-    <li className={
-      clsx(
-        (!isClassNameModifier(classNames?.listItem) || !classNames?.listItem?.overrideDefault) && "mb-1 list-disc pl-1 last:mb-0 md:pl-2",
-        isClassNameModifier(classNames?.listItem) ? classNames?.listItem?.className : classNames?.listItem
-      )}
-    >
-      {children}
-    </li>
-  ),
+  list: ({ children }) => <ul className="">{children}</ul>,
+  listItem: ({ children }) => <li className="">{children}</li>,
   //#endregion
 
   //#region Text
   paragraph: ({ children }) => (
-    <p className={
-      clsx(
-        (!isClassNameModifier(classNames?.paragraph) || !classNames?.paragraph?.overrideDefault) && "mb-4 last:mb-0",
-        isClassNameModifier(classNames?.paragraph) ? classNames?.paragraph?.className : classNames?.paragraph
-      )}
-    >
+    <p className={clsx("text-primary text-paragraph", classNames?.paragraph)}>
       {children}
     </p>
   ),
 
   strong: ({ children }) => (
-    <strong className={
-      clsx(
-        (!isClassNameModifier(classNames?.strong) || !classNames?.strong?.overrideDefault) && "font-semibold",
-        isClassNameModifier(classNames?.strong) ? classNames?.strong?.className : classNames?.strong
-      )}
-    >
-      {children}
-    </strong>
+    <strong className="text-primary font-bold">{children}</strong>
   ),
 
   hyperlink: ({ children, node }) => (
-    <PrismicNextLink
-      field={node.data}
-      className={
-        clsx(
-          (!isClassNameModifier(classNames?.hyperlink) || !classNames?.hyperlink?.overrideDefault) && "underline decoration-1 underline-offset-2",
-          isClassNameModifier(classNames?.hyperlink) ? classNames?.hyperlink?.className : classNames?.hyperlink
-        )}
-    >
+    <PrismicNextLink field={node.data} className="">
       {children}
     </PrismicNextLink>
   ),
   //#endregion
 
   //#region Misc
-  image: ({ node }) => (
-    <PrismicNextImage
-      field={node}
-      className={
-        clsx(
-          (!isClassNameModifier(classNames?.image) || !classNames?.image?.overrideDefault) && "mb-4",
-          isClassNameModifier(classNames?.image) ? classNames?.image?.className : classNames?.image
-        )}
-    />
-  ),
+  image: ({ node }) => <PrismicNextImage field={node} className="" />,
 
   preformatted: ({ children }) => (
-    <pre className={
-      clsx(
-        (!isClassNameModifier(classNames?.preformatted) || !classNames?.preformatted?.overrideDefault) && "mb-4 rounded bg-slate-100 p-4 text-sm last:mb-0 md:p-8 md:text-lg",
-        isClassNameModifier(classNames?.preformatted) ? classNames?.preformatted?.className : classNames?.preformatted
-      )}
-    >
+    <pre className="">
       <code>{children}</code>
     </pre>
   ),

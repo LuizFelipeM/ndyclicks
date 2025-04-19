@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Content, ImageField, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const isMouseEvent = (ev: MouseEvent | TouchEvent): ev is MouseEvent =>
   "clientX" in ev;
@@ -107,8 +106,8 @@ const Splitter: React.FC<SplitterProps> = ({ slice }) => {
           border-2 border-neutral-white-smoke rounded-full"
         >
           <div className="w-2 h-2 flex gap-1 justify-center items-center text-neutral-white-smoke">
-            <FontAwesomeIcon icon={faCaretLeft} />
-            <FontAwesomeIcon icon={faCaretRight} />
+            <FaChevronLeft size={20} />
+            <FaChevronRight size={20} />
           </div>
         </div>
       </div>

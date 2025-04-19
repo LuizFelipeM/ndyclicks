@@ -6,7 +6,7 @@
   "variations": [
     {
       "id": "default",
-      "name": "Default",
+      "name": "Padrão",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -17,307 +17,43 @@
           "config": {
             "label": "Título",
             "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading1"
+            "allowTargetBlank": false,
+            "single": "heading1"
           }
         },
-        "text": {
+        "subtitle": {
           "type": "StructuredText",
           "config": {
-            "label": "Texto",
+            "label": "Subtítulo",
             "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
+            "allowTargetBlank": false,
+            "single": "paragraph"
           }
         },
-        "buttons": {
-          "type": "Group",
-          "config": {
-            "label": "Botões",
-            "repeat": true,
-            "fields": {
-              "link": {
-                "type": "Link",
-                "config": {
-                  "label": "Link do botão",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "select": null
-                }
-              },
-              "text": {
-                "type": "Text",
-                "config": {
-                  "label": "Texto do botão",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "carousel": {
-          "type": "Group",
-          "config": {
-            "label": "Carrossel de imagens",
-            "repeat": true,
-            "fields": {
-              "image": {
-                "type": "Image",
-                "config": {
-                  "label": "Imagem",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              }
-            }
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "magazineMobileAndDesktop",
-      "name": "Estilo Revista - Mobile e Desk",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Título",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading1"
-          }
-        },
-        "is_title_left": {
-          "type": "Boolean",
-          "config": {
-            "label": "Posição do título",
-            "placeholder_false": "A direita",
-            "placeholder_true": "A esquerda",
-            "default_value": false
-          }
-        },
-        "text": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Texto",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
-          }
-        },
-        "is_text_left": {
-          "type": "Boolean",
-          "config": {
-            "label": "Posição do texto",
-            "placeholder_false": "A direita",
-            "placeholder_true": "A esquerda",
-            "default_value": false
-          }
-        },
-        "buttons": {
-          "type": "Group",
-          "config": {
-            "label": "Botões",
-            "repeat": true,
-            "fields": {
-              "link": {
-                "type": "Link",
-                "config": {
-                  "label": "Link do botão",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "select": null
-                }
-              },
-              "text": {
-                "type": "Text",
-                "config": {
-                  "label": "Texto do botão",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "image": {
+        "background_image": {
           "type": "Image",
           "config": {
-            "label": "Imagem",
-            "constraint": {},
+            "label": "Imagem de fundo",
+            "constraint": {
+              "width": 3000
+            },
             "thumbnails": []
           }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "magazineMobile",
-      "name": "Estilo Revista - Mobile",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Título",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading1"
-          }
         },
-        "text": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Texto",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
-          }
-        },
-        "is_text_left": {
-          "type": "Boolean",
-          "config": {
-            "label": "Posição do texto",
-            "placeholder_false": "A direita",
-            "placeholder_true": "A esquerda",
-            "default_value": false
-          }
-        },
-        "buttons": {
-          "type": "Group",
-          "config": {
-            "label": "Botões",
-            "repeat": true,
-            "fields": {
-              "link": {
-                "type": "Link",
-                "config": {
-                  "label": "Link do botão",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "select": null
-                }
-              },
-              "text": {
-                "type": "Text",
-                "config": {
-                  "label": "Texto do botão",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "mobile_image": {
+        "left_card": {
           "type": "Image",
           "config": {
-            "label": "Imagem Mobile",
+            "label": "Cartão Esquerdo",
             "constraint": {},
             "thumbnails": []
           }
         },
-        "carousel": {
-          "type": "Group",
+        "right_card": {
+          "type": "Image",
           "config": {
-            "label": "Carrossel de imagens",
-            "repeat": true,
-            "fields": {
-              "image": {
-                "type": "Image",
-                "config": {
-                  "label": "Imagem",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              }
-            }
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "products",
-      "name": "Produtos",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "before_highlighted_text": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Antes do texto destacado",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
-          }
-        },
-        "after_highlighted_text": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Depois do texto detacado",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
-          }
-        },
-        "buttons": {
-          "type": "Group",
-          "config": {
-            "label": "Botões",
-            "repeat": true,
-            "fields": {
-              "link": {
-                "type": "Link",
-                "config": {
-                  "label": "Link do botão",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "select": null
-                }
-              },
-              "text": {
-                "type": "Text",
-                "config": {
-                  "label": "Texto do botão",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "carousel": {
-          "type": "Group",
-          "config": {
-            "label": "Carrossel de imagens",
-            "repeat": true,
-            "fields": {
-              "highlighted_text": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Texto destacado",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "strong,em,paragraph"
-                }
-              },
-              "image": {
-                "type": "Image",
-                "config": {
-                  "label": "Imagem",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              }
-            }
+            "label": "Cartão Direito",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

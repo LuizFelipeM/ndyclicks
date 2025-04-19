@@ -87,7 +87,7 @@ export const TestimonialSlider: React.FC<{ children: React.ReactNode }> = ({
 
   const slide = (direction: Direction) => {
     dispatch({ type: direction, numItems: numChildren });
-    setTimeout(() => dispatch({ type: "STOP" }), 500);
+    setTimeout(() => dispatch({ type: "STOP" }), 50);
   };
 
   const handlers = useSwipeable({
@@ -118,7 +118,7 @@ export const TestimonialSlider: React.FC<{ children: React.ReactNode }> = ({
             return (
             <div
               style={{
-                transition: "all 500ms ease",
+                transition: "all 100ms ease",
                 order: order,
                 opacity: isActive ? 1 : 0.5,
                 scale: isActive ? 1 : 0.9,

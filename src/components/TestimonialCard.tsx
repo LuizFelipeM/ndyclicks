@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
-
+import { ImQuotesLeft } from "react-icons/im";
 interface TestimonialCardProps {
   imageSrc: string;
   testimonial: string;
@@ -20,7 +20,8 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
         min-w-[30rem] max-w-[30rem] transition-all duration-500
         p-12 pt-32 mt-20
         bg-secondary relative rounded-tl-md rounded-br-md rounded-tr-[80px] rounded-bl-[80px] text-center 
-        after:content-[''] after:w-72 after:h-64 after:absolute after:-top-4 after:-left-16 after:bg-arabesco-right"
+        after:content-[''] after:w-72 after:h-64 after:absolute after:-top-4 after:-left-16 after:bg-arabesco-right
+        cursor-grab select-none"
       style={{
         opacity: isActive ? 1 : 0.5,
         scale: isActive ? 1 : 0.9,
@@ -39,11 +40,10 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
       <div
         className="
-        absolute top-20 left-1/2 -translate-x-1/2 w-10 h-10
+        absolute top-20 left-1/2 -translate-x-1/2
         text-hero-title text-white text-opacity-55"
       >
-        <span dangerouslySetInnerHTML={{ __html: "&#10075;" }} />
-        <span dangerouslySetInnerHTML={{ __html: "&#10075;" }} />
+        <ImQuotesLeft size={40} />
       </div>
 
       <p className="text-paragraph text-white mb-6">{testimonial}</p>

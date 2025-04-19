@@ -120,13 +120,13 @@ export default async function Home() {
       {/* Events Section */}
       <section className="pb-32 px-4 md:px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center">
-          <div className="overflow-hidden relative aspect-[6/7] rounded-tl-md rounded-br-md rounded-tr-[80px] rounded-bl-[80px]">
+          <div className="relative z-10 overflow-hidden aspect-[6/7] rounded-tl-md rounded-br-md rounded-tr-[80px] rounded-bl-[80px]">
             {/* talvez adicionar max-w-[390px] caso necessário */}
             <Image
               src="/example.avif"
               alt="Eventos e ensaios"
               fill
-              className="object-cover"
+              className="object-cover z-10"
             />
           </div>
 
@@ -145,12 +145,13 @@ export default async function Home() {
                 detalhes.
               </p>
             </div>
-            <div
-              className="relative flex px-10 py-7 bg-secondary
-              after:content-[''] after:w-44 after:h-36 after:absolute after:-top-5 after:right-0
-              after:bg-arabesco-right"
-            >
-              <Link href="/portfolio" className="btn">
+            <div className="relative flex px-10 py-7 bg-secondary">
+              <div
+                className="
+                z-0 absolute w-screen max-w-[50vw] h-full top-0 -left-2 bg-secondary
+                after:z-0 after:absolute after:content-[''] after:w-44 after:h-36 after:-top-5 after:right-0 after:bg-arabesco-right"
+              />
+              <Link href="/portfolio" className="btn z-10">
                 Confira
               </Link>
             </div>
@@ -177,22 +178,25 @@ export default async function Home() {
               </p>
             </div>
             <div
-              className="relative flex justify-end px-10 py-7 bg-secondary
-              after:content-[''] after:w-44 after:h-36 after:absolute after:-top-5 after:left-0
-              after:bg-arabesco-left"
+              className="relative flex justify-end px-10 py-7 bg-secondary"
             >
-              <Link href="/mercado-pet" className="btn">
+              <div
+                className="
+                z-0 absolute w-screen max-w-[50vw] h-full top-0 -right-2 bg-secondary
+                after:z-0 after:absolute after:content-[''] after:w-44 after:h-36 after:-top-5 after:left-0 after:bg-arabesco-left"
+              />
+              <Link href="/mercado-pet" className="btn z-10">
                 Confira
               </Link>
             </div>
           </div>
 
-          <div className="overflow-hidden relative aspect-[6/7] rounded-tr-md rounded-bl-md rounded-tl-[80px] rounded-br-[80px]">
+          <div className="relative z-10overflow-hidden aspect-[6/7] rounded-tr-md rounded-bl-md rounded-tl-[80px] rounded-br-[80px]">
             <Image
               src="/example2.avif"
               alt="Mercado Pet"
               fill
-              className="object-cover"
+              className="object-cover z-10"
             />
           </div>
         </div>
@@ -216,7 +220,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <TestimonialSlider>
             {testimonials.map((testimonial, index) => (
               <TestimonialCard

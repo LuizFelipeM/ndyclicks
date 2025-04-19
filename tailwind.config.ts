@@ -62,7 +62,7 @@ const config: Config = {
       footer: [
         "1rem",
         {
-          lineHeight: "2rem",
+          lineHeight: "1.25rem",
         },
       ],
     },

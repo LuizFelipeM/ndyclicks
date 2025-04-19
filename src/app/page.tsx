@@ -191,7 +191,7 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="relative z-10overflow-hidden aspect-[6/7] rounded-tr-md rounded-bl-md rounded-tl-[80px] rounded-br-[80px]">
+          <div className="relative z-10 overflow-hidden aspect-[6/7] rounded-tr-md rounded-bl-md rounded-tl-[80px] rounded-br-[80px]">
             <Image
               src="/example2.avif"
               alt="Mercado Pet"

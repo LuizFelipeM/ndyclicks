@@ -7,7 +7,6 @@ import { Content } from "@prismicio/client";
  */
 type PostGridProps = {
   posts?: Content.PostDocument<string>[];
-  cols?: number;
   showPostTitles: boolean;
 };
 
@@ -20,6 +19,6 @@ export const PostGrid: React.FC<PostGridProps> = ({ posts, showPostTitles }) =>
       key={post.id}
       post={post}
       showTitle={showPostTitles}
-      left={index % 2 === 0}
+      isTextLeft={index % 2 !== 0}
     />
   ));

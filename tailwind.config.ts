@@ -32,29 +32,29 @@ const config: Config = {
       "hero-title": [
         "4rem",
         {
-          lineHeight: "1",
+          lineHeight: "1.15",
         },
       ],
       title: [
         "3rem",
         {
-          lineHeight: "1",
+          lineHeight: "1.15",
         },
       ],
       subtitle: [
         "2.25rem",
         {
-          lineHeight: "1",
+          lineHeight: "1.15",
         },
       ],
       paragraph: [
-        "2rem",
+        "1.75rem",
         {
-          lineHeight: "1",
+          lineHeight: "1.15",
         },
       ],
       button: [
-        "2rem",
+        "1.75rem",
         {
           lineHeight: "1",
         },
@@ -76,7 +76,7 @@ const config: Config = {
 
       primary: {
         DEFAULT: "#663E2A",
-        light: "#764D33",
+        light: "#91583B",
         dark: "#4C2318",
       },
 

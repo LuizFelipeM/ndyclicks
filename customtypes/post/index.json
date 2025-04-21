@@ -21,6 +21,24 @@
           "multi": "heading1"
         }
       },
+      "short_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Descrição curta",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink"
+        }
+      },
+      "show_short_description_on_post": {
+        "type": "Boolean",
+        "config": {
+          "label": "Mostrar Descrição curta no Post?",
+          "placeholder_false": "Não",
+          "placeholder_true": "Sim",
+          "default_value": false
+        }
+      },
       "thumbnail": {
         "type": "Image",
         "config": {
@@ -32,13 +50,13 @@
           "thumbnails": []
         }
       },
-      "short_description": {
-        "type": "StructuredText",
+      "show_thumbnail_on_post": {
+        "type": "Boolean",
         "config": {
-          "label": "Descrição curta",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "paragraph,strong,em,hyperlink"
+          "label": "Mostrar Thumbnail no Post?",
+          "placeholder_false": "Não",
+          "placeholder_true": "Sim",
+          "default_value": true
         }
       },
       "slices": {

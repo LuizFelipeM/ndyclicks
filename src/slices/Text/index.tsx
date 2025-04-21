@@ -3,10 +3,10 @@ import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
 import { Default } from "./Default";
 import { TextAndImage } from "./TextAndImage";
-import { TextAndHeader } from "./TextAndHeader";
-import { TextWithHeaderAndImage } from "./TextWithHeaderImage";
 
-const VariationSelector: React.FC<{ slice: Content.TextSlice }> = ({ slice }) => {
+const VariationSelector: React.FC<{ slice: Content.TextSlice }> = ({
+  slice,
+}) => {
   switch (slice.variation) {
     case "textAndImage":
       return (
@@ -15,31 +15,12 @@ const VariationSelector: React.FC<{ slice: Content.TextSlice }> = ({ slice }) =>
           image={slice.primary.image}
           isTextLeft={slice.primary.is_text_left}
         />
-      )
-
-    case "textAndHeader":
-      return (
-        <TextAndHeader
-          text={slice.primary.text}
-          header={slice.primary.header}
-          isTextLeft={slice.primary.is_text_left}
-        />
-      )
-
-    case "textWithHeaderAndImage":
-      return (
-        <TextWithHeaderAndImage
-          text={slice.primary.text}
-          header={slice.primary.header}
-          image={slice.primary.image}
-          isTextLeft={slice.primary.is_text_left}
-        />
-      )
+      );
 
     default:
-      return <Default text={slice.primary.text} />
+      return <Default text={slice.primary.text} />;
   }
-}
+};
 
 /**
  * Props for `Text`.
@@ -54,7 +35,7 @@ const Text = ({ slice }: TextProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mt-4 mb-4"
+      className="mb-10 px-4 md:px-8"
     >
       <VariationSelector slice={slice} />
     </section>

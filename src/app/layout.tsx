@@ -9,12 +9,14 @@ const abhaya = Abhaya_Libre({
   subsets: ["latin"],
   weight: ["400", "800"],
   variable: "--font-abhaya",
+  display: "swap",
 });
 
 const inspiration = Inspiration({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--font-inspiration",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

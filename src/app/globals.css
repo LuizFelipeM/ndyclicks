@@ -51,7 +51,9 @@
   }
 
   .divider {
-    @apply w-full h-10 my-28;
+    @apply
+      w-full h-6 my-16
+      md:h-10 md:my-28;
 
     display: block;
     background-image: url('/divisa-marom-GRANDE.svg');

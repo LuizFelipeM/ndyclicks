@@ -56,7 +56,7 @@ const Form = ({ slice }: FormProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="my-8"
+      className="relative my-8"
     >
       {isFilled.group(slice.primary.fields) && (
         <DynamicForm

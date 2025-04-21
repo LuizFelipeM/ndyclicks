@@ -38,7 +38,7 @@ export const DynamicForm = ({
   };
 
   return (
-    <Card className="m-auto max-w-[90vw] lg:max-w-[50vw]">
+    <Card className="m-auto max-w-[80vw] w-2 lg:max-w-[50vw]">
       <Form
         initialValues={initialValues}
         onSubmit={handleSubmit}

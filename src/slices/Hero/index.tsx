@@ -17,9 +17,9 @@ const components: JSXMapSerializer = {
     <p
       className="
             flex items-center gap-2
-            font-abhaya text-title text-white
-            after:content-[''] after:block after:w-32 after:h-5 after:bg-[url('/semi-divisa-direita.svg')] after:bg-contain after:bg-no-repeat after:bg-center
-            before:content-[''] before:block before:w-32 before:h-5 before:bg-[url('/semi-divisa-esquerda-BRANCO.svg')] before:bg-contain before:bg-no-repeat before:bg-center"
+            font-abhaya text-paragraph md:text-title text-white
+            after:content-[''] after:block after:w-24 after:h-5 after:md:w-32 after:md:h-5 after:bg-[url('/semi-divisa-direita.svg')] after:bg-contain after:bg-no-repeat after:bg-center
+            before:content-[''] before:block before:w-24 before:h-5 before:md:w-32 before:md:h-5 before:bg-[url('/semi-divisa-esquerda-BRANCO.svg')] before:bg-contain before:bg-no-repeat before:bg-center"
     >
       {children}
     </p>
@@ -72,7 +72,11 @@ const Hero: React.FC<HeroProps> = ({ slice }): JSX.Element => {
 
         <div className="w-2/6 h-4/6 absolute -bottom-[45%] left-1/2 -translate-x-1/2 ">
           {isFilled.image(slice.primary.left_card) && (
-            <div className="w-[21rem] h-[32rem] p-3 z-10 absolute left-[28%] 2xl:left-1/3 -translate-x-1/2 border-[14px] border-white shadow-md -rotate-[22deg]">
+            <div
+              className="
+                        w-[12rem] h-[18rem] p-3 z-10 absolute left-0 2xl:left-1/3 -translate-x-1/2 border-[14px] border-white shadow-md -rotate-[22deg]
+                        md:w-[21rem] md:h-[32rem]"
+            >
               <PrismicNextImage
                 field={slice.primary.left_card}
                 fill
@@ -81,7 +85,11 @@ const Hero: React.FC<HeroProps> = ({ slice }): JSX.Element => {
             </div>
           )}
           {isFilled.image(slice.primary.right_card) && (
-            <div className="w-[21rem] h-[32rem] p-3 z-20 absolute right-[28%] 2xl:right-1/3 translate-x-1/2 border-[14px] border-white shadow-md rotate-[22deg]">
+            <div
+              className="
+                        w-[12rem] h-[18rem] p-3 z-20 absolute right-0 2xl:right-1/3 translate-x-1/2 border-[14px] border-white shadow-md rotate-[22deg]
+                        md:w-[21rem] md:h-[32rem]"
+            >
               <PrismicNextImage
                 field={slice.primary.right_card}
                 fill

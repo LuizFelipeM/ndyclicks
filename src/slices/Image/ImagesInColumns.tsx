@@ -37,7 +37,8 @@ export const ImagesInColumns: React.FC<ImagesInColumnsProps> = ({ images }) => {
           <div
             className="
               relative z-10 overflow-hidden aspect-[6/7]
-              rounded-tl-md rounded-br-md rounded-tr-[80px] rounded-bl-[80px]"
+              rounded-tr-md rounded-bl-md rounded-tl-[80px] rounded-br-[80px]
+              md:rounded-tl-md md:rounded-br-md md:rounded-tr-[80px] md:rounded-bl-[80px]"
           >
             <PrismicNextImage
               field={images[imageIndex2].image}
@@ -49,25 +50,4 @@ export const ImagesInColumns: React.FC<ImagesInColumnsProps> = ({ images }) => {
       </div>
     );
   });
-
-  // return (
-  //   <div
-  //     style={{ "--cols": cols }}
-  //     className="my-3 grid gap-8 md:gap-x-8 md:gap-y-4 images-grid"
-  //   >
-  //     {isFilled.group(images) &&
-  //       images.map(({ image }, i) => (
-  //         <div
-  //           key={i}
-  //           style={{ height: `${imagesHeight}px` }}
-  //           className="relative w-full rounded-lg"
-  //         >
-  //           <PrismicImage
-  //             field={image}
-  //             className="absolute inset-0 w-auto h-full m-auto rounded-lg"
-  //           />
-  //         </div>
-  //       ))}
-  //   </div>
-  // );
 };

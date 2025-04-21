@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -30,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <body className={`${abhaya.variable} ${inspiration.variable} font-abhaya`}>
+    <html lang="pt-BR" className="block relative min-h-screen min-w-[100vw] h-screen w-screen">
+      <body className={`${abhaya.variable} ${inspiration.variable} font-abhaya block relative min-h-screen min-w-[100vw] h-screen w-screen`}>
         <Header />
         {children}
         <Footer />

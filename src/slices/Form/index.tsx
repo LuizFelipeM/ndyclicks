@@ -1,8 +1,8 @@
-import DynamicForm from "@/components/DynamicForm";
-import { FieldType } from "@/components/DynamicForm/FieldType";
-import { Field } from "@/components/DynamicForm/Field";
+import { FieldType } from "@/components/Form/FieldType";
+import { Field } from "@/components/Form/Field";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { DynamicForm } from "./DynamicForm";
 
 type ContentFieldType =
   | "Texto curto"

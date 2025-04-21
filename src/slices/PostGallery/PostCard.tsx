@@ -58,7 +58,7 @@ export const PostCard: React.FC<PostCardProps> = ({
           <div
             className={clsx(
               "z-0 absolute w-screen max-w-[50vw] h-full top-0 bg-secondary",
-              "after:z-0 after:absolute after:content-[''] after:w-44 after:h-36 after:-top-5",
+              "after:-z-10 after:absolute after:content-[''] after:w-44 after:h-36 after:-top-5",
               {
                 "-left-2 after:right-0 after:bg-arabesco-right": left,
                 "-right-1 after:left-0 after:bg-arabesco-left": !left,

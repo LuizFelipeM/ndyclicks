@@ -49,4 +49,14 @@
     background-repeat: no-repeat;
     transform: scaleX(-1);
   }
+
+  .divider {
+    @apply w-full h-10 my-28;
+
+    display: block;
+    background-image: url('/divisa-marom-GRANDE.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }

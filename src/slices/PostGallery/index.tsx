@@ -24,6 +24,7 @@ const PostGallery = async ({
         post {
           title
           thumbnail
+          short_description
         }
       }`,
     })

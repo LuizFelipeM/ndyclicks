@@ -37,7 +37,10 @@ export default async function Post({ params }: PostProps) {
       graphQuery: `{
         post {
           title
+          show_thumbnail_on_post
           thumbnail
+          show_short_description_on_post
+          short_description
           slices
         }
       }`,

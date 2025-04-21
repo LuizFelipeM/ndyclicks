@@ -53,9 +53,7 @@ type PageDocumentDataSlicesSlice =
   | TestimonialsSlice
   | PostGallerySlice
   | TextSlice
-  | HeroSlice
-  | HeaderSlice
-  | CallToActionSlice;
+  | HeroSlice;
 
 /**
  * Content for Página documents
@@ -153,8 +151,7 @@ type PostDocumentDataSlicesSlice =
   | ImageSlice
   | SplitterSlice
   | TextSlice
-  | HeroSlice
-  | CallToActionSlice;
+  | HeroSlice;
 
 /**
  * Content for Post documents
@@ -331,98 +328,33 @@ export type AllDocumentTypes =
   | SocialMediaDocument;
 
 /**
- * Primary content in *CallToAction → Default → Primary*
- */
-export interface CallToActionSliceDefaultPrimary {
-  /**
-   * Texto field in *CallToAction → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.default.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-
-  /**
-   * Destino field in *CallToAction → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.default.primary.destination
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  destination: prismic.LinkField;
-}
-
-/**
- * Default variation for CallToAction Slice
+ * Padrão variation for Divider Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+export type DividerSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<CallToActionSliceDefaultPrimary>,
+  Record<string, never>,
   never
 >;
 
 /**
- * Primary content in *CallToAction → Centralizada → Primary*
+ * Slice variation for *Divider*
  */
-export interface CallToActionSliceCenterPrimary {
-  /**
-   * Texto field in *CallToAction → Centralizada → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.center.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-
-  /**
-   * Destino field in *CallToAction → Centralizada → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.center.primary.destination
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  destination: prismic.LinkField;
-}
+type DividerSliceVariation = DividerSliceDefault;
 
 /**
- * Centralizada variation for CallToAction Slice
+ * Divider Shared Slice
  *
- * - **API ID**: `center`
- * - **Description**: Default
+ * - **API ID**: `divider`
+ * - **Description**: Divider
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type CallToActionSliceCenter = prismic.SharedSliceVariation<
-  "center",
-  Simplify<CallToActionSliceCenterPrimary>,
-  never
->;
-
-/**
- * Slice variation for *CallToAction*
- */
-type CallToActionSliceVariation =
-  | CallToActionSliceDefault
-  | CallToActionSliceCenter;
-
-/**
- * CallToAction Shared Slice
- *
- * - **API ID**: `call_to_action`
- * - **Description**: CallToAction
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CallToActionSlice = prismic.SharedSlice<
-  "call_to_action",
-  CallToActionSliceVariation
+export type DividerSlice = prismic.SharedSlice<
+  "divider",
+  DividerSliceVariation
 >;
 
 /**
@@ -522,58 +454,6 @@ type FormSliceVariation = FormSliceDefault;
 export type FormSlice = prismic.SharedSlice<"form", FormSliceVariation>;
 
 /**
- * Primary content in *Header → Default → Primary*
- */
-export interface HeaderSliceDefaultPrimary {
-  /**
-   * Título field in *Header → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: header.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Subtítulo field in *Header → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: header.default.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  subtitle: prismic.RichTextField;
-}
-
-/**
- * Default variation for Header Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeaderSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HeaderSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Header*
- */
-type HeaderSliceVariation = HeaderSliceDefault;
-
-/**
- * Header Shared Slice
- *
- * - **API ID**: `header`
- * - **Description**: Header
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeaderSlice = prismic.SharedSlice<"header", HeaderSliceVariation>;
-
-/**
  * Primary content in *Hero → Padrão → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -671,21 +551,6 @@ export interface ImageSliceImagesInColumnsPrimaryImagesItem {
 }
 
 /**
- * Item in *Image → Imagens - Estilo Alvenaria → Primary → Imagens*
- */
-export interface ImageSliceImagesInMasonryPrimaryImagesItem {
-  /**
-   * Imagem field in *Image → Imagens - Estilo Alvenaria → Primary → Imagens*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image.imagesInMasonry.primary.images[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
  * Primary content in *Image → Tela cheia → Primary*
  */
 export interface ImageSliceDefaultPrimary {
@@ -763,26 +628,6 @@ export type ImageSliceDefault = prismic.SharedSliceVariation<
  */
 export interface ImageSliceImagesInColumnsPrimary {
   /**
-   * Número de colunas field in *Image → Imagens - Estilo Colunas → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: Número de colunas mostradas no PC
-   * - **API ID Path**: image.imagesInColumns.primary.col_quantity
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  col_quantity: prismic.NumberField;
-
-  /**
-   * Altura das imagens (px) field in *Image → Imagens - Estilo Colunas → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: Altura utilizada para que todas as imagens tenham o mesmo tamanho
-   * - **API ID Path**: image.imagesInColumns.primary.image_height
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  image_height: prismic.NumberField;
-
-  /**
    * Imagens field in *Image → Imagens - Estilo Colunas → Primary*
    *
    * - **Field Type**: Group
@@ -809,52 +654,9 @@ export type ImageSliceImagesInColumns = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Image → Imagens - Estilo Alvenaria → Primary*
- */
-export interface ImageSliceImagesInMasonryPrimary {
-  /**
-   * Largura da coluna (px) field in *Image → Imagens - Estilo Alvenaria → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image.imagesInMasonry.primary.col_width
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  col_width: prismic.NumberField;
-
-  /**
-   * Imagens field in *Image → Imagens - Estilo Alvenaria → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image.imagesInMasonry.primary.images[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  images: prismic.GroupField<
-    Simplify<ImageSliceImagesInMasonryPrimaryImagesItem>
-  >;
-}
-
-/**
- * Imagens - Estilo Alvenaria variation for Image Slice
- *
- * - **API ID**: `imagesInMasonry`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImageSliceImagesInMasonry = prismic.SharedSliceVariation<
-  "imagesInMasonry",
-  Simplify<ImageSliceImagesInMasonryPrimary>,
-  never
->;
-
-/**
  * Slice variation for *Image*
  */
-type ImageSliceVariation =
-  | ImageSliceDefault
-  | ImageSliceImagesInColumns
-  | ImageSliceImagesInMasonry;
+type ImageSliceVariation = ImageSliceDefault | ImageSliceImagesInColumns;
 
 /**
  * Image Shared Slice
@@ -1211,21 +1013,14 @@ declare module "@prismicio/client" {
       SocialMediaDocument,
       SocialMediaDocumentData,
       AllDocumentTypes,
-      CallToActionSlice,
-      CallToActionSliceDefaultPrimary,
-      CallToActionSliceCenterPrimary,
-      CallToActionSliceVariation,
-      CallToActionSliceDefault,
-      CallToActionSliceCenter,
+      DividerSlice,
+      DividerSliceVariation,
+      DividerSliceDefault,
       FormSlice,
       FormSliceDefaultPrimaryFieldsItem,
       FormSliceDefaultPrimary,
       FormSliceVariation,
       FormSliceDefault,
-      HeaderSlice,
-      HeaderSliceDefaultPrimary,
-      HeaderSliceVariation,
-      HeaderSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -1234,12 +1029,9 @@ declare module "@prismicio/client" {
       ImageSliceDefaultPrimary,
       ImageSliceImagesInColumnsPrimaryImagesItem,
       ImageSliceImagesInColumnsPrimary,
-      ImageSliceImagesInMasonryPrimaryImagesItem,
-      ImageSliceImagesInMasonryPrimary,
       ImageSliceVariation,
       ImageSliceDefault,
       ImageSliceImagesInColumns,
-      ImageSliceImagesInMasonry,
       PostGallerySlice,
       PostGallerySliceDefaultPrimary,
       PostGallerySliceVariation,

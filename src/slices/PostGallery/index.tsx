@@ -24,9 +24,9 @@ const PostGallery = async ({
         post {
           title
           thumbnail
-          }
-          }`,
-          // short_description
+          short_description
+        }
+      }`,
     })
     .catch(() => console.error("Error getting posts list"));
 

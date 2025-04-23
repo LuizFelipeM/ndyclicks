@@ -20,7 +20,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <Card
-      className="cursor-grab select-none pt-32 mt-20"
+      className="cursor-grab select-none pt-32 md:pt-32 mt-20"
       style={{
         opacity: isActive ? 1 : 0.5,
         scale: isActive ? 1 : 0.9,

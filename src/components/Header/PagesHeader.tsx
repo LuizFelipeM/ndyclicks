@@ -6,7 +6,7 @@ export const PagesHeader = () => {
     <header className="relative w-full z-50 bg-secondary">
       <div className="max-w-7xl md:max-w-[80%] mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <PrismicNextLink href="/" className="relative w-48 h-20">
+          <PrismicNextLink href="/" className="relative w-32 h-16 md:w-48 md:h-20">
             <Image
               src="/logo1.svg"
               alt="Ndy Clicks"

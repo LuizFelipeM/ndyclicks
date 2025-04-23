@@ -34,9 +34,9 @@ const PostGallery = async ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="py-32 px-4 md:px-8"
+      className="mb-14 md:mb-32 mx-4 md:mx-8"
     >
-      <div className="max-w-6xl mx-auto text-center mb-32">
+      <div className="max-w-6xl mx-auto text-center mb-14 md:mb-32">
         {isFilled.richText(slice.primary.title) && (
           <RichText field={slice.primary.title} />
         )}

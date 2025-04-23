@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ slice }): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mb-6"
+      className="mb-14 md:mb-32"
     >
       <section className="overflow-hidden relative h-[73vh]">
         <div className="absolute inset-0 w-full h-full">

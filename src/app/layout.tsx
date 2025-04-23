@@ -30,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className="block relative min-h-screen min-w-[100vw] h-screen w-screen">
-      <body className={`${abhaya.variable} ${inspiration.variable} font-abhaya block relative min-h-screen min-w-[100vw] h-screen w-screen`}>
+    <html lang="pt-BR" className="block relative min-h-screen">
+      <body className={`${abhaya.variable} ${inspiration.variable} font-abhaya block relative min-h-screen`}>
         <Header />
         {children}
         <Footer />

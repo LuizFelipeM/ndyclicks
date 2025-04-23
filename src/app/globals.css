@@ -11,7 +11,6 @@
     display: flex;
     position: relative;
     align-items: center;
-    border-radius: 9999px;
   }
 
   .btn-reverse::before {
@@ -26,7 +25,7 @@
   }
 
   .btn::after {
-    @apply w-12 h-5;
+    @apply w-10 h-5 md:w-12 md:h-5;
 
     content: "";
     display: block;
@@ -37,17 +36,10 @@
   }
 
   /* Custom styles for background patterns and decorative elements */
-  .bg-arabesco-left {
+  .bg-arabesco {
     background-image: url("/arabesco.svg");
     background-size: contain;
     background-repeat: no-repeat;
-  }
-
-  .bg-arabesco-right {
-    background-image: url("/arabesco.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: scaleX(-1);
   }
 
   .divider {

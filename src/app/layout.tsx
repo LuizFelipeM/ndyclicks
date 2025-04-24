@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import { Abhaya_Libre, Inspiration } from "next/font/google";
 
 const abhaya = Abhaya_Libre({
@@ -36,6 +37,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

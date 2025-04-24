@@ -19,7 +19,10 @@ export const ImagesInColumns: React.FC<ImagesInColumnsProps> = ({ images }) => {
     const [imageIndex1, imageIndex2] = [2 * index, 2 * index + 1];
 
     return (
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-12 last:mb-0">
+      <div
+        key={index}
+        className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-12 last:mb-0"
+      >
         {images[imageIndex1] && isFilled.image(images[imageIndex1].image) && (
           <div
             className="

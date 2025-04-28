@@ -690,27 +690,6 @@ export interface PostGallerySliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subtitle: prismic.RichTextField;
-
-  /**
-   * Número de colunas field in *PostGallery → Padrão → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: Número de colunas mostradas no PC
-   * - **API ID Path**: post_gallery.default.primary.cols
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  cols: prismic.NumberField;
-
-  /**
-   * Mostrar título dos posts field in *PostGallery → Padrão → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: post_gallery.default.primary.show_post_titles
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  show_post_titles: prismic.BooleanField;
 }
 
 /**

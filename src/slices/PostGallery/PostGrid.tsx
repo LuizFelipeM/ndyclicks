@@ -7,18 +7,16 @@ import { Content } from "@prismicio/client";
  */
 type PostGridProps = {
   posts?: Content.PostDocument<string>[];
-  showPostTitles: boolean;
 };
 
 /**
  * Component for "PostGrid" component.
  */
-export const PostGrid: React.FC<PostGridProps> = ({ posts, showPostTitles }) =>
+export const PostGrid: React.FC<PostGridProps> = ({ posts }) =>
   posts?.map((post, index) => (
     <PostCard
       key={post.id}
       post={post}
-      showTitle={showPostTitles}
       isTextLeft={index % 2 !== 0}
     />
   ));

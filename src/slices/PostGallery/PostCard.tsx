@@ -7,7 +7,6 @@ import { TextSection } from "@/components/TextSection";
  */
 type PostCardProps = {
   post: Content.PostDocument<string>;
-  showTitle: boolean;
   isTextLeft?: boolean;
 };
 
@@ -16,7 +15,6 @@ type PostCardProps = {
  */
 export const PostCard: React.FC<PostCardProps> = ({
   post,
-  showTitle,
   isTextLeft,
 }): JSX.Element => {
   const { href, ...attributes } = asLinkAttrs(post);
@@ -26,13 +24,17 @@ export const PostCard: React.FC<PostCardProps> = ({
       <TextSection.Image image={post.data.thumbnail} />
       <TextSection.Body>
         <TextSection.Text>
-          {showTitle && <RichText field={post.data.title} />}
+          {isFilled.richText(post.data.title) && (
+            <RichText field={post.data.title} />
+          )}
 
           {isFilled.richText(post.data.short_description) && (
             <RichText field={post.data.short_description} />
           )}
         </TextSection.Text>
-        <TextSection.Link {...attributes} href={href!}>Confira</TextSection.Link>
+        <TextSection.Link {...attributes} href={href!}>
+          Confira
+        </TextSection.Link>
       </TextSection.Body>
     </TextSection>
   );

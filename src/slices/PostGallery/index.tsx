@@ -46,10 +46,7 @@ const PostGallery = async ({
         )}
       </div>
 
-      <PostGrid
-        posts={posts!}
-        showPostTitles={slice.primary.show_post_titles}
-      />
+      <PostGrid posts={posts!} />
     </section>
   );
 };

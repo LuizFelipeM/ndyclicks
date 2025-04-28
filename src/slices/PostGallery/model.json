@@ -29,22 +29,6 @@
             "allowTargetBlank": true,
             "multi": "paragraph,strong"
           }
-        },
-        "cols": {
-          "type": "Number",
-          "config": {
-            "label": "Número de colunas",
-            "placeholder": "Número de colunas mostradas no PC"
-          }
-        },
-        "show_post_titles": {
-          "type": "Boolean",
-          "config": {
-            "label": "Mostrar título dos posts",
-            "placeholder_false": "Não",
-            "placeholder_true": "Sim",
-            "default_value": true
-          }
         }
       },
       "items": {}

@@ -28,24 +28,62 @@ const config: Config = {
   ],
 
   theme: {
+    fontSize: {
+      "hero-title": [
+        "4rem",
+        {
+          lineHeight: "1.15",
+        },
+      ],
+      title: [
+        "3rem",
+        {
+          lineHeight: "1.15",
+        },
+      ],
+      subtitle: [
+        "2.25rem",
+        {
+          lineHeight: "1.15",
+        },
+      ],
+      paragraph: [
+        "1.75rem",
+        {
+          lineHeight: "1.15",
+        },
+      ],
+      button: [
+        "1.75rem",
+        {
+          lineHeight: "1",
+        },
+      ],
+      footer: [
+        "1rem",
+        {
+          lineHeight: "1.25rem",
+        },
+      ],
+    },
+
     colors: {
       transparent: "transparent",
       black: "#000000",
+      white: "#FFFFFF",
 
       error: "#DF1F1F",
 
       primary: {
         DEFAULT: "#663E2A",
-        light: "#764D33",
+        light: "#91583B",
         dark: "#4C2318",
       },
 
       secondary: {
-        olive: {
-          DEFAULT: "#8C9A76",
-          light: "#A2B28A",
-          dark: "#6F7D5C",
-        },
+        DEFAULT: "#6F7D5C",
+        light: "#A2B28A",
+        dark: "#8C9A76",
       },
 
       neutral: {
@@ -62,6 +100,8 @@ const config: Config = {
 
     extend: {
       fontFamily: {
+        abhaya: ["Abhaya Libre", "serif"],
+        inspiration: ["Inspiration", "cursive"],
         Roboto: ["Roboto", "sans-serif"],
       },
       textShadow: {

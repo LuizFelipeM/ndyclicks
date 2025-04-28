@@ -18,7 +18,7 @@
             "label": "Texto",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,list-item,o-list-item"
           }
         }
       },
@@ -38,7 +38,7 @@
             "label": "Posição do texto",
             "placeholder_false": "A direita",
             "placeholder_true": "A esquerda",
-            "default_value": false
+            "default_value": true
           }
         },
         "text": {
@@ -48,90 +48,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl"
-          }
-        },
-        "image": {
-          "type": "Image",
-          "config": {
-            "label": "Imagem",
-            "constraint": {},
-            "thumbnails": []
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "textAndHeader",
-      "name": "Texto & Cabeçalho",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "is_text_left": {
-          "type": "Boolean",
-          "config": {
-            "label": "Posição do texto",
-            "placeholder_false": "A direita",
-            "placeholder_true": "A esquerda",
-            "default_value": false
-          }
-        },
-        "text": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Texto",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl"
-          }
-        },
-        "header": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Cabeçalho",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading2,em,strong"
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "textWithHeaderAndImage",
-      "name": "Texto + Cabeçalho & Imagem",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "is_text_left": {
-          "type": "Boolean",
-          "config": {
-            "label": "Posição do texto",
-            "placeholder_false": "A direita",
-            "placeholder_true": "A esquerda",
-            "default_value": false
-          }
-        },
-        "text": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Texto",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl"
-          }
-        },
-        "header": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Cabeçalho",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading2,em,strong"
           }
         },
         "image": {

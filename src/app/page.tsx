@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { asText } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import { components } from "@/slices";
-import Footer from "@/components/Footer";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
@@ -25,7 +24,7 @@ export default async function Home() {
   const page = await client.getByUID("page", "home").catch(() => notFound());
 
   return (
-    <main className="pb-8 mt-0">
+    <main className="min-h-screen">
       <SliceZone slices={page.data.slices} components={components} />
     </main>
   );

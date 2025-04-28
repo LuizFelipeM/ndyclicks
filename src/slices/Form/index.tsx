@@ -1,8 +1,8 @@
-import DynamicForm from "@/components/DynamicForm/DynamicForm";
-import { FieldType } from "@/components/DynamicForm/FieldType";
-import { Field } from "@/components/DynamicForm/Field";
+import { FieldType } from "@/components/Form/FieldType";
+import { Field } from "@/components/Form/Field";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { DynamicForm } from "./DynamicForm";
 
 type ContentFieldType =
   | "Texto curto"
@@ -56,7 +56,7 @@ const Form = ({ slice }: FormProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="my-8"
+      className="relative my-8"
     >
       {isFilled.group(slice.primary.fields) && (
         <DynamicForm

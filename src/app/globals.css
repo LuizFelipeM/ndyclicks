@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn, .btn-reverse {
+    @apply gap-2 px-6 py-2
+      text-white
+      text-button;
+
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  .btn-reverse::before {
+    @apply w-12 h-5;
+
+    content: "";
+    display: block;
+    background-image: url("/semi-divisa-botao-esquerda.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .btn::after {
+    @apply w-10 h-5 md:w-12 md:h-5;
+
+    content: "";
+    display: block;
+    background-image: url("/semi-divisa-botao-direita-BRANCO.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Custom styles for background patterns and decorative elements */
+  .bg-arabesco {
+    background-image: url("/arabesco.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .divider {
+    @apply
+      w-full h-6 my-16
+      md:h-10 md:my-28;
+
+    display: block;
+    background-image: url('/divisa-marom-GRANDE.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

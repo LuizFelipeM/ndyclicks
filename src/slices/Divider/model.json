@@ -1,0 +1,18 @@
+{
+  "id": "divider",
+  "type": "SharedSlice",
+  "name": "Divider",
+  "description": "Divider",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Padrão",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

@@ -7,7 +7,7 @@ type DefaultProps = {
 }
 
 export const Default: React.FC<DefaultProps> = ({ text }) => (
-  <div className="px-4 py-3">
+  <div className="relative max-w-6xl w-[80vw] mx-auto">
     <RichText field={text} />
   </div>
 )

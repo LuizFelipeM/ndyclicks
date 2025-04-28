@@ -3,138 +3,94 @@ import {
   type PrismicRichTextProps,
   type JSXMapSerializer,
 } from "@prismicio/react";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-
-import { Heading } from "./Heading";
+import { PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
-
-type ClassNameModifier = {
-  className: string
-  overrideDefault?: boolean
-}
+import { ImageFullScreen } from "./ImageFullScreen";
 
 type DefaultComponentsProps = {
-  classNames?: Partial<Record<keyof JSXMapSerializer, string | ClassNameModifier>>
-}
+  classNames?: Partial<Record<keyof JSXMapSerializer, string>>;
+};
 
-const isClassNameModifier = (className: string | ClassNameModifier | undefined): className is ClassNameModifier =>
-  !!className && !(typeof className === "string") && "className" in className
-
-const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerializer => ({
+const defaultComponents = ({
+  classNames,
+}: DefaultComponentsProps): JSXMapSerializer => ({
   //#region Headings
   heading1: ({ children }) => (
-    <Heading as="h1" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading1) || !classNames?.heading1?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading1) ? classNames?.heading1?.className : classNames?.heading1
+    <h1
+      className={clsx(
+        // Tablet & Desktop
+        "md:flex md:items-center md:justify-center md:gap-2",
+        "md:font-abhaya md:font-extrabold md:text-title md:text-primary md:mb-4",
+        "md:after:content-[''] md:after:block md:after:w-32 md:after:h-5 md:after:bg-[url('/semi-divisa-botao-direita-MARROM.svg')] md:after:bg-contain md:after:bg-no-repeat md:after:bg-center",
+        "md:before:content-[''] md:before:block md:before:w-32 md:before:h-5 md:before:bg-[url('/semi-divisa-botao-esquerda-MARROM.svg')] md:before:bg-contain md:before:bg-no-repeat md:before:bg-center",
+        // Mobile
+        "font-abhaya font-extrabold text-center text-title text-primary mb-4",
+        "after:content-[''] after:m-auto after:block after:w-52 after:h-8 after:mt-4 after:bg-[url('/divisa-marrom-PEQUENA.svg')] after:bg-contain after:bg-no-repeat after:bg-center",
+        classNames?.heading1
       )}
     >
       {children}
-    </Heading>
+    </h1>
   ),
   heading2: ({ children }) => (
-    <Heading as="h2" size="md" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading2) || !classNames?.heading2?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading2) ? classNames?.heading2?.className : classNames?.heading2
+    <h2
+      className={clsx(
+        "font-abhaya font-extrabold text-center text-subtitle text-primary mb-4",
+        "after:content-[''] after:m-auto after:block after:w-52 after:h-8 after:mt-4 after:bg-[url('/divisa-marrom-PEQUENA.svg')] after:bg-contain after:bg-no-repeat after:bg-center",
+        classNames?.heading2
       )}
     >
       {children}
-    </Heading>
+    </h2>
   ),
   heading3: ({ children }) => (
-    <Heading as="h3" size="sm" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading3) || !classNames?.heading3?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading3) ? classNames?.heading3?.className : classNames?.heading3
+    <h3
+      className={clsx(
+        "font-abhaya font-extrabold text-center text-subtitle text-primary mb-4",
+        classNames?.heading3
       )}
     >
       {children}
-    </Heading>
-  ),
-  heading4: ({ children }) => (
-    <Heading as="h4" size="sm" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading4) || !classNames?.heading4?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading4) ? classNames?.heading4?.className : classNames?.heading4
-      )}
-    >
-      {children}
-    </Heading>
-  ),
-  heading5: ({ children }) => (
-    <Heading as="h5" size="sm" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading5) || !classNames?.heading5?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading5) ? classNames?.heading5?.className : classNames?.heading5
-      )
-    }>
-      {children}
-    </Heading>
-  ),
-  heading6: ({ children }) => (
-    <Heading as="h6" size="sm" className={
-      clsx(
-        (!isClassNameModifier(classNames?.heading6) || !classNames?.heading6?.overrideDefault) && "mb-7 mt-12 first:mt-0 last:mb-0",
-        isClassNameModifier(classNames?.heading6) ? classNames?.heading6?.className : classNames?.heading6
-      )}
-    >
-
-      {children}
-    </Heading >
+    </h3>
   ),
   //#endregion
 
   //#region Lists
   oList: ({ children }) => (
-    <ol className={
-      clsx(
-        (!isClassNameModifier(classNames?.oList) || !classNames?.oList?.overrideDefault) && "mb-4 pl-4 last:mb-0 md:pl-6",
-        isClassNameModifier(classNames?.oList) ? classNames?.oList?.className : classNames?.oList
+    <ol
+      className={clsx(
+        "list-decimal list-inside text-primary text-paragraph mb-5",
+        classNames?.oList
       )}
     >
       {children}
     </ol>
   ),
   oListItem: ({ children }) => (
-    <li className={
-      clsx(
-        (!isClassNameModifier(classNames?.oListItem) || !classNames?.oListItem?.overrideDefault) && "mb-1 list-decimal pl-1 last:mb-0 md:pl-2",
-        isClassNameModifier(classNames?.oListItem) ? classNames?.oListItem?.className : classNames?.oListItem
-      )}
-    >
-      {children}
-    </li>
+    <li className={clsx("mb-2", classNames?.oListItem)}>{children}</li>
   ),
 
   list: ({ children }) => (
-    <ul className={
-      clsx(
-        (!isClassNameModifier(classNames?.list) || !classNames?.list?.overrideDefault) && "mb-4 pl-4 last:mb-0 md:pl-6",
-        isClassNameModifier(classNames?.list) ? classNames?.list?.className : classNames?.list
+    <ul
+      className={clsx(
+        "list-disc list-inside text-primary text-paragraph mb-5",
+        classNames?.list
       )}
     >
       {children}
     </ul>
   ),
   listItem: ({ children }) => (
-    <li className={
-      clsx(
-        (!isClassNameModifier(classNames?.listItem) || !classNames?.listItem?.overrideDefault) && "mb-1 list-disc pl-1 last:mb-0 md:pl-2",
-        isClassNameModifier(classNames?.listItem) ? classNames?.listItem?.className : classNames?.listItem
-      )}
-    >
-      {children}
-    </li>
+    <li className={clsx("mb-2", classNames?.listItem)}>{children}</li>
   ),
   //#endregion
 
   //#region Text
   paragraph: ({ children }) => (
-    <p className={
-      clsx(
-        (!isClassNameModifier(classNames?.paragraph) || !classNames?.paragraph?.overrideDefault) && "mb-4 last:mb-0",
-        isClassNameModifier(classNames?.paragraph) ? classNames?.paragraph?.className : classNames?.paragraph
+    <p
+      className={clsx(
+        "text-primary text-paragraph mb-5",
+        classNames?.paragraph
       )}
     >
       {children}
@@ -142,12 +98,7 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   ),
 
   strong: ({ children }) => (
-    <strong className={
-      clsx(
-        (!isClassNameModifier(classNames?.strong) || !classNames?.strong?.overrideDefault) && "font-semibold",
-        isClassNameModifier(classNames?.strong) ? classNames?.strong?.className : classNames?.strong
-      )}
-    >
+    <strong className={clsx("text-primary font-bold", classNames?.strong)}>
       {children}
     </strong>
   ),
@@ -155,11 +106,10 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   hyperlink: ({ children, node }) => (
     <PrismicNextLink
       field={node.data}
-      className={
-        clsx(
-          (!isClassNameModifier(classNames?.hyperlink) || !classNames?.hyperlink?.overrideDefault) && "underline decoration-1 underline-offset-2",
-          isClassNameModifier(classNames?.hyperlink) ? classNames?.hyperlink?.className : classNames?.hyperlink
-        )}
+      className={clsx(
+        "underline text-primary hover:text-primary-light",
+        classNames?.hyperlink
+      )}
     >
       {children}
     </PrismicNextLink>
@@ -167,27 +117,9 @@ const defaultComponents = ({ classNames }: DefaultComponentsProps): JSXMapSerial
   //#endregion
 
   //#region Misc
-  image: ({ node }) => (
-    <PrismicNextImage
-      field={node}
-      className={
-        clsx(
-          (!isClassNameModifier(classNames?.image) || !classNames?.image?.overrideDefault) && "mb-4",
-          isClassNameModifier(classNames?.image) ? classNames?.image?.className : classNames?.image
-        )}
-    />
-  ),
+  image: ({ node }) => <ImageFullScreen image={node} />,
 
-  preformatted: ({ children }) => (
-    <pre className={
-      clsx(
-        (!isClassNameModifier(classNames?.preformatted) || !classNames?.preformatted?.overrideDefault) && "mb-4 rounded bg-slate-100 p-4 text-sm last:mb-0 md:p-8 md:text-lg",
-        isClassNameModifier(classNames?.preformatted) ? classNames?.preformatted?.className : classNames?.preformatted
-      )}
-    >
-      <code>{children}</code>
-    </pre>
-  ),
+  preformatted: ({ children }) => <pre>{children}</pre>,
   //#endregion
 });
 

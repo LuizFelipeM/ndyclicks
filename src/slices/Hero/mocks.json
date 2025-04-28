@@ -3,150 +3,66 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Sint aute nulla nostrud occaecat culpa cupidatat laboris amet tempor nisi sunt proident ut id Lorem. Et incididunt tempor enim anim magna. Anim fugiat do aliquip minim elit anim ad do exercitation voluptate ad ut excepteur quis aliqua."
-						}
-					}
-				]
-			},
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"link",
-								{
-									"key": "d027205d-4922-464c-b496-0734458536d7",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
-									}
-								}
-							],
-							[
-								"text",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "flow",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
-			"carousel": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"image",
-								{
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
-										"width": 4000,
-										"height": 4000
-									},
-									"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
-									"width": 4000,
-									"height": 4000,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							]
-						]
-					}
-				]
-			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Blank"
-						}
+							"text": "Agende sua Sessão",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
-			}
-		},
-		"items": []
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "magazineMobileAndDesktop",
-		"primary": {
-			"text": {
+			},
+			"subtitle": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Anim in sunt fugiat cillum deserunt magna Lorem deserunt ullamco voluptate. Id officia et cillum magna pariatur non voluptate reprehenderit velit velit anim irure dolore consequat."
-						}
+							"text": "Eventos",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"link",
-								{
-									"key": "9c91eb32-486b-4174-bacd-8f534f7bd1ce",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
-									}
-								}
-							],
-							[
-								"text",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "package",
-									"type": "Text"
-								}
-							]
-						]
+			"background_image": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NDUwMjczNjR8MA&ixlib=rb-4.0.3&q=85&rect=0,0,3709,5563&w=3000&h=4500",
+				"alt": "assorted sliced citrus fruits on brown wooden chopping board",
+				"origin": {
+					"id": "1CsaVdwfIew",
+					"url": "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NDUwMjczNjR8MA&ixlib=rb-4.0.3&q=85",
+					"width": 3709,
+					"height": 5563
+				},
+				"width": 3000,
+				"height": 4500,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
 					}
-				]
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
 			},
-			"image": {
+			"left_card": {
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
-					"width": 6597,
-					"height": 4398
+					"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+					"width": 5616,
+					"height": 3744
 				},
-				"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
-				"width": 6597,
-				"height": 4398,
+				"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+				"width": 5616,
+				"height": 3744,
 				"edit": {
 					"zoom": 1,
 					"crop": {
@@ -160,121 +76,14 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Ourselves"
-						}
-					}
-				]
-			},
-			"is_text_left": {
-				"__TYPE__": "BooleanContent",
-				"value": false
-			},
-			"is_title_left": {
-				"__TYPE__": "BooleanContent",
-				"value": true
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "magazineMobile",
-		"primary": {
-			"text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Enim proident officia sint cupidatat."
-						}
-					}
-				]
-			},
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"link",
-								{
-									"key": "3d37b482-d3df-4d10-bbfa-eaf4d1fb9464",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "http://google.com"
-									}
-								}
-							],
-							[
-								"text",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "mental",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
-			"carousel": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"image",
-								{
-									"origin": {
-										"id": "main",
-										"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
-										"width": 5616,
-										"height": 3744
-									},
-									"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
-									"width": 5616,
-									"height": 3744,
-									"edit": {
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										},
-										"background": "transparent"
-									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							]
-						]
-					}
-				]
-			},
-			"mobile_image": {
+			"right_card": {
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+					"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
 					"width": 4000,
 					"height": 6000
 				},
-				"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+				"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
 				"width": 4000,
 				"height": 6000,
 				"edit": {
@@ -289,237 +98,6 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
-			},
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Upper"
-						}
-					}
-				]
-			},
-			"is_text_left": {
-				"__TYPE__": "BooleanContent",
-				"value": true
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "products",
-		"primary": {
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"link",
-								{
-									"key": "8bf70365-9098-4aa4-a0de-921761e276f7",
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "http://google.com"
-									}
-								}
-							],
-							[
-								"text",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Contate-me"
-								}
-							]
-						]
-					}
-				]
-			},
-			"carousel": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"highlighted_text",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Produtos",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							],
-							[
-								"image",
-								{
-									"provider": "imgix",
-									"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzM3MjI5MjMzfDA&ixlib=rb-4.0.3&q=85",
-									"alt": "orange citrus",
-									"origin": {
-										"id": "CFWgJgmm6p8",
-										"url": "https://images.unsplash.com/photo-1568383245703-b6fccedeefba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzM3MjI5MjMzfDA&ixlib=rb-4.0.3&q=85",
-										"width": 6000,
-										"height": 4000
-									},
-									"width": 6000,
-									"height": 4000,
-									"edit": {
-										"background": "transparent",
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										}
-									},
-									"credits": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"highlighted_text",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Pratos",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							],
-							[
-								"image",
-								{
-									"provider": "imgix",
-									"url": "https://images.unsplash.com/photo-1527498580783-4656d37cba65?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNnx8cGxhdGVzfGVufDB8fHx8MTczNzI5MjM0Nnww&ixlib=rb-4.0.3&q=85",
-									"alt": "assorted breakfast dishes",
-									"origin": {
-										"id": "H82HDdkcd4c",
-										"url": "https://images.unsplash.com/photo-1527498580783-4656d37cba65?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNnx8cGxhdGVzfGVufDB8fHx8MTczNzI5MjM0Nnww&ixlib=rb-4.0.3&q=85",
-										"width": 2834,
-										"height": 3778
-									},
-									"width": 2834,
-									"height": 3778,
-									"edit": {
-										"background": "transparent",
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										}
-									},
-									"credits": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"highlighted_text",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Animais",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							],
-							[
-								"image",
-								{
-									"provider": "imgix",
-									"url": "https://images.unsplash.com/photo-1568383306313-1b27a2e28071?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MzcyMjkyMzN8MA&ixlib=rb-4.0.3&q=85",
-									"alt": "sliced fruit",
-									"origin": {
-										"id": "p2n1zvbA5_4",
-										"url": "https://images.unsplash.com/photo-1568383306313-1b27a2e28071?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MzcyMjkyMzN8MA&ixlib=rb-4.0.3&q=85",
-										"width": 6000,
-										"height": 4000
-									},
-									"width": 6000,
-									"height": 4000,
-									"edit": {
-										"background": "transparent",
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										}
-									},
-									"credits": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							]
-						]
-					}
-				]
-			},
-			"before_highlighted_text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Transforme os seus",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"after_highlighted_text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "em algo especial",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
 			}
 		},
 		"items": [

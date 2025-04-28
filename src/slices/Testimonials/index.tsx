@@ -2,7 +2,8 @@ import { RichText } from "@/components/RichText";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
-import { Testimonial } from "./Testimonial";
+import { TestimonialCard } from "@/components/TestimonialCard";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
 
 /**
  * Props for `Testimonials`.
@@ -17,25 +18,30 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative w-full bg-gray-100 py-8 px-8"
+      className="mb-14 md:mb-32 md:last:mb-14 mx-4 md:mx-8"
     >
-      <div className="text-center mb-12">
-        <RichText field={slice.primary.text} />
+      <div className="max-w-6xl mx-auto text-center mb-14 md:mb-32 px-4 md:px-8">
+        {isFilled.richText(slice.primary.text) && (
+          <RichText field={slice.primary.text} />
+        )}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-10">
-        {isFilled.group(slice.primary.testimonials) &&
-          slice.primary.testimonials.map(({ author_image, author_name, quote }, i) =>
-            isFilled.richText(author_name) &&
-            isFilled.richText(quote) &&
-            (
-              <Testimonial
-                key={i}
-                authorImage={author_image}
-                authorName={author_name}
-                quote={quote}
-              />
-            ))}
+      <div className="max-w-6xl mx-auto">
+        <TestimonialSlider>
+          {isFilled.group(slice.primary.testimonials) &&
+            slice.primary.testimonials.map(
+              ({ author_image, author_name, quote }, index) =>
+                isFilled.richText(author_name) &&
+                isFilled.richText(quote) && (
+                  <TestimonialCard
+                    key={index}
+                    image={author_image}
+                    testimonial={quote}
+                    author={author_name}
+                  />
+                )
+            )}
+        </TestimonialSlider>
       </div>
     </section>
   );

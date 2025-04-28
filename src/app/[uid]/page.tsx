@@ -1,10 +1,7 @@
-import { LinkButton } from "@/components/LinkButton";
 import { RichText } from "@/components/RichText";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { asText } from "@prismicio/client";
+import { asText, isFilled } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -37,24 +34,17 @@ export default async function Page({ params }: Arguments) {
     .catch(() => notFound());
 
   return (
-    <main className="py-8 px-8 lg:px-16 m-0">
-      <section className="mb-7 flex flex-row items-center">
-        {page.data.show_title && (
-          <RichText
-            field={page.data.title}
-            classNames={{
-              heading1: {
-                className: "text-primary flex-1 m-0",
-                overrideDefault: true,
-              },
-            }}
-          />
-        )}
+    <main className="min-h-screen">
+      <section className="py-32 px-4 md:px-8">
+        <div className="text-primary m-auto mx-10">
+          {isFilled.richText(page.data.title) && (
+            <RichText field={page.data.title} />
+          )}
 
-        <LinkButton href="/">
-          <FontAwesomeIcon icon={faArrowLeft} className="mr-1.5" />
-          Voltar
-        </LinkButton>
+          {isFilled.richText(page.data.short_description) && (
+            <RichText field={page.data.short_description} />
+          )}
+        </div>
       </section>
       <SliceZone slices={page.data.slices} components={components} />
     </main>

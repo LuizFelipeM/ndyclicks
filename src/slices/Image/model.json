@@ -6,7 +6,7 @@
   "variations": [
     {
       "id": "default",
-      "name": "Fullscreen",
+      "name": "Tela cheia",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -66,55 +66,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "col_quantity": {
-          "type": "Number",
-          "config": {
-            "label": "Número de colunas",
-            "placeholder": "Número de colunas mostradas no PC"
-          }
-        },
-        "image_height": {
-          "type": "Number",
-          "config": {
-            "label": "Altura das imagens (px)",
-            "placeholder": "Altura utilizada para que todas as imagens tenham o mesmo tamanho"
-          }
-        },
-        "images": {
-          "type": "Group",
-          "config": {
-            "label": "Imagens",
-            "repeat": true,
-            "fields": {
-              "image": {
-                "type": "Image",
-                "config": {
-                  "label": "Imagem",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              }
-            }
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "imagesInMasonry",
-      "name": "Imagens - Estilo Alvenaria",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "col_width": {
-          "type": "Number",
-          "config": {
-            "label": "Largura da coluna (px)",
-            "placeholder": ""
-          }
-        },
         "images": {
           "type": "Group",
           "config": {

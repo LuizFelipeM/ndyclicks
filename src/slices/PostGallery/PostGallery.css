@@ -1,9 +1,0 @@
-.post-grid {
-    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-}
-
-@media screen and (max-width: 768px) {
-    .post-grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-}

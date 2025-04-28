@@ -51,7 +51,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <span className="flex items-center gap-2 justify-center">
         <PiTildeBold size={25} className="text-white" />{" "}
         {isFilled.richText(author) && (
-          <RichText field={author} classNames={{ paragraph: "text-white m-0" }} />
+          <RichText field={author} classNames={{ paragraph: "text-white mb-0" }} />
         )}
       </span>
     </Card>

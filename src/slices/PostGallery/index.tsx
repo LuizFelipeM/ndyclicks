@@ -37,12 +37,8 @@ const PostGallery = async ({
       className="mb-14 md:mb-32 mx-4 md:mx-8"
     >
       <div className="max-w-6xl mx-auto text-center mb-14 md:mb-32">
-        {isFilled.richText(slice.primary.title) && (
-          <RichText field={slice.primary.title} />
-        )}
-
-        {isFilled.richText(slice.primary.subtitle) && (
-          <RichText field={slice.primary.subtitle} />
+        {isFilled.richText(slice.primary.text) && (
+          <RichText field={slice.primary.text} />
         )}
       </div>
 

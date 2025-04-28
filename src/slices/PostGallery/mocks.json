@@ -3,24 +3,13 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Happened"
-						}
-					}
-				]
-			},
-			"subtitle": {
+			"text": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Cillum eu sint incididunt laborum commodo sunt consequat nostrud elit velit. Tempor sint adipisicing magna nisi culpa eiusmod fugiat."
+							"text": "Ea sint excepteur adipisicing non eu ipsum nostrud laborum ut Lorem. Dolor non est veniam ut quis consectetur adipisicing elit adipisicing."
 						}
 					}
 				]

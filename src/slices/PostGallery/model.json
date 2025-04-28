@@ -12,22 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "text": {
           "type": "StructuredText",
           "config": {
-            "label": "Título",
+            "label": "Texto",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1"
-          }
-        },
-        "subtitle": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Subtítulo",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,strong"
+            "multi": "heading1,paragraph,strong,em"
           }
         }
       },

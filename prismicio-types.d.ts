@@ -672,24 +672,14 @@ export type ImageSlice = prismic.SharedSlice<"image", ImageSliceVariation>;
  */
 export interface PostGallerySliceDefaultPrimary {
   /**
-   * Título field in *PostGallery → Padrão → Primary*
+   * Texto field in *PostGallery → Padrão → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: post_gallery.default.primary.title
+   * - **API ID Path**: post_gallery.default.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.RichTextField;
-
-  /**
-   * Subtítulo field in *PostGallery → Padrão → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: post_gallery.default.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  subtitle: prismic.RichTextField;
+  text: prismic.RichTextField;
 }
 
 /**

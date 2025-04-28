@@ -18,7 +18,7 @@
             "label": "Texto",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,paragraph,strong,em"
+            "multi": "paragraph,strong,em,heading1"
           }
         },
         "testimonials": {

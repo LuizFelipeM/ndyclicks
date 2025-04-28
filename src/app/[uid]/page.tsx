@@ -36,7 +36,7 @@ export default async function Page({ params }: Arguments) {
   return (
     <main className="min-h-screen">
       <section className="py-32 px-4 md:px-8">
-        <div className="text-primary m-auto mx-10">
+        <div className="text-primary m-auto mx-10 text-center">
           {isFilled.richText(page.data.title) && (
             <RichText field={page.data.title} />
           )}

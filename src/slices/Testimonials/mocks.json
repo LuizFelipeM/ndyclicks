@@ -7,26 +7,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading2",
-						"content": {
-							"text": "What Our Readers Say",
-							"spans": [
-								{
-									"type": "strong",
-									"start": 0,
-									"end": 20
-								}
-							]
-						},
-						"direction": "ltr"
-					},
-					{
 						"type": "paragraph",
 						"content": {
-							"text": "Real stories from real people who have experienced the magic.",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Mollit quis ea qui culpa esse magna veniam."
+						}
 					}
 				]
 			},

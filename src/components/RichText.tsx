@@ -11,7 +11,7 @@ type DefaultComponentsProps = {
   classNames?: Partial<Record<keyof JSXMapSerializer, string>>;
 };
 
-const defaultComponents = ({
+export const defaultComponents = ({
   classNames,
 }: DefaultComponentsProps): JSXMapSerializer => ({
   //#region Headings

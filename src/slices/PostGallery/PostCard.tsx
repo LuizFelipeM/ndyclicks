@@ -1,5 +1,5 @@
-import { Content, asLinkAttrs, isFilled } from "@prismicio/client";
-import { RichText } from "@/components/RichText";
+import { Content, RTHeading1Node, asLinkAttrs, isFilled } from "@prismicio/client";
+import { defaultComponents, RichText } from "@/components/RichText";
 import { TextSection } from "@/components/TextSection";
 
 /**
@@ -25,7 +25,12 @@ export const PostCard: React.FC<PostCardProps> = ({
       <TextSection.Body>
         <TextSection.Text>
           {isFilled.richText(post.data.title) && (
-            <RichText field={post.data.title} />
+            <RichText
+              field={post.data.title}
+              components={{
+                heading1: defaultComponents({}).heading2 as any,
+              }}
+            />
           )}
 
           {isFilled.richText(post.data.short_description) && (

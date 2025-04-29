@@ -64,6 +64,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "divider": {
+              "type": "SharedSlice"
+            },
             "image": {
               "type": "SharedSlice"
             },

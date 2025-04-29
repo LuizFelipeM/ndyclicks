@@ -20,38 +20,10 @@
             "thumbnails": []
           }
         },
-        "change_image_size": {
-          "type": "Boolean",
-          "config": {
-            "label": "Alterar tamanho da imagem",
-            "placeholder_false": "Não",
-            "placeholder_true": "Sim",
-            "default_value": false
-          }
-        },
-        "keep_aspect_ratio": {
-          "type": "Select",
-          "config": {
-            "label": "Manter proporção?",
-            "placeholder": "",
-            "options": [
-              "Largura (ajustar altura automaticamente)",
-              "Altura (ajustar largura automaticamente)",
-              "Não manter proporção"
-            ]
-          }
-        },
-        "image_height": {
+        "change_image_position": {
           "type": "Number",
           "config": {
-            "label": "Altura da imagem (px)",
-            "placeholder": ""
-          }
-        },
-        "image_width": {
-          "type": "Number",
-          "config": {
-            "label": "Largura da imagem (px)",
+            "label": "Mudar pos. vertical da imagem (px)",
             "placeholder": ""
           }
         }

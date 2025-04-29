@@ -148,6 +148,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type PostDocumentDataSlicesSlice =
+  | DividerSlice
   | ImageSlice
   | SplitterSlice
   | TextSlice
@@ -565,49 +566,14 @@ export interface ImageSliceDefaultPrimary {
   image: prismic.ImageField<never>;
 
   /**
-   * Alterar tamanho da imagem field in *Image → Tela cheia → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: image.default.primary.change_image_size
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  change_image_size: prismic.BooleanField;
-
-  /**
-   * Manter proporção? field in *Image → Tela cheia → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image.default.primary.keep_aspect_ratio
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  keep_aspect_ratio: prismic.SelectField<
-    | "Largura (ajustar altura automaticamente)"
-    | "Altura (ajustar largura automaticamente)"
-    | "Não manter proporção"
-  >;
-
-  /**
-   * Altura da imagem (px) field in *Image → Tela cheia → Primary*
+   * Mudar pos. vertical da imagem (px) field in *Image → Tela cheia → Primary*
    *
    * - **Field Type**: Number
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.default.primary.image_height
+   * - **API ID Path**: image.default.primary.change_image_position
    * - **Documentation**: https://prismic.io/docs/field#number
    */
-  image_height: prismic.NumberField;
-
-  /**
-   * Largura da imagem (px) field in *Image → Tela cheia → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image.default.primary.image_width
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  image_width: prismic.NumberField;
+  change_image_position: prismic.NumberField;
 }
 
 /**

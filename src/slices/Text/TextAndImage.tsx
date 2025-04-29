@@ -13,7 +13,7 @@ export const TextAndImage: React.FC<TextAndImageProps> = ({
   image,
   isTextLeft,
 }) => (
-  <TextSection textLeft={isTextLeft}>
+  <TextSection textLeft={isTextLeft} className="gap-12">
     <TextSection.Image image={image} />
     <TextSection.Body>
       <TextSection.Text>

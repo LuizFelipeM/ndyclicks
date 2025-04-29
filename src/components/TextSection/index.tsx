@@ -109,6 +109,7 @@ const Link: React.FC<LinkProps> = ({ children, textLeft, href }) => {
 interface TextSectionProps {
   children: React.ReactNode;
   textLeft: boolean;
+  className?: string;
 }
 
 interface TextSectionCoumpound extends React.FC<TextSectionProps> {
@@ -118,7 +119,11 @@ interface TextSectionCoumpound extends React.FC<TextSectionProps> {
   Body: typeof Body;
 }
 
-export const TextSection: TextSectionCoumpound = ({ children, textLeft }) => {
+export const TextSection: TextSectionCoumpound = ({
+  children,
+  textLeft,
+  className,
+}) => {
   const componentWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       return React.cloneElement(child, {
@@ -130,11 +135,13 @@ export const TextSection: TextSectionCoumpound = ({ children, textLeft }) => {
 
   return (
     <div
-      className="
-                max-w-[80vw] md:max-w-6xl mx-auto
-                grid md:grid-cols-2
-                items-center
-                mb-20 md:mb-32 last:mb-0"
+      className={
+        clsx("max-w-[80vw] md:max-w-6xl mx-auto",
+              "grid md:grid-cols-2",
+              "items-center",
+              "mb-20 md:mb-32 last:mb-0",
+              className
+            )}
     >
       {componentWithProps}
     </div>

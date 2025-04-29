@@ -26,24 +26,10 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"image_height": {
+			"change_image_position": {
 				"__TYPE__": "FieldContent",
-				"type": "Number",
-				"value": "600"
-			},
-			"image_width": {
-				"__TYPE__": "FieldContent",
-				"type": "Number",
-				"value": "700"
-			},
-			"keep_aspect_ratio": {
-				"__TYPE__": "FieldContent",
-				"type": "Select",
-				"value": "Não manter proporção"
-			},
-			"change_image_size": {
-				"__TYPE__": "BooleanContent",
-				"value": true
+				"value": "46",
+				"type": "Number"
 			}
 		},
 		"items": []

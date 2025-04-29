@@ -11,7 +11,12 @@ const VariationSelector: React.FC<{ slice: Content.ImageSlice }> = ({
       return <ImagesInColumns images={slice.primary.images} />;
 
     default:
-      return <Default image={slice.primary.image} />;
+      return (
+        <Default
+          image={slice.primary.image}
+          bottom={slice.primary.change_image_position}
+        />
+      );
   }
 };
 
